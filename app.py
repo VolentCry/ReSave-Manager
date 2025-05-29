@@ -1,22 +1,33 @@
 import customtkinter
+import time
+import subprocess
+
+
+
+# Данные пользователя
+games = [["Elden Ring", "5 Май 2025 18:05:56", ["on", "off", "off", "off", "off"], r"E:\Games\ELDEN RING\Game", r"C:\Users\Semen\Desktop\Programming\ReSave Manager\saves\games\Elden Ring", r"C:\Users\Semen\AppData\Roaming\EldenRing\76561197960267366"]]
 
 
 class ToplevelWindow(customtkinter.CTkToplevel):
     """Окно настройки определённой игры"""
-    def __init__(self):
+    def __init__(self, name_of_game, directory_of_game, dir_of_resave, dir_of_cur_save, parametrs):
         super().__init__()
         self.geometry("650x400")
         self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(12, weight=1)
 
-        self.label = customtkinter.CTkLabel(self, text="Настройки резервного копирования")
+        self.directory_of_game = directory_of_game
+        self.dir_of_resave = dir_of_resave
+        self.dir_of_cur_save = dir_of_cur_save
+
+        self.label = customtkinter.CTkLabel(self, text=f"Настройки резервного копирования для игры {name_of_game}")
         self.label.grid(row=0, columnspan=2, pady=5)
 
         # Переменные чекбоксов
         self.frequency_resave_var = customtkinter.StringVar(value="on") # Сохранение с определённой частотой
         self.smart_resave_var = customtkinter.StringVar(value="off") # Умное резервное копирование
-        self.count_resave_var = customtkinter.StringVar(value="off") # Сохранение по количеству резервных сейвов
         self.after_game_resave_var = customtkinter.StringVar(value="off") # Сохранение после каждой игровой сессии
+        self.count_resave_var = customtkinter.StringVar(value="off") # Сохранение по количеству резервных сейвов
         self.memory_resave_var = customtkinter.StringVar(value="off") # Сохранение до поределённого лимита памяти
 
         # Настройка частоты автосохранений
@@ -24,8 +35,8 @@ class ToplevelWindow(customtkinter.CTkToplevel):
         self.checkbox_frequency.grid(row=1, column=0, padx=8)
         self.resave_frequency_slider = customtkinter.CTkSlider(self, from_=0, to=100)
         self.resave_frequency_slider.grid(row=2, column=0, padx=8, pady=4, sticky="ew")
-        self.resave_frequency_mean = customtkinter.CTkLabel(self, text=f"дней")
-        self.resave_frequency_mean.grid(row=2, column=1) 
+        self.resave_frequency_mean = customtkinter.CTkLabel(self, text=f" дней")
+        self.resave_frequency_mean.grid(row=2, column=1)
 
         # "Умное" резервное копирование
         self.checkbox_smart_resave = customtkinter.CTkCheckBox(self, text='"Умное" резервное копирование', command=self.smart_resave_event, variable=self.smart_resave_var, onvalue="on", offvalue="off")
@@ -65,15 +76,15 @@ class ToplevelWindow(customtkinter.CTkToplevel):
 
     def button_game_dir(self):
         """Открытие директории игры"""
-        print("Открытие директории игры")
+        subprocess.Popen(['explorer', self.directory_of_game]) # Открыть проводник в заданной директории
     
     def button_resaves(self):
         """Открытие директории с резервными копиями сохранений"""
-        print("Открытие директории с резервными копиями сохранений")
+        subprocess.Popen(['explorer', self.dir_of_resave]) # Открыть проводник в заданной директории
 
     def button_game_current_save(self):
         """Открытие директории с текущем сохранение"""
-        print("Открытие директории с текущем сохранение")
+        subprocess.Popen(['explorer', self.dir_of_cur_save]) # Открыть проводник в заданной директории
 
     def button_settings_save(self):
         """Сохранение изменений настроек"""
@@ -96,12 +107,29 @@ class ToplevelWindow(customtkinter.CTkToplevel):
 
 
 
+class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
+    """Скроллбар, где будут находиться все карточки с играми"""
+    def __init__(self, master):
+        super().__init__(master)
+
+        cnt = 0
+        for i in games:
+            self.games_frame = GameFrame(self, name=i[0], date=i[1], par=i[2], game_dir=i[3], resave_dir=i[4], cur_save_dir=i[5])
+            self.games_frame.grid(row=cnt, column=0, sticky="ew", padx=8, pady=(6, 0))
+            cnt += 1
+
 
 
 class GameFrame(customtkinter.CTkFrame):
     """Блок, который будет создаваться для каждой игры пользователя"""
-    def __init__(self, master, name, date):
+    def __init__(self, master, name, date, par, game_dir, resave_dir, cur_save_dir):
         super().__init__(master)
+
+        self.name = name
+        self.par = par
+        self.game_dir = game_dir
+        self.resave_dir = resave_dir
+        self.cur_save_dir = cur_save_dir
 
         # Название игры
         self.label_name = customtkinter.CTkLabel(self, text=name)
@@ -115,12 +143,16 @@ class GameFrame(customtkinter.CTkFrame):
         self.game_resave_settings = customtkinter.CTkButton(self, text="Настройки", command=self.button_callbck)
         self.game_resave_settings.grid(row=0, column=1)
 
+        # Создание резервной копии
+        self.game_resave_settings = customtkinter.CTkButton(self, text="Настройки", command=self.button_callbck)
+        self.game_resave_settings.grid(row=1, column=1)
+
         self.toplevel_window = None
 
     def button_callbck(self):
         """Заход в меню настроек определённой игры"""
         if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
-            self.toplevel_window = ToplevelWindow()
+            self.toplevel_window = ToplevelWindow(name_of_game=self.name, directory_of_game=self.game_dir, dir_of_resave=self.resave_dir, dir_of_cur_save=self.cur_save_dir, parametrs=self.par)
         else:
             self.toplevel_window.focus()
 
@@ -167,13 +199,13 @@ class App(customtkinter.CTk):
         self.grid_rowconfigure(1, weight=1)
 
         # test
-        self.games_frame = GameFrame(self, name="REPO", date="5 июня")
-        self.games_frame.grid(row=1, column=0, sticky="nsew")
+        self.games_frame = GameScrollBarFrame(self)
+        self.games_frame.grid(row=1, sticky="nsew", columnspan=2, padx=8, pady=8)
 
         self.label_of_app = customtkinter.CTkLabel(self, text="List of your games:")
-        self.label_of_app.grid(row=0, column=0)
-        self.button_settings = customtkinter.CTkButton(self, text="Settings", command=self.button_callbck)
-        self.button_settings.grid(row=0, column=1)
+        self.label_of_app.grid(row=0, columnspan=2, sticky="ew")
+        # self.button_settings = customtkinter.CTkButton(self, text="Settings", command=self.button_callbck)
+        # self.button_settings.grid(row=0, column=2)
 
     def button_callbck(self):
         self.settings_app = Settings()
