@@ -1,11 +1,12 @@
 import customtkinter
 import time
 import subprocess
+import shutil
 
 
 
 # Данные пользователя
-games = [["Elden Ring", "5 Май 2025 18:05:56", ["on", "off", "off", "off", "off"], r"E:\Games\ELDEN RING\Game", r"C:\Users\Semen\Desktop\Programming\ReSave Manager\saves\games\Elden Ring", r"C:\Users\Semen\AppData\Roaming\EldenRing\76561197960267366"]]
+games = [["Elden Ring", "5 Май 2025 18:05:56", ["on", "off", "off", "off", "off"], r"E:\Games\ELDEN RING\Game", r"%USERPROFILE%\Desktop\Programming\ReSave Manager\saves\games\Elden Ring", r"%USERPROFILE%\AppData\Roaming\EldenRing\76561197960267366"]]
 
 
 class ToplevelWindow(customtkinter.CTkToplevel):
@@ -24,11 +25,11 @@ class ToplevelWindow(customtkinter.CTkToplevel):
         self.label.grid(row=0, columnspan=2, pady=5)
 
         # Переменные чекбоксов
-        self.frequency_resave_var = customtkinter.StringVar(value="on") # Сохранение с определённой частотой
-        self.smart_resave_var = customtkinter.StringVar(value="off") # Умное резервное копирование
-        self.after_game_resave_var = customtkinter.StringVar(value="off") # Сохранение после каждой игровой сессии
-        self.count_resave_var = customtkinter.StringVar(value="off") # Сохранение по количеству резервных сейвов
-        self.memory_resave_var = customtkinter.StringVar(value="off") # Сохранение до поределённого лимита памяти
+        self.frequency_resave_var = customtkinter.StringVar(value=parametrs[0]) # Сохранение с определённой частотой
+        self.smart_resave_var = customtkinter.StringVar(value=parametrs[1]) # Умное резервное копирование
+        self.after_game_resave_var = customtkinter.StringVar(value=parametrs[2]) # Сохранение после каждой игровой сессии
+        self.count_resave_var = customtkinter.StringVar(value=parametrs[3]) # Сохранение по количеству резервных сейвов
+        self.memory_resave_var = customtkinter.StringVar(value=parametrs[4]) # Сохранение до поределённого лимита памяти
 
         # Настройка частоты автосохранений
         self.checkbox_frequency = customtkinter.CTkCheckBox(self, text="Частота автосохранений:", command=self.frequency_checkbox_event, variable=self.frequency_resave_var, onvalue="on", offvalue="off")
@@ -122,7 +123,7 @@ class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
 
 class GameFrame(customtkinter.CTkFrame):
     """Блок, который будет создаваться для каждой игры пользователя"""
-    def __init__(self, master, name, date, par, game_dir, resave_dir, cur_save_dir):
+    def __init__(self, master, name, date, par, game_dir, resave_dir, cur_save_dir, num_of_game):
         super().__init__(master)
 
         self.name = name
@@ -141,11 +142,11 @@ class GameFrame(customtkinter.CTkFrame):
 
         # Заход в настройки каждого приложения
         self.game_resave_settings = customtkinter.CTkButton(self, text="Настройки", command=self.button_callbck)
-        self.game_resave_settings.grid(row=0, column=1)
+        self.game_resave_settings.grid(row=0, column=1, padx=4)
 
         # Создание резервной копии
-        self.game_resave_settings = customtkinter.CTkButton(self, text="Настройки", command=self.button_callbck)
-        self.game_resave_settings.grid(row=1, column=1)
+        self.game_resave_settings = customtkinter.CTkButton(self, text="Создать резервную копию", command=self.button_make_resave)
+        self.game_resave_settings.grid(row=1, column=1, padx=4, pady=4)
 
         self.toplevel_window = None
 
@@ -153,8 +154,15 @@ class GameFrame(customtkinter.CTkFrame):
         """Заход в меню настроек определённой игры"""
         if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
             self.toplevel_window = ToplevelWindow(name_of_game=self.name, directory_of_game=self.game_dir, dir_of_resave=self.resave_dir, dir_of_cur_save=self.cur_save_dir, parametrs=self.par)
+            self.toplevel_window.focus()
         else:
             self.toplevel_window.focus()
+
+    def button_make_resave(self):
+        """Создаёт резервную копию"""
+
+        shutil.copy('dir1/source.txt', 'dir2/destination.txt')
+
 
 
 
