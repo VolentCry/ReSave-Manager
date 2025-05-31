@@ -2,11 +2,9 @@ import customtkinter
 import time
 import subprocess
 import shutil
+import os
 
-
-
-# Данные пользователя
-games = [["Elden Ring", "5 Май 2025 18:05:56", ["on", "off", "off", "off", "off"], r"E:\Games\ELDEN RING\Game", r"%USERPROFILE%\Desktop\Programming\ReSave Manager\saves\games\Elden Ring", r"%USERPROFILE%\AppData\Roaming\EldenRing\76561197960267366"]]
+from game_copier_algorithm import resave_copier_algorithm, games
 
 
 class ToplevelWindow(customtkinter.CTkToplevel):
@@ -115,7 +113,7 @@ class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
 
         cnt = 0
         for i in games:
-            self.games_frame = GameFrame(self, name=i[0], date=i[1], par=i[2], game_dir=i[3], resave_dir=i[4], cur_save_dir=i[5])
+            self.games_frame = GameFrame(self, name=i[0], date=i[1], par=i[2], game_dir=i[3], resave_dir=i[4], cur_save_dir=i[5], num_of_game=cnt, current_cnt_resaves=i[6], resaves_limit_cnt=i[7], resaves_limit_memory=i[8])
             self.games_frame.grid(row=cnt, column=0, sticky="ew", padx=8, pady=(6, 0))
             cnt += 1
 
@@ -123,14 +121,18 @@ class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
 
 class GameFrame(customtkinter.CTkFrame):
     """Блок, который будет создаваться для каждой игры пользователя"""
-    def __init__(self, master, name, date, par, game_dir, resave_dir, cur_save_dir, num_of_game):
+    def __init__(self, master, name, date, par, game_dir, resave_dir, cur_save_dir, num_of_game, current_cnt_resaves, resaves_limit_cnt, resaves_limit_memory):
         super().__init__(master)
 
-        self.name = name
-        self.par = par
-        self.game_dir = game_dir
-        self.resave_dir = resave_dir
-        self.cur_save_dir = cur_save_dir
+        self.name = name # Название игры
+        self.par = par # Параметры настроек
+        self.game_dir = game_dir # Директория игры
+        self.resave_dir = resave_dir # Директория ресейвов
+        self.cur_save_dir = cur_save_dir # Директория текущего сейва
+        self.num_of_game = num_of_game # Номер игры в общем списке игр пользователя
+        self.current_cnt_resaves = current_cnt_resaves # Количество текущих ресейвов
+        self.resaves_limit_cnt = resaves_limit_cnt # Ограничение по количеству ресейвов
+        self.resaves_limit_memory = resaves_limit_memory # Ограничение по количеству занимаемой памяти ресейвами
 
         # Название игры
         self.label_name = customtkinter.CTkLabel(self, text=name)
@@ -160,8 +162,7 @@ class GameFrame(customtkinter.CTkFrame):
 
     def button_make_resave(self):
         """Создаёт резервную копию"""
-
-        shutil.copy('dir1/source.txt', 'dir2/destination.txt')
+        resave_copier_algorithm(games[self.num_of_game], self.num_of_game)
 
 
 
