@@ -4,20 +4,24 @@ import subprocess
 import shutil
 import os
 
-from game_copier_algorithm import resave_copier_algorithm, games
-
+from game_copier_algorithm import resave_copier_algorithm
+import user_games
 
 class ToplevelWindow(customtkinter.CTkToplevel):
     """Окно настройки определённой игры"""
-    def __init__(self, name_of_game, directory_of_game, dir_of_resave, dir_of_cur_save, parametrs):
+    def __init__(self, name_of_game, directory_of_game, dir_of_resave, dir_of_cur_save, parametrs, num_of_game):
         super().__init__()
-        self.geometry("650x400")
+        self.geometry("650x480")
         self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(12, weight=1)
+        self.title(f"Настройки резервных сохранений дял {name_of_game}")
+        self.resizable(False, False)
 
         self.directory_of_game = directory_of_game
         self.dir_of_resave = dir_of_resave
         self.dir_of_cur_save = dir_of_cur_save
+        self.num_of_game = num_of_game
+
 
         self.label = customtkinter.CTkLabel(self, text=f"Настройки резервного копирования для игры {name_of_game}")
         self.label.grid(row=0, columnspan=2, pady=5)
@@ -31,27 +35,27 @@ class ToplevelWindow(customtkinter.CTkToplevel):
 
         # Настройка частоты автосохранений
         self.checkbox_frequency = customtkinter.CTkCheckBox(self, text="Частота автосохранений:", command=self.frequency_checkbox_event, variable=self.frequency_resave_var, onvalue="on", offvalue="off")
-        self.checkbox_frequency.grid(row=1, column=0, padx=8)
+        self.checkbox_frequency.grid(row=1, column=0, padx=8, sticky="w")
         self.resave_frequency_slider = customtkinter.CTkSlider(self, from_=0, to=100)
-        self.resave_frequency_slider.grid(row=2, column=0, padx=8, pady=4, sticky="ew")
+        self.resave_frequency_slider.grid(row=2, column=0, padx=8, pady=10, sticky="we")
         self.resave_frequency_mean = customtkinter.CTkLabel(self, text=f" дней")
-        self.resave_frequency_mean.grid(row=2, column=1)
+        self.resave_frequency_mean.grid(row=2, column=1, sticky="w")
 
         # "Умное" резервное копирование
         self.checkbox_smart_resave = customtkinter.CTkCheckBox(self, text='"Умное" резервное копирование', command=self.smart_resave_event, variable=self.smart_resave_var, onvalue="on", offvalue="off")
-        self.checkbox_smart_resave.grid(row=3, column=0, padx=8)
+        self.checkbox_smart_resave.grid(row=3, column=0, padx=8, sticky="w")
 
         # Резервное копирование после завершения каждой игровой сессии
         self.checkbox_after_game_resave = customtkinter.CTkCheckBox(self, text='Сохранение после каждой игровой сессии', command=self.after_game_resave_checkbox_event, variable=self.after_game_resave_var, onvalue="on", offvalue="off")
-        self.checkbox_after_game_resave.grid(row=4, column=0, padx=8, pady=4)
+        self.checkbox_after_game_resave.grid(row=4, column=0, padx=8, pady=10, sticky="w")
 
         # Открытие директории ишры, резервной копии сохранений и директории с текущим сохранением
         self.button_game = customtkinter.CTkButton(self, text="Директория игры...", command=self.button_game_dir)
         self.button_game.grid(row=5, column=0, padx=(8, 0), sticky="ew", columnspan=2)
         self.button_resave = customtkinter.CTkButton(self, text="Директория резервных копий...", command=self.button_resaves)
-        self.button_resave.grid(row=6, column=0, padx=8, pady=4, sticky="ew")
+        self.button_resave.grid(row=6, column=0, padx=8, pady=4, sticky="ew", columnspan=2)
         self.button_cur_save = customtkinter.CTkButton(self, text="Директория текущего сохранения...", command=self.button_game_current_save)
-        self.button_cur_save.grid(row=7, column=0, padx=(8, 0), sticky="ew")
+        self.button_cur_save.grid(row=7, column=0, padx=(8, 0), sticky="ew", columnspan=2)
 
         # Сохранение до определённого количества резервных копий
         self.checkbox_resave_count = customtkinter.CTkCheckBox(self, text='Резервное копирование по количеству копий: ', command=self.count_resaves_checkbox_event, variable=self.count_resave_var, onvalue="on", offvalue="off")
@@ -70,7 +74,7 @@ class ToplevelWindow(customtkinter.CTkToplevel):
         self.cnt_resaves_memory_entry.grid(row=11, column=1, sticky="ew", padx=(0, 8))
 
         # Кнопка сохранения настроек
-        self.button_game = customtkinter.CTkButton(self, text="Применить изменения", command=self.button_game_dir)
+        self.button_game = customtkinter.CTkButton(self, text="Применить изменения", command=self.button_settings_save)
         self.button_game.grid(row=12, column=0, padx=8, sticky="ew", columnspan=2)
 
     def button_game_dir(self):
@@ -80,6 +84,7 @@ class ToplevelWindow(customtkinter.CTkToplevel):
     def button_resaves(self):
         """Открытие директории с резервными копиями сохранений"""
         subprocess.Popen(['explorer', self.dir_of_resave]) # Открыть проводник в заданной директории
+        
 
     def button_game_current_save(self):
         """Открытие директории с текущем сохранение"""
@@ -88,6 +93,14 @@ class ToplevelWindow(customtkinter.CTkToplevel):
     def button_settings_save(self):
         """Сохранение изменений настроек"""
         print("Изменения сохранены")
+        user_games.games[self.num_of_game][2][0] = self.checkbox_frequency.get()
+        user_games.games[self.num_of_game][2][1] = self.checkbox_smart_resave.get()
+        user_games.games[self.num_of_game][2][2] = self.checkbox_after_game_resave.get()
+        user_games.games[self.num_of_game][2][3] = self.checkbox_resave_count.get()
+        user_games.games[self.num_of_game][2][4] = self.checkbox_resave_memory.get()
+        user_games.games[self.num_of_game][7] = int(self.cnt_resaves_entry.get())
+        user_games.games[self.num_of_game][8] = int(self.cnt_resaves_memory_entry.get())
+        print(user_games.games[self.num_of_game])
 
     def frequency_checkbox_event(self):
         print("Частота автосохранений:", self.frequency_resave_var.get())
@@ -97,6 +110,16 @@ class ToplevelWindow(customtkinter.CTkToplevel):
 
     def after_game_resave_checkbox_event(self):
         print('Сохранение после каждой игровой сессии:', self.after_game_resave_var.get())
+        self.frequency_resave_var.set("off")
+        self.smart_resave_var.set("off")
+        if self.checkbox_after_game_resave.get() != "off":
+            self.checkbox_frequency.configure(state="disabled")
+            self.checkbox_smart_resave.configure(state="disabled")
+            self.resave_frequency_slider.configure(state="disabled")
+        else:
+            self.checkbox_frequency.configure(state="normal")
+            self.checkbox_smart_resave.configure(state="normal")
+            self.resave_frequency_slider.configure(state="normal")
     
     def count_resaves_checkbox_event(self):
         print('Сохранение взависимости от количества игровых копий:', self.count_resave_var.get())
@@ -112,7 +135,7 @@ class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
         super().__init__(master)
 
         cnt = 0
-        for i in games:
+        for i in user_games.games:
             self.games_frame = GameFrame(self, name=i[0], date=i[1], par=i[2], game_dir=i[3], resave_dir=i[4], cur_save_dir=i[5], num_of_game=cnt, current_cnt_resaves=i[6], resaves_limit_cnt=i[7], resaves_limit_memory=i[8])
             self.games_frame.grid(row=cnt, column=0, sticky="ew", padx=8, pady=(6, 0))
             cnt += 1
@@ -155,7 +178,7 @@ class GameFrame(customtkinter.CTkFrame):
     def button_callbck(self):
         """Заход в меню настроек определённой игры"""
         if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
-            self.toplevel_window = ToplevelWindow(name_of_game=self.name, directory_of_game=self.game_dir, dir_of_resave=self.resave_dir, dir_of_cur_save=self.cur_save_dir, parametrs=self.par)
+            self.toplevel_window = ToplevelWindow(name_of_game=self.name, directory_of_game=self.game_dir, dir_of_resave=self.resave_dir, dir_of_cur_save=self.cur_save_dir, parametrs=self.par, num_of_game=self.num_of_game)
             self.toplevel_window.focus()
         else:
             self.toplevel_window.focus()
