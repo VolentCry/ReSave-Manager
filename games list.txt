@@ -1,3 +1,3 @@
-Satisfactory;%APPDATA%\Local\FactoryGame\Saved\SaveGames;100-500
-Horizon Zero Dawn;%USERPROFILE%\Documents\Horizon Zero Dawn;1
-Elden Ring;%APPDATA%\Roaming\EldenRing\76561197960267366;5-10
+Satisfactory;%APPDATA%\Local\FactoryGame\Saved\SaveGames;100-500;FactoryGame
+Horizon Zero Dawn;%USERPROFILE%\Documents\Horizon Zero Dawn;1;
+Elden Ring;%APPDATA%\Roaming\EldenRing\76561197960267366;5-10;

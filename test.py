@@ -1,76 +1,53 @@
-import time
-import os
-import shutil
-# print(time.time())
-# print(time.ctime(time.time()))
+import psutil
 
-
-games = [["Elden Ring", "time", ["on", "off", "off", "off", "off"], "game_directory", "resave_directory", "cur_save_dir"]]
-
-
-import subprocess
-
-# # Формируем путь с заменой переменной среды
-# path = os.path.expandvars(r"%USERPROFILE%\Documents\Horizon Zero Dawn")
-# path = os.path.expandvars(r"%USERPROFILE%\AppData\Local\FactoryGame\Saved\SaveGames")
-
-
-# # Проверяем существование папки
-# if os.path.exists(path):
-#     # Открываем проводник
-#     subprocess.Popen(f'explorer "{path}"')
-# else:
-#     print(f"Папка не найдена: {path}")
-
-
-games = [["Elden Ring", "5 Май 2025 18:05:56", ["on", "off", "off", "off", "off"], r"E:\Games\ELDEN RING\Game", r"%USERPROFILE%\Desktop\Programming\ReSave Manager\saves\games\Elden Ring", r"%USERPROFILE%\AppData\Roaming\EldenRing\76561197960267366", 0, 0, 0]]
-# Раскрываем переменные среды в пути
-path = os.path.expandvars(rf"{games[0][5]}")
-
-        # Проверяем существование папки
-# if os.path.exists(path):
+# for process in psutil.process_iter():
 #     try:
-#                 # Получаем список файлов/папок
-#         contents = os.listdir(path)
-#         print(contents)
-#         if contents == []:
-#             #subprocess.Popen(f'explorer "{path}"')
-#             a = fr'{os.path.expandvars(games[0][5])}'
-#             b = fr'{path}\ReSave 1\{games[0][5].split("\\")[-1]}'
-#             os.makedirs(fr'{path}\\ReSave 1', exist_ok=True) # Создаёт папку для первого ресейва
-#             shutil.copy(a, b)
-#     except PermissionError:
-#         print("Ошибка: Нет доступа к папке")
-#     except NotADirectoryError:
-#         print("Ошибка: Это не папка")
-# else:
-#     print(f"Папка не найдена: {path}")\
+#         # Получаем имя процесса
+#         process_name = process.name()
+#         # Получаем PID
+#         process_pid = process.pid
+#         # Получаем процент использования CPU
+#         cpu_percent = process.cpu_percent(interval=0.5)  # Проверяем каждые 0.5 секунды
+#         # Получаем использование памяти
+#         memory_info = process.memory_info()
+
+#         # Выводим информацию
+#         print(f"PID: {process_pid}, Name: {process_name}, CPU: {cpu_percent}%, Memory: {memory_info.rss / (1024 * 1024)} MB")
+
+#     except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+#         pass  # Обрабатываем ошибки
+    
 
 
+# for process in psutil.process_iter():
+#     try:
+#         print(process.name().startswith("satisfactory"))
+#     except:
+#         pass
 
+# import subprocess
 
-# def check_permissions(path):
-#     st = os.stat(path)
-#     return {
-#         'user_read': bool(st.st_mode & stat.S_IRUSR),
-#         'user_write': bool(st.st_mode & stat.S_IWUSR),
-#         'user_exec': bool(st.st_mode & stat.S_IXUSR)
-#     }
+# print(*[line.split() for line in subprocess.check_output("tasklist").splitlines()])
 
-# print(check_permissions(path))
+# import psutil
+# for proc in psutil.process_iter():
+#     name = proc.name()
+#     print(name)
+#     if "factory" in name.lower(): print(name); break
 
-# # # Попробуйте получить права администратора
-# # if not ctypes.windll.shell32.IsUserAnAdmin():
-# #     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+import tkinter as tk
+from tkinter import filedialog
 
-# path = os.path.expandvars(rf"{games[0][4]}")
-# contents = os.listdir(path)
-# if contents == []:
-#     #subprocess.Popen(f'explorer "{path}"')
-#     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
-#     a = fr'{os.path.expandvars(games[0][5])}'
-#     b = fr'{path}\ReSave 1\{games[0][5].split("\\")[-1]}'
-#     os.makedirs(fr'{path}\\ReSave 1', exist_ok=True) # Создаёт папку для первого ресейва
-#     shutil.copy(a, b)
+def select_folder():
+    folder_path = filedialog.askdirectory(title="Выберите папку")
+    if folder_path:
+        label.config(text=f"Выбрано: {folder_path}")
 
+root = tk.Tk()
+root.geometry("400x200")
 
+tk.Button(root, text="Открыть проводник", command=select_folder).pack(pady=20)
+label = tk.Label(root, text="Папка не выбрана", font=("Arial", 12))
+label.pack()
+
+root.mainloop()
