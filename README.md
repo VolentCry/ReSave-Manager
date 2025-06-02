@@ -1,5 +1,5 @@
 <h1 align="center">ReSave Manage</h1>
-"This program is a simple save manager for your video games🎮  
+This program is a simple save manager for your video games🎮  
 
 With this application, you can configure backup settings for your game saves—how often they will be created and how many will be stored.  
 
@@ -36,7 +36,7 @@ In addition to the features listed above, the game settings also allow you to:
 
 All the settings mentioned above can be applied uniformly to all games at once if needed. To do this, go to the app’s general settings, select *"Apply to all"* (enabled by default), and set the desired parameters.  
 
-❌**The project is not ready and is still in development**❌"  
+❌**The project is not ready and is still in development**❌ 
 
 
 <h2>На русском языке:</h2>
@@ -79,5 +79,5 @@ All the settings mentioned above can be applied uniformly to all games at once i
 
 Все выше перечисленные настройки можно сразу установить для всех игр одниковые, если это необходимо. Для этого нужно просто зайии в оьщие настройки приложения, выюрать пункт "Установить для всех", по умолчанию он включён, после чего выставить нужные требования.
 
-❌Проект не готов и находиться на стадии разработки❌
+❌**Проект не готов и находиться на стадии разработки**❌
 
