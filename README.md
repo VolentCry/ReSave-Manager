@@ -1,46 +1,44 @@
 <h1 align="center">ReSave Manage</h1>
-This program is a simple save manager for your video games🎮  
+This program is a simple save manager for your video games🎮
 
-With this application, you can configure backup settings for your game saves—how often they will be created and how many will be stored.  
+With this application, you can configure backup settings for your game saves—how often they will be created and how many will be stored.
 
-The app is primarily aimed at pirated gaming, as services like Steam or even Hydra Launcher have their own cloud storage. This solution simply creates backup copies of available game saves so that, if necessary, you can always roll back your game—for example, if you get stuck in a softlock trap—ensuring you don’t lose all your progress. This feature is especially relevant for games that don’t have multiple save slots, such as the well-known game *Elden Ring*.  
+The app is primarily aimed at pirated gaming, as services like Steam or even Hydra Launcher have their own cloud storage. This solution simply creates backup copies of available game saves so that, if necessary, you can always roll back your game — for example, if you get stuck in a softlock trap—ensuring you don’t lose all your progress. This feature is especially relevant for games that don’t have multiple save slots, such as the well-known game *Elden Ring*.
 
-In the future, the plan is to create cloud storage for your game saves by integrating with popular cloud services like Yandex Disk or Google Drive.  
+In the future, the plan is to create cloud storage for your game saves by integrating with popular cloud services like Yandex Disk or Google Drive.
 
-### **Usage Instructions**  
-To use the program, simply download the .exe file or the entire program in .zip format, then place it in any folder. The program will automatically create a separate folder for all future backups.  
+### **Usage Instructions**
+To use the program, simply download the .exe file or the entire program in .zip format, then place it in any folder. The program will automatically create a separate folder for all future backups.
 
-Upon first launch, the app will prompt you to specify system folders where your games are stored. If your games are scattered across the disk, you can simply specify the root folder of the drive, though this will increase the search time for game saves.  
+Upon first launch, the app will prompt you to specify system folders where your games are stored. If your games are scattered across the disk, you can simply specify the root folder of the drive, though this will increase the search time for game saves.
 
-However, it’s worth mentioning that you can always manually specify everything. The program includes necessary utilities for this, though it will still take some time :)  
+However, it’s worth mentioning that you can always manually specify everything. The program includes necessary utilities for this, though it will still take some time :)
 
-Each game gets its own folder, containing subfolders with all your backup saves.  
+Each game gets its own folder, containing subfolders with all your backup saves.
 
-To configure the frequency and number of backups, there is a settings button next to each game on the main screen—this is where everything is managed.  
+To configure the frequency and number of backups, there is a settings button next to each game on the main screen—this is where everything is managed.
 
-The core functionality can be summarized as follows:  
-1. **Backup frequency**  
-2. **Number of backups**  
-3. **Storage limit**  
-4. **"Smart" backup**  
+The core functionality can be summarized as follows:
+1. **Backup frequency**
+2. **Number of backups**
+3. **Storage limit**
+4. **"Smart" backup**
 
-- *Backup frequency* — You can set a time interval from 1 hour to 1 year.  
-- *Number of backups* — Sets a limit on how many backup copies are stored.  
-- *Storage limit* — Sets a limit on how much disk space a single game’s backups can occupy.  
-- *"Smart" backup* — Ensures the program won’t create backups if the user hasn’t played the game longer than the set backup frequency.  
+- *Backup frequency* — You can set a time interval from 1 hour to 1 year.
+- *Number of backups* — Sets a limit on how many backup copies are stored.
+- *Storage limit* — Sets a limit on how much disk space a single game’s backups can occupy.
+- *"Smart" backup* — Ensures the program won’t create backups if the user hasn’t played the game longer than the set backup frequency.
 
-In addition to the features listed above, the game settings also allow you to:  
-- Open the game’s directory  
-- Open the backup save directory  
-- Open the current save directory  
+In addition to the features listed above, the game settings also allow you to:
+- Open the game’s directory
+- Open the backup save directory
+- Open the current save directory
 
-All the settings mentioned above can be applied uniformly to all games at once if needed. To do this, go to the app’s general settings, select *"Apply to all"* (enabled by default), and set the desired parameters.  
+All the settings mentioned above can be applied uniformly to all games at once if needed. To do this, go to the app’s general settings, select *"Apply to all"* (enabled by default), and set the desired parameters.
 
-❌**The project is not ready and is still in development**❌ 
-
+❌**The project is not ready and is still in development**❌
 
 <h2>На русском языке:</h2>
-
 Данная программа является простым менеджером сохранений доя ваших видеоигр🎮
 
 С помощью данного приложения вы сможете настроить резервное копирования созранений ваших их, как васто они будут происходить и в каком количестве храниться.
