@@ -94,13 +94,26 @@ class ToplevelWindow(customtkinter.CTkToplevel):
         if value <= 27:
             self.day = str(int((value // 3) + 1))
             self.type_of_time = "дней"
-            self.resave_frequency_mean.setvar(f"{self.day} {self.type_of_time}")
+            self.resave_frequency_mean.configure(text=f"{self.day} {self.type_of_time}")
         elif 27 < value < 88:
-            print("Weeks")
+            cnt = 1
+            if value <= 42:
+                self.day = str(cnt + int(((value-27) // 5) + 1))
+                self.type_of_time = "недели"
+            else:
+                self.day = str(cnt + int(((value-27) // 5) + 1))
+                self.type_of_time = "недель"
+            self.resave_frequency_mean.configure(text=f"{self.day} {self.type_of_time}")
         elif value >= 88:
-            print("Months")
+            cnt = 2
+            if value <= 96:
+                self.day = str(cnt + int(((value-88) // 4) + 1))
+                self.type_of_time = "месяца"
+            else:
+                self.day = str(cnt + int(((value-88) // 4) + 1))
+                self.type_of_time = "месяцев"
+            self.resave_frequency_mean.configure(text=f"{self.day} {self.type_of_time}")
 
-        print(value)
 
     def button_game_current_save(self):
         """Открытие директории с текущем сохранение"""
