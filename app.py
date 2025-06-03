@@ -128,6 +128,7 @@ class ToplevelWindow(customtkinter.CTkToplevel):
         user_games.games[self.num_of_game][2][4] = self.checkbox_resave_memory.get()
         user_games.games[self.num_of_game][7] = int(self.cnt_resaves_entry.get())
         user_games.games[self.num_of_game][8] = int(self.cnt_resaves_memory_entry.get())
+        user_games.games[self.num_of_game][9] = self.resave_frequency_mean.cget("text")
         print(user_games.games[self.num_of_game])
 
     def frequency_checkbox_event(self):
@@ -229,10 +230,13 @@ class AddGameWindow(customtkinter.CTkToplevel):
     def add_game(self):
         time_to_start = date_translate(time.ctime(time.time()))
         name_of_game = self.add_name_entry.get()
-        path_to_resave = fr'C:\Users\Semen\Desktop\Programming\ReSave Manager\saves\games\{name_of_game}'
-        os.makedirs(path_to_resave, exist_ok=True) # Создание папки для новой игры
-        user_games.games.append([name_of_game, time_to_start, ["on", "off", "off", "off", "off"], self.path_to_game, path_to_resave, self.path_to_save, 0, 0, 0])
-        print(user_games.games)
+        if name_of_game == "" or name_of_game == None or self.path_to_game == None or self.path_to_save == None:
+            print("Пожалуйста укажите все данные")
+        else:
+            path_to_resave = fr'C:\Users\Semen\Desktop\Programming\ReSave Manager\saves\games\{name_of_game}'
+            os.makedirs(path_to_resave, exist_ok=True) # Создание папки для новой игры
+            user_games.games.append([name_of_game, time_to_start, ["on", "off", "off", "off", "off"], self.path_to_game, path_to_resave, self.path_to_save, 0, 0, 0, "1 день"])
+            print(user_games.games)
 
 
 
