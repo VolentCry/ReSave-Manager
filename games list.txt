@@ -1,5 +1,5 @@
 Satisfactory;%USERPROFILE%\AppData\Local\FactoryGame\Saved\SaveGames;100–500;FactoryGame
-Horizon Zero Dawn;%USERPROFILE%\Documents\Horizon Zero Dawn;1;
+Horizon Zero Dawn;%USERPROFILE%\Documents\Horizon Zero Dawn\Saved Game;1;
 Elden Ring;%APPDATA%\EldenRing\76561197960267366;5–10;
 Cult Of The Lamb;%USERPROFILE%\AppData\LocalLow\Massive Monster\Cult Of The Lamb\saves;1;
 The Witcher 3: Wild Hunt;%USERPROFILE%\Documents\TheWitcher3\gamesaves;2–10;
@@ -52,3 +52,4 @@ Battlefield: Bad Company 2;%USERPROFILE%\Documents\BFBC2;1–3;
 Battlefield 2;%USERPROFILE%\Documents\Battlefield2\Profiles;1–3;
 Apex Legends;%USERPROFILE%\SavedGames\Respawn\Apex;1–3;
 Titanfall 2;%USERPROFILE%\SavedGames\Respawn\Titanfall2;1–3;
+Voices of the Void;%USERPROFILE%\AppData\Local\VotV\Saved\SaveGames;10–20;
