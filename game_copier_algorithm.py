@@ -67,3 +67,13 @@ def resave_copier_algorithm(game: list, num_of_game: int):
 
         games[num_of_game][6] = len(os.listdir(fr'{path}')) # Обновляем данные о количестве всего резервных копий
 
+def game_detection():
+    games_names = []
+    games_saves_path = []
+    with open("games list.txt") as f:
+        for i in f.readlines():
+            directory_path = os.path.expandvars(rf"{i.split(";")[1]}")
+            if os.path.exists(directory_path):
+                games_names.append(i.split(";")[0])
+                games_saves_path.append(i.split(";")[1])
+    return games_names, games_saves_path

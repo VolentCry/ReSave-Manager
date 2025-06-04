@@ -7,7 +7,7 @@ from tkinter import filedialog
 
 
 from additional_algorithms import date_translate
-from game_copier_algorithm import resave_copier_algorithm
+from game_copier_algorithm import resave_copier_algorithm, game_detection
 import user_games
 
 class ToplevelWindow(customtkinter.CTkToplevel):
@@ -130,6 +130,7 @@ class ToplevelWindow(customtkinter.CTkToplevel):
         user_games.games[self.num_of_game][8] = int(self.cnt_resaves_memory_entry.get())
         user_games.games[self.num_of_game][9] = self.resave_frequency_mean.cget("text")
         print(user_games.games[self.num_of_game])
+        self.destroy()
 
     def frequency_checkbox_event(self):
         print("Частота автосохранений:", self.frequency_resave_var.get())
@@ -290,7 +291,6 @@ class GameFrame(customtkinter.CTkFrame):
 
 
 
-
 class SettingsFrameForGame(customtkinter.CTkFrame):
     """Рамка для настроек игровых сохранений приложения"""
     def __init__(self, master, name):
@@ -304,21 +304,91 @@ class SettingsFrameForGame(customtkinter.CTkFrame):
 
 
 
+class GameListScrollBar(customtkinter.CTkScrollableFrame):
+    """Скроллбар, где отобразиться список всех обнаруженных игр"""
+    def __init__(self, master, detected_games: list):
+        super().__init__(master)
+        self.columnconfigure(0, weight=1)
+        cnt = 0
+        for i in detected_games:
+            self.game_name = customtkinter.CTkLabel(self, text=f"{i}", justify="left", anchor="w", font=("Calibri", 14, "bold"))
+            self.game_name.grid(row=cnt, column=0, sticky="w", padx=8, pady=(2, 0))
+            cnt += 1
+
+
+
+class DatectedGamesListTopLevel(customtkinter.CTkToplevel):
+    """Создаёт окно, куда выводиться список оьбнаруженных игр"""
+    
+    def __init__(self, detected_games: list, detected_games_saves_path:list):
+        super().__init__()
+        self.geometry("380x500")
+        self.title("Обноруженные файлы сохранений")
+        self.columnconfigure(0, weight=1)
+        self.rowconfigure(3, weight=1)
+
+        # Переменные
+        self.detected_games = detected_games
+        self.detected_games_saves_path = detected_games_saves_path
+
+        # Составляющие приложения
+        self.list_label = customtkinter.CTkLabel(self, text="Список обнаруженных игр:", font=("Calibri", 16, "bold"))
+        self.list_label.grid(row=0, column=0, padx=8, pady=(10, 0), sticky="ew")
+        self.names_scrollbar = GameListScrollBar(self, self.detected_games)
+        self.names_scrollbar.grid(row=1, column=0, padx=8, pady=8, sticky="ew")
+        self.text_info = customtkinter.CTkLabel(self, text="Предупреждение! Выше найденые игры это лишь показатель того, что были обнаружены файлы сохранения, так что далее укажить путь к файлу каждой игры!\n"\
+                                                "После нажатия кнопки подтверждения игры автоматически будут добавлены в вашу библиотеку.", font=("Calibri", 13.5, "bold"), wraplength=(380-16))
+        self.text_info.grid(row=2, column=0, padx=8, sticky="ew")
+        self.confirm_button = customtkinter.CTkButton(self, text="Подтвердить", command=self.add_detected_games)
+        self.confirm_button.grid(row=3, column=0, padx=8, pady=8, sticky="ew")
+    
+    def add_detected_games(self):
+        """Добавляет обнаруженные игры в библиотеку пользователя"""
+        names = [y[0] for y in user_games.games]
+        for i in self.detected_games:
+            if i in names:
+                print(f"Игра {i} уже добавлена")
+            else:
+                print(f"Игра {i} теперь добавлена в библиотеку")
+                time_to_start = date_translate(time.ctime(time.time())) # Получаем текущее время
+                path_to_resave = fr'C:\Users\Semen\Desktop\Programming\ReSave Manager\saves\games\{i}'
+                os.makedirs(path_to_resave, exist_ok=True) # Создание папки для новой игры
+                user_games.games.append([i, time_to_start, ["on", "off", "off", "off", "off"], "", path_to_resave, self.detected_games_saves_path[self.detected_games.index(i)], 0, 0, 0, "1 день"])
+        print(user_games.games)
+
+
+
 class Settings(customtkinter.CTk):
     """открывает настройки ОСНОВНОГО приложения, а не отдельных игр"""
     def __init__(self):
         super().__init__()
         self.geometry("400x150")
-        self.title("Settings")
+        self.title("Настройки приложения")
+        self.columnconfigure(1, weight=1)
+        self.rowconfigure(3, weight=1)
 
-        self.label = customtkinter.CTkLabel(self, text="Тема приложения:")
-        self.label.grid(row=0, column=0, sticky="nsew")
-
-        self.button_confirn = customtkinter.CTkButton(self, text="Confirm", command=self.button_callbck)
+        self.label = customtkinter.CTkLabel(self, text="Тема приложения:", font=("Calibri", 14, "bold"))
+        self.label.grid(row=0, column=0, sticky="nsew", pady=(8, 0))
+        self.optionmenu = customtkinter.CTkOptionMenu(self, values=["Системная", "Светлая", "Тёмная"])
+        self.optionmenu.grid(row=0, column=1, pady=(8, 0))
+        self.button_confirn = customtkinter.CTkButton(self, text="Авто обноружение игр", command=self.game_detected_utton)
+        self.button_confirn.grid(row=1, column=0, padx=8, pady=8, sticky="ew")
+        self.button_confirn = customtkinter.CTkButton(self, text="Подтвердить настройки", command=self.button_callbck)
         self.button_confirn.grid(row=3, column=0)
+
+        self.toplevel_window = None
 
     def button_callbck(self):
         self.destroy()
+
+    def game_detected_utton(self):
+        """Функция, которая по нажатию кнопки запускает поиск директорий сохранений игр"""
+        detected_games, saves_path = game_detection()
+        if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
+            self.toplevel_window = DatectedGamesListTopLevel(detected_games, saves_path)
+            self.toplevel_window.focus()
+        else:
+            self.toplevel_window.focus()
 
 
 
@@ -339,8 +409,8 @@ class App(customtkinter.CTk):
         self.label_of_app.grid(row=0, columnspan=2, sticky="ew", pady=(8, 0))
         self.button_to_add_game = customtkinter.CTkButton(self, text="+ Добавить игру", command=self.add_game)
         self.button_to_add_game.grid(row=3, columnspan=2, sticky="sew", padx=8, pady=(0, 8))
-        # self.button_settings = customtkinter.CTkButton(self, text="Settings", command=self.button_callbck)
-        # self.button_settings.grid(row=0, column=2)
+        self.button_settings = customtkinter.CTkButton(self, text="Настройки приложения", command=self.button_callbck)
+        self.button_settings.grid(row=0, column=1, sticky="e", padx=8, pady=(8, 0))
 
         self.toplevel_window = None
 

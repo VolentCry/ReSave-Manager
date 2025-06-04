@@ -1,6 +1,0 @@
-45 Battlefield 4 %USERPROFILE% \Documents \Battlefield 4 \settings 1–3 МБ
-46 Battlefield 3 %USERPROFILE% \Documents \Battlefield 3 \settings 1–3 МБ
-47 Battlefield: Bad Company 2 %USERPROFILE% \Documents \BFBC2 1–3 МБ
-48 Battlefield 2 %USERPROFILE% \Documents \Battlefield 2 \Profiles 1–3 МБ
-49 Apex Legends %USERPROFILE% \Saved Games \Respawn \Apex 1–3 МБ
-50 Titanfall 2 %USERPROFILE% \Saved Games \Respawn \Titanfall2 1–3 МБ

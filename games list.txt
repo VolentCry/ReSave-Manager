@@ -1,6 +1,6 @@
-Satisfactory;%APPDATA%\Local\FactoryGame\Saved\SaveGames;100–500;FactoryGame
+Satisfactory;%USERPROFILE%\AppData\Local\FactoryGame\Saved\SaveGames;100–500;FactoryGame
 Horizon Zero Dawn;%USERPROFILE%\Documents\Horizon Zero Dawn;1;
-Elden Ring;%APPDATA%\Roaming\EldenRing\76561197960267366;5–10;
+Elden Ring;%APPDATA%\EldenRing\76561197960267366;5–10;
 Cult Of The Lamb;%USERPROFILE%\AppData\LocalLow\Massive Monster\Cult Of The Lamb\saves;1;
 The Witcher 3: Wild Hunt;%USERPROFILE%\Documents\TheWitcher3\gamesaves;2–10;
 Skyrim;%USERPROFILE%\Documents\MyGames\Skyrim\Saves;5–15;
