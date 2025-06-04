@@ -176,19 +176,40 @@ class ToplevelWindow(customtkinter.CTkToplevel):
 
 class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
     """Скроллбар, где будут находиться все карточки с играми"""
+
     def __init__(self, master):
         super().__init__(master)
-        self.columnconfigure(0, weight=1)
-        cnt = 0
-        for i in user_games.games:
-            self.games_frame = GameFrame(self, name=i[0], date=i[1], par=i[2], game_dir=i[3], resave_dir=i[4], cur_save_dir=i[5], num_of_game=cnt, current_cnt_resaves=i[6], resaves_limit_cnt=i[7], resaves_limit_memory=i[8])
-            self.games_frame.grid(row=cnt, column=0, sticky="ew", padx=8, pady=(6, 0))
-            cnt += 1
+        self.game_frames = []  # Храним ссылки на фреймы
+        self.update_games()    # Инициализация при создании
+    
+    def update_games(self):
+        # Удаляем старые фреймы
+        for frame in self.game_frames:
+            frame.destroy()
+        self.game_frames.clear()
+        
+        # Создаем новые фреймы для всех игр
+        for i, game in enumerate(user_games.games):
+            game_frame = GameFrame(
+                self, 
+                name=game[0],
+                date=game[1],
+                par=game[2],
+                game_dir=game[3],
+                resave_dir=game[4],
+                cur_save_dir=game[5],
+                num_of_game=i,
+                current_cnt_resaves=game[6],
+                resaves_limit_cnt=game[7],
+                resaves_limit_memory=game[8]
+            )
+            game_frame.grid(row=i, column=0, sticky="ew", padx=8, pady=(6, 0))
+            self.game_frames.append(game_frame)
 
 
 
 class AddGameWindow(customtkinter.CTkToplevel):
-    def __init__(self):
+    def __init__(self, games_frame_ref):  # Добавляем параметр
         super().__init__()
         self.geometry("500x300")
         self.title("Добавление новой игры...")
@@ -197,6 +218,7 @@ class AddGameWindow(customtkinter.CTkToplevel):
 
         self.path_to_game = None
         self.path_to_save = None
+        self.games_frame_ref = games_frame_ref  # Сохраняем ссылку
 
         self.add_name_label = customtkinter.CTkLabel(self, text="Введите название игры: ", font=("Calibri", 14, "bold"))
         self.add_name_label.grid(row=0, column=0, padx=8, pady=(6, 0), sticky="w")
@@ -238,6 +260,8 @@ class AddGameWindow(customtkinter.CTkToplevel):
             os.makedirs(path_to_resave, exist_ok=True) # Создание папки для новой игры
             user_games.games.append([name_of_game, time_to_start, ["on", "off", "off", "off", "off"], self.path_to_game, path_to_resave, self.path_to_save, 0, 0, 0, "1 день"])
             print(user_games.games)
+        self.games_frame_ref.update_games()
+        self.destroy()
 
 
 
@@ -320,7 +344,7 @@ class GameListScrollBar(customtkinter.CTkScrollableFrame):
 class DatectedGamesListTopLevel(customtkinter.CTkToplevel):
     """Создаёт окно, куда выводиться список оьбнаруженных игр"""
     
-    def __init__(self, detected_games: list, detected_games_saves_path:list):
+    def __init__(self, detected_games, detected_games_saves_path, games_frame_ref):
         super().__init__()
         self.geometry("380x500")
         self.title("Обноруженные файлы сохранений")
@@ -330,6 +354,7 @@ class DatectedGamesListTopLevel(customtkinter.CTkToplevel):
         # Переменные
         self.detected_games = detected_games
         self.detected_games_saves_path = detected_games_saves_path
+        self.games_frame_ref = games_frame_ref
 
         # Составляющие приложения
         self.list_label = customtkinter.CTkLabel(self, text="Список обнаруженных игр:", font=("Calibri", 16, "bold"))
@@ -355,6 +380,9 @@ class DatectedGamesListTopLevel(customtkinter.CTkToplevel):
                 os.makedirs(path_to_resave, exist_ok=True) # Создание папки для новой игры
                 user_games.games.append([i, time_to_start, ["on", "off", "off", "off", "off"], "", path_to_resave, self.detected_games_saves_path[self.detected_games.index(i)], 0, 0, 0, "1 день"])
         print(user_games.games)
+        # ОБНОВЛЯЕМ ОСНОВНОЙ ФРЕЙМ
+        self.games_frame_ref.update_games()
+        self.destroy()
 
 
 
@@ -371,7 +399,7 @@ class Settings(customtkinter.CTk):
         self.label.grid(row=0, column=0, sticky="nsew", pady=(8, 0))
         self.optionmenu = customtkinter.CTkOptionMenu(self, values=["Системная", "Светлая", "Тёмная"])
         self.optionmenu.grid(row=0, column=1, pady=(8, 0))
-        self.button_confirn = customtkinter.CTkButton(self, text="Авто обноружение игр", command=self.game_detected_utton)
+        self.button_confirn = customtkinter.CTkButton(self, text="Авто обноружение игр", command=self.game_detected_button)
         self.button_confirn.grid(row=1, column=0, padx=8, pady=8, sticky="ew")
         self.button_confirn = customtkinter.CTkButton(self, text="Подтвердить настройки", command=self.button_callbck)
         self.button_confirn.grid(row=3, column=0)
@@ -381,13 +409,16 @@ class Settings(customtkinter.CTk):
     def button_callbck(self):
         self.destroy()
 
-    def game_detected_utton(self):
+    def game_detected_button(self):
         """Функция, которая по нажатию кнопки запускает поиск директорий сохранений игр"""
         detected_games, saves_path = game_detection()
         if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
-            self.toplevel_window = DatectedGamesListTopLevel(detected_games, saves_path)
-            self.toplevel_window.focus()
-        else:
+            # Передаем games_frame из основного окна
+            self.toplevel_window = DatectedGamesListTopLevel(
+                detected_games, 
+                saves_path,
+                app.games_frame  # Ссылка на основной фрейм
+            )
             self.toplevel_window.focus()
 
 
@@ -402,7 +433,7 @@ class App(customtkinter.CTk):
         self.grid_rowconfigure(2, weight=1)
 
         # test
-        self.games_frame = GameScrollBarFrame(self)
+        self.games_frame = GameScrollBarFrame(self)  # Сохраняем в атрибуте
         self.games_frame.grid(row=1, sticky="nsew", columnspan=2, padx=8, pady=8, rowspan=2)
 
         self.label_of_app = customtkinter.CTkLabel(self, text="List of your games:", font=("Calibri", 28, "bold"))
@@ -421,7 +452,7 @@ class App(customtkinter.CTk):
     def add_game(self):
         """Заход в меню добавления определённой игры"""
         if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
-            self.toplevel_window = AddGameWindow()
+            self.toplevel_window = AddGameWindow(self.games_frame) 
             self.toplevel_window.focus()
         else:
             self.toplevel_window.focus()
