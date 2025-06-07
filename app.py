@@ -4,11 +4,17 @@ import subprocess
 import shutil
 import os
 from tkinter import filedialog
-
+import asyncio
+from async_tkinter_loop import async_handler, async_mainloop
+from async_tkinter_loop.mixins import AsyncCTk
+import threading
 
 from additional_algorithms import date_translate
 from game_copier_algorithm import resave_copier_algorithm, game_detection
 import user_games
+from process_monitoring import a_main, LOG_FILE
+
+
 
 class ToplevelWindow(customtkinter.CTkToplevel):
     """Окно настройки определённой игры"""
@@ -432,6 +438,8 @@ class App(customtkinter.CTk):
         self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(2, weight=1)
 
+        threading.Thread(target=start_async_loop).start()
+
         # test
         self.games_frame = GameScrollBarFrame(self)  # Сохраняем в атрибуте
         self.games_frame.grid(row=1, sticky="nsew", columnspan=2, padx=8, pady=8, rowspan=2)
@@ -447,8 +455,8 @@ class App(customtkinter.CTk):
 
     def button_callbck(self):
         self.settings_app = Settings()
-        self.settings_app.mainloop()
-    
+        self.settings_app.mainloop()    
+
     def add_game(self):
         """Заход в меню добавления определённой игры"""
         if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
@@ -457,9 +465,38 @@ class App(customtkinter.CTk):
         else:
             self.toplevel_window.focus()
 
+
+
+path_to_exe = [ r"C:\Users\Semen\AppData\Roaming\.tlauncher\legacy\Minecraft\TL.exe",
+        r"E:\Games\The Planet Crafter (2024)\The Planet Crafter\Planet Crafter.exe",
+        r"E:\Games\Untitled Goose Game\Untitled.exe"]
+
+for j in user_games.games:
+    for i in os.listdir(j[3]):
+        if str(i).endswith(".exe"):
+            path_to_exe.append(rf"{j[3]}\{str(i)}")
+
+def start_async_loop():
+    try:
+        asyncio.run(a_main(path_to_exe))
+    except:
+        print("Не удалось запустить мониторинг процессов")
         
+def on_closing():
+    app.destroy()
+    print("\n[INFO] Скрипт остановлен вручную (Ctrl+C).")
+    # Очистка файла логов
+    if os.path.exists(LOG_FILE):
+        with open(LOG_FILE, 'w'):
+            pass  # Открытие в режиме 'w' очищает файл
+        print(f"[INFO] Файл логов '{LOG_FILE}' успешно очищен.")
+    else:
+        print(f"[WARNING] Файл логов '{LOG_FILE}' не найден при попытке очистки.")
+
+if __name__ == "__main__":
+    app = App()
+    app.protocol("WM_DELETE_WINDOW", on_closing)
+    app.mainloop()
+    
 
 
-
-app = App()
-app.mainloop()
