@@ -12,9 +12,11 @@ import threading
 from additional_algorithms import date_translate
 from game_copier_algorithm import resave_copier_algorithm, game_detection
 import user_games
+from user_games import *
 from process_monitoring import a_main, LOG_FILE
 
-
+# Подключаемся к БД
+conn_app = connect_db()
 
 class ToplevelWindow(customtkinter.CTkToplevel):
     """Окно настройки определённой игры"""
@@ -26,6 +28,7 @@ class ToplevelWindow(customtkinter.CTkToplevel):
         self.title(f"Настройки резервных сохранений дял {name_of_game}")
         self.resizable(False, False)
 
+        self.name_of_game = name_of_game
         self.directory_of_game = directory_of_game
         self.dir_of_resave = dir_of_resave
         self.dir_of_cur_save = dir_of_cur_save
@@ -127,6 +130,8 @@ class ToplevelWindow(customtkinter.CTkToplevel):
 
     def button_settings_save(self):
         """Сохранение изменений настроек"""
+        setting_chackbox_parametrs = [self.checkbox_frequency.get(), self.checkbox_smart_resave.get(), self.checkbox_after_game_resave.get(), self.checkbox_resave_count.get(), self.checkbox_resave_memory.get()]
+        update_parametrs(conn_app, self.name_of_game, setting_chackbox_parametrs)
         user_games.games[self.num_of_game][2][0] = self.checkbox_frequency.get()
         user_games.games[self.num_of_game][2][1] = self.checkbox_smart_resave.get()
         user_games.games[self.num_of_game][2][2] = self.checkbox_after_game_resave.get()
