@@ -4,18 +4,6 @@ import shutil
 import sys
 import ctypes
 
-from user_games import games
-
-user_games_name = [x[0] for x in games]
-
-# f = open("games list.txt")
-# a = [x.split(";") for x in f.readlines()]
-# f.close()
-
-# for i in a:
-#     if i[0] in user_games_name:
-#         print(i[0])
-
 
 def resave_copier_algorithm(game: list, num_of_game: int):
     """Создание единичной копии"""

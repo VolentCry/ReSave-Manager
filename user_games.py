@@ -114,3 +114,30 @@ def update_frequency_resave(conn: Connection, name_of_game: str, frequency_resav
     cursor = conn.cursor()
     cursor.execute('UPDATE games SET frequency_resave = ? WHERE name_of_game = ?', (frequency_resave, name_of_game))
     conn.commit()
+
+def delete_game(conn: Connection, name_of_game: str):
+    """Удаляет игру из базы данных"""
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM games WHERE name_of_game = ?', (name_of_game,))
+    conn.commit()
+
+def take_game_info(conn: Connection, name_of_game: str) -> list:
+    """Возвращает все параметры для определённой игры"""
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM games')
+    rows = cursor.fetchall()
+    for i in rows:
+        if i[0] == name_of_game: return i   
+    print("Игры нет в списке")
+
+def take_all_games(conn: Connection) -> list:
+    """Возвращает все игры из базы данных"""
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM games')
+    return cursor.fetchall()
+
+def take_all_games_names(conn: Connection) -> list:
+    """Возвращает все названия игр из базы данных"""
+    cursor = conn.cursor()
+    cursor.execute('SELECT name_of_game FROM games')
+    return cursor.fetchall()

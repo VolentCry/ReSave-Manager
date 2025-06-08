@@ -11,7 +11,7 @@ import threading
 
 from additional_algorithms import date_translate
 from game_copier_algorithm import resave_copier_algorithm, game_detection
-import user_games
+# import user_games
 from user_games import *
 from process_monitoring import a_main, LOG_FILE
 
@@ -132,15 +132,14 @@ class ToplevelWindow(customtkinter.CTkToplevel):
         """Сохранение изменений настроек"""
         setting_chackbox_parametrs = [self.checkbox_frequency.get(), self.checkbox_smart_resave.get(), self.checkbox_after_game_resave.get(), self.checkbox_resave_count.get(), self.checkbox_resave_memory.get()]
         update_parametrs(conn_app, self.name_of_game, setting_chackbox_parametrs)
-        user_games.games[self.num_of_game][2][0] = self.checkbox_frequency.get()
-        user_games.games[self.num_of_game][2][1] = self.checkbox_smart_resave.get()
-        user_games.games[self.num_of_game][2][2] = self.checkbox_after_game_resave.get()
-        user_games.games[self.num_of_game][2][3] = self.checkbox_resave_count.get()
-        user_games.games[self.num_of_game][2][4] = self.checkbox_resave_memory.get()
-        user_games.games[self.num_of_game][7] = int(self.cnt_resaves_entry.get())
-        user_games.games[self.num_of_game][8] = int(self.cnt_resaves_memory_entry.get())
-        user_games.games[self.num_of_game][9] = self.resave_frequency_mean.cget("text")
-        print(user_games.games[self.num_of_game])
+        update_frequency_resave(conn_app, self.name_of_game, self.resave_frequency_mean.cget("text"))
+        try:
+            update_limit_resaves(conn_app, self.name_of_game, int(self.cnt_resaves_entry.get()))
+            update_limit_memory(conn_app, self.name_of_game, int(self.cnt_resaves_memory_entry.get()))
+        except ValueError:
+            update_limit_resaves(conn_app, self.name_of_game, 0)
+            update_limit_memory(conn_app, self.name_of_game, 0)
+        print(take_game_info(conn_app, self.name_of_game))
         self.destroy()
 
     def frequency_checkbox_event(self):
@@ -200,7 +199,8 @@ class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
         self.game_frames.clear()
         
         # Создаем новые фреймы для всех игр
-        for i, game in enumerate(user_games.games):
+        for i, game in enumerate(take_all_games(conn_app)):
+            print(game)
             game_frame = GameFrame(
                 self, 
                 name=game[0],
@@ -262,15 +262,16 @@ class AddGameWindow(customtkinter.CTkToplevel):
         self.path_to_save = folder_path
 
     def add_game(self):
-        time_to_start = date_translate(time.ctime(time.time()))
         name_of_game = self.add_name_entry.get()
         if name_of_game == "" or name_of_game == None or self.path_to_game == None or self.path_to_save == None:
             print("Пожалуйста укажите все данные")
         else:
             path_to_resave = fr'C:\Users\Semen\Desktop\Programming\ReSave Manager\saves\games\{name_of_game}'
             os.makedirs(path_to_resave, exist_ok=True) # Создание папки для новой игры
-            user_games.games.append([name_of_game, time_to_start, ["on", "off", "off", "off", "off"], self.path_to_game, path_to_resave, self.path_to_save, 0, 0, 0, "1 день"])
-            print(user_games.games)
+            add_game(conn_app, name_of_game, ["on", "off", "off", "off", "off"], self.path_to_game, path_to_resave, self.path_to_save, 0, 0, 0, "1 день")
+            # user_games.games.append([name_of_game, time_to_start, ["on", "off", "off", "off", "off"], self.path_to_game, path_to_resave, self.path_to_save, 0, 0, 0, "1 день"])
+            # print(user_games.games)
+            print(take_all_games(conn_app))
         self.games_frame_ref.update_games()
         self.destroy()
 
@@ -322,7 +323,7 @@ class GameFrame(customtkinter.CTkFrame):
 
     def button_make_resave(self):
         """Создаёт резервную копию"""
-        resave_copier_algorithm(user_games.games[self.num_of_game], self.num_of_game)
+        resave_copier_algorithm(take_game_info(conn_app, self.name), self.num_of_game)
 
 
 
@@ -380,7 +381,7 @@ class DatectedGamesListTopLevel(customtkinter.CTkToplevel):
     
     def add_detected_games(self):
         """Добавляет обнаруженные игры в библиотеку пользователя"""
-        names = [y[0] for y in user_games.games]
+        names = [y[0] for y in take_all_games_names(conn_app)]
         for i in self.detected_games:
             if i in names:
                 print(f"Игра {i} уже добавлена")
@@ -389,8 +390,9 @@ class DatectedGamesListTopLevel(customtkinter.CTkToplevel):
                 time_to_start = date_translate(time.ctime(time.time())) # Получаем текущее время
                 path_to_resave = fr'C:\Users\Semen\Desktop\Programming\ReSave Manager\saves\games\{i}'
                 os.makedirs(path_to_resave, exist_ok=True) # Создание папки для новой игры
-                user_games.games.append([i, time_to_start, ["on", "off", "off", "off", "off"], "", path_to_resave, self.detected_games_saves_path[self.detected_games.index(i)], 0, 0, 0, "1 день"])
-        print(user_games.games)
+                # user_games.games.append([i, time_to_start, ["on", "off", "off", "off", "off"], "", path_to_resave, self.detected_games_saves_path[self.detected_games.index(i)], 0, 0, 0, "1 день"])
+                add_game(conn_app, i, ["on", "off", "off", "off", "off"], "", path_to_resave, self.detected_games_saves_path[self.detected_games.index(i)], 0, 0, 0, "1 день")
+        print(take_all_games(conn_app))
         # ОБНОВЛЯЕМ ОСНОВНОЙ ФРЕЙМ
         self.games_frame_ref.update_games()
         self.destroy()
@@ -472,11 +474,9 @@ class App(customtkinter.CTk):
 
 
 
-path_to_exe = [ r"C:\Users\Semen\AppData\Roaming\.tlauncher\legacy\Minecraft\TL.exe",
-        r"E:\Games\The Planet Crafter (2024)\The Planet Crafter\Planet Crafter.exe",
-        r"E:\Games\Untitled Goose Game\Untitled.exe"]
+path_to_exe = []
 
-for j in user_games.games:
+for j in take_all_games(conn_app):
     for i in os.listdir(j[3]):
         if str(i).endswith(".exe"):
             path_to_exe.append(rf"{j[3]}\{str(i)}")
