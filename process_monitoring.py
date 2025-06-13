@@ -4,13 +4,22 @@ import os
 from datetime import datetime
 import logging
 
+from user_games import *
+
 LOG_FILE = 'process_monitor.log'
+# Подключаемся к БД
+conn_m = connect_db()
 
 # === Callback для обработки событий закрытия ===
-def on_program_closed(program_name: str, end_time: datetime, runtime):
+def on_program_closed(program_name: str, end_time: datetime, runtime, target_path: str):
     print(f"[INFO] Программа '{program_name}' закрыта в {end_time}, общее время работы: {runtime}")
-
-    # Здесь можно делать любую обработку: сохранение в базу, отправка, уведомление и т.д.
+    # Находим название игры, к которой относится exe-файл
+    name_of_game = find_path_exe(conn_m, target_path)
+    print(name_of_game)
+    parametrs = take_parametrs(conn_m, name_of_game)
+    if parametrs[2] == "on":
+        print(f"[INFO] Сохранение после каждой игровой сессии включено для игры {name_of_game}")
+        update_current_game_resaves(conn_m, name_of_game, 0)
 
 # === Мониторинг процесса ===
 async def monitor_process(target_path: str, check_interval_in_seconds: int):
@@ -55,7 +64,7 @@ async def monitor_process(target_path: str, check_interval_in_seconds: int):
                         f"Время завершения: {end_time}. Общее время работы: {runtime}")
 
             # Вызов обработчика закрытия
-            on_program_closed(program_name, end_time, runtime)
+            on_program_closed(program_name, end_time, runtime, target_path)
 
             running = False
 

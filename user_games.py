@@ -18,10 +18,13 @@ def add_game(conn, name_of_game: str, parametrs_of_settings: list, path_to_game:
     cursor = conn.cursor()
 
     path_to_exe = []
-    for i in os.listdir(path_to_game):
-        if str(i).endswith(".exe"):
-            path_to_exe.append(rf"{path_to_game}\{str(i)}")
-    path_to_exe = ";".join(path_to_exe)
+    if path_to_game == "":
+        path_to_exe = ""
+    else:
+        for i in os.listdir(path_to_game):
+            if str(i).endswith(".exe"):
+                path_to_exe.append(rf"{path_to_game}\{str(i)}")
+        path_to_exe = ";".join(path_to_exe)
 
     parametrs_of_settings = " ".join(parametrs_of_settings)
     last_date = str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
@@ -87,6 +90,14 @@ def update_game_path(conn: Connection, name_of_game: str, path_to_game: str):
     )
     conn.commit()
 
+def update_game_exe(conn: Connection, name_of_game: str, paths_to_game_exe: str):
+    """Обновляет пути к exe игры"""
+    cursor = conn.cursor()
+    cursor.execute(
+        'UPDATE games SET path_to_exe = ? WHERE name_of_game = ?', (paths_to_game_exe, name_of_game)
+    )
+    conn.commit()
+
 def update_current_game_resaves(conn: Connection, name_of_game: str, current_resaves: int):
     """Обновляет значения количества текущих ресейвов"""
     cursor = conn.cursor()
@@ -141,3 +152,24 @@ def take_all_games_names(conn: Connection) -> list:
     cursor = conn.cursor()
     cursor.execute('SELECT name_of_game FROM games')
     return cursor.fetchall()
+
+def update_last_date(conn: Connection, name_of_game: str):
+    """Обновляет значение даты последнего запуска игры"""
+    cursor = conn.cursor()
+    last_date = str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    cursor.execute('UPDATE games SET last_date = ? WHERE name_of_game = ?', (last_date, name_of_game))
+
+def find_path_exe(conn: Connection, path_to_exe: str) -> str:
+    """Находит название игры, к который указывает exe-файл"""
+    cursor = conn.cursor()
+    cursor.execute('SELECT name_of_game, path_to_exe FROM games')
+    rows = cursor.fetchall()
+    for i in rows:
+        paths_to_exe = i[1].split(";")
+        for path in paths_to_exe:
+            if path == path_to_exe:
+                return i[0]
+    return None
+
+# conn1 = connect_db()
+# add_game(conn1, "The Planet Crafter", ["off", "off", "off", "off", "off"], r"E:\Games\The Planet Crafter (2024)\The Planet Crafter", r"saves\games\The Planet Crafter", r"%USERPROFILE%\AppData\LocalLow\MijuGames\Planet Crafter", 0, 0, 0, "1 день")

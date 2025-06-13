@@ -1,31 +1,38 @@
+# Версия Python 3.13.3
+
+# Стороние импорты
 import customtkinter
 import time
 import subprocess
-import shutil
 import os
 from tkinter import filedialog
 import asyncio
 from async_tkinter_loop import async_handler, async_mainloop
 from async_tkinter_loop.mixins import AsyncCTk
 import threading
+import logging
 
+# Внутренние импорты
 from additional_algorithms import date_translate
 from game_copier_algorithm import resave_copier_algorithm, game_detection
-# import user_games
 from user_games import *
 from process_monitoring import a_main, LOG_FILE
 
 # Подключаемся к БД
 conn_app = connect_db()
 
-class ToplevelWindow(customtkinter.CTkToplevel):
+# === Настройка логгера ===
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+class GameSettingsWindow(customtkinter.CTkToplevel):
     """Окно настройки определённой игры"""
     def __init__(self, name_of_game, directory_of_game, dir_of_resave, dir_of_cur_save, parametrs, num_of_game):
         super().__init__()
         self.geometry("650x410")
         self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(12, weight=1)
-        self.title(f"Настройки резервных сохранений дял {name_of_game}")
+        self.title(f"Настройки резервных сохранений для {name_of_game}")
         self.resizable(False, False)
 
         self.name_of_game = name_of_game
@@ -90,9 +97,19 @@ class ToplevelWindow(customtkinter.CTkToplevel):
         self.button_game = customtkinter.CTkButton(self, text="Применить изменения", command=self.button_settings_save, height=38)
         self.button_game.grid(row=12, column=0, padx=8, sticky="ew", columnspan=2)
 
+        self.toplevel_window = None
+
     def button_game_dir(self):
         """Открытие директории игры"""
-        subprocess.Popen(['explorer', self.directory_of_game]) # Открыть проводник в заданной директории
+        if self.directory_of_game == "":
+            """Заход в меню настроек определённой игры"""
+            if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
+                self.toplevel_window = ChoiceGameDir(name_of_game=self.name_of_game)
+                self.toplevel_window.focus()
+            else:
+                self.toplevel_window.focus()
+        else:
+            subprocess.Popen(['explorer', self.directory_of_game]) # Открыть проводник в заданной директории
     
     def button_resaves(self):
         """Открытие директории с резервными копиями сохранений"""
@@ -122,7 +139,6 @@ class ToplevelWindow(customtkinter.CTkToplevel):
                 self.day = str(cnt + int(((value-88) // 4) + 1))
                 self.type_of_time = "месяцев"
             self.resave_frequency_mean.configure(text=f"{self.day} {self.type_of_time}")
-
 
     def button_game_current_save(self):
         """Открытие директории с текущем сохранение"""
@@ -184,6 +200,48 @@ class ToplevelWindow(customtkinter.CTkToplevel):
 
 
 
+class ChoiceGameDir(customtkinter.CTkToplevel):
+    """Окно выбора директории игры"""
+    def __init__(self, name_of_game):
+        super().__init__()
+        self.geometry("510x410")
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_rowconfigure(3, weight=1)
+        self.title(f"Выбор директории для игры {name_of_game}")
+        self.resizable(False, False)
+
+        self.name_of_game = name_of_game
+        
+        self.info_label = customtkinter.CTkLabel(self, text="Данная игра была добавлена с помощью автообноружения, поэтому путь к самой директории неизвестен, пожалуйста, укажите его вручную. "\
+                                                 "Обратите внимание, чтобы в этой директории был обязательно файл с раширением .exe для запуска игры.", font=("Calibri", 13.5, "bold"), wraplength=(510-16))
+        self.info_label.grid(row=0, column=0, padx=8, pady=10, sticky="ew")
+        self.button_choose_dir = customtkinter.CTkButton(self, text="Выбрать директорию...", command=self.select_folder)
+        self.button_choose_dir.grid(row=1, column=0, padx=8, sticky="ew")
+        self.label_game_dir = customtkinter.CTkLabel(self, text="Выбранная директория: ")
+        self.label_game_dir.grid(row=2, column=0, padx=8, pady=10, sticky="ew")
+        self.label_confirm_dir = customtkinter.CTkLabel(self, text="")
+        self.label_confirm_dir.grid(row=3, column=0, padx=8, pady=(0, 10), sticky="ew")
+
+    def select_folder(self):
+        path_to_game_dir = filedialog.askdirectory()  # Выбор папки
+        if path_to_game_dir:
+            print("Выбрана папка:", path_to_game_dir)
+            self.label_game_dir.configure(text=f"Выбранная директория: {path_to_game_dir}")
+
+        update_game_path(conn_app, self.name_of_game, path_to_game_dir) # Добавление пути к игре в БД
+
+        # Поиск .exe файлов
+        path_to_exe = []
+        for i in os.listdir(path_to_game_dir):
+            if str(i).endswith(".exe"):
+                path_to_exe.append(rf"{path_to_game_dir}\{str(i)}")
+        path_to_exe = ";".join(path_to_exe)
+
+        update_game_exe(conn_app, self.name_of_game, path_to_exe)
+        self.label_confirm_dir.configure(text="Данные успешно обновлены!")
+
+
+
 class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
     """Скроллбар, где будут находиться все карточки с играми"""
 
@@ -205,7 +263,7 @@ class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
                 self, 
                 name=game[0],
                 date=game[1],
-                par=game[2],
+                par=game[2].split(),
                 game_dir=game[3],
                 resave_dir=game[4],
                 cur_save_dir=game[5],
@@ -304,7 +362,7 @@ class GameFrame(customtkinter.CTkFrame):
         self.label_name.grid(row=1, column=0)
 
         # Заход в настройки каждого приложения
-        self.game_resave_settings = customtkinter.CTkButton(self, text="Настройки", command=self.button_callbck, width=200)
+        self.game_resave_settings = customtkinter.CTkButton(self, text="Настройки", command=self.button_callback_settings_menu_game, width=200)
         self.game_resave_settings.grid(row=0, column=1, padx=8, sticky="e")
 
         # Создание резервной копии
@@ -313,10 +371,10 @@ class GameFrame(customtkinter.CTkFrame):
 
         self.toplevel_window = None
 
-    def button_callbck(self):
+    def button_callback_settings_menu_game(self):
         """Заход в меню настроек определённой игры"""
         if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
-            self.toplevel_window = ToplevelWindow(name_of_game=self.name, directory_of_game=self.game_dir, dir_of_resave=self.resave_dir, dir_of_cur_save=self.cur_save_dir, parametrs=self.par, num_of_game=self.num_of_game)
+            self.toplevel_window = GameSettingsWindow(name_of_game=self.name, directory_of_game=self.game_dir, dir_of_resave=self.resave_dir, dir_of_cur_save=self.cur_save_dir, parametrs=self.par, num_of_game=self.num_of_game)
             self.toplevel_window.focus()
         else:
             self.toplevel_window.focus()
@@ -474,16 +532,20 @@ class App(customtkinter.CTk):
 
 
 
-path_to_exe = []
+paths_to_exe = []
 
 for j in take_all_games(conn_app):
-    for i in os.listdir(j[3]):
-        if str(i).endswith(".exe"):
-            path_to_exe.append(rf"{j[3]}\{str(i)}")
+    try:
+        for i in os.listdir(j[3]):
+            if str(i).endswith(".exe"):
+                paths_to_exe.append(rf"{j[3]}\{str(i)}")
+    except FileNotFoundError:
+        logger.error(f"Для игры {j[0]} не указана директория с самой игрой!")
+        
 
 def start_async_loop():
     try:
-        asyncio.run(a_main(path_to_exe))
+        asyncio.run(a_main(paths_to_exe))
     except:
         print("Не удалось запустить мониторинг процессов")
         
@@ -502,6 +564,3 @@ if __name__ == "__main__":
     app = App()
     app.protocol("WM_DELETE_WINDOW", on_closing)
     app.mainloop()
-    
-
-
