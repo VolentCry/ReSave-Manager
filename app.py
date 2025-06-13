@@ -258,7 +258,6 @@ class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
         
         # Создаем новые фреймы для всех игр
         for i, game in enumerate(take_all_games(conn_app)):
-            print(game)
             game_frame = GameFrame(
                 self, 
                 name=game[0],

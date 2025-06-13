@@ -98,12 +98,24 @@ def update_game_exe(conn: Connection, name_of_game: str, paths_to_game_exe: str)
     )
     conn.commit()
 
-def update_current_game_resaves(conn: Connection, name_of_game: str, current_resaves: int):
-    """Обновляет значения количества текущих ресейвов"""
+def update_current_game_resaves(conn: Connection, name_of_game: str):
+    """Обновляет значения количества текущих ресейвов у определённой игры"""
     cursor = conn.cursor()
-    cursor.execute(
-        'UPDATE games SET current_resave = ? WHERE name_of_game = ?', (current_resaves, name_of_game)
-    )
+    cursor.execute("SELECT current_resave FROM games WHERE name_of_game = ?", (name_of_game,))
+    rows = cursor.fetchall()
+    current_resaves = int(rows[0][0]) + 1
+    cursor.execute('UPDATE games SET current_resave = ? WHERE name_of_game = ?', (current_resaves, name_of_game))
+    conn.commit()
+
+def update_current_all_games_resaves(conn: Connection):
+    """Обновляет значения количества текущих ресейвов у всех игр исходя из содержания папки saves/games/..."""
+    cursor = conn.cursor()
+    games_names = take_all_games_names(conn)
+    games_current_resaves = {}
+    for name in os.listdir("saves/games"):
+        games_current_resaves[name] = len(os.listdir(f"saves/games/{name}"))
+    for game_name in games_names:
+        cursor.execute('UPDATE games SET current_resave = ? WHERE name_of_game = ?', (games_current_resaves[game_name[0]], game_name[0]))
     conn.commit()
 
 def update_limit_resaves(conn: Connection, name_of_game: str, resaves_cnt_limit: int):
@@ -172,4 +184,5 @@ def find_path_exe(conn: Connection, path_to_exe: str) -> str:
     return None
 
 # conn1 = connect_db()
+# update_current_all_games_resaves(conn1)
 # add_game(conn1, "The Planet Crafter", ["off", "off", "off", "off", "off"], r"E:\Games\The Planet Crafter (2024)\The Planet Crafter", r"saves\games\The Planet Crafter", r"%USERPROFILE%\AppData\LocalLow\MijuGames\Planet Crafter", 0, 0, 0, "1 день")
