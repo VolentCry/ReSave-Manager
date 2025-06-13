@@ -12,6 +12,12 @@ LOG_FILE = 'process_monitor.log'
 # Подключаемся к БД
 conn_m = connect_db()
 
+games_frame_ref = None
+
+def set_games_frame_ref(ref):
+    global games_frame_ref
+    games_frame_ref = ref
+
 # === Callback для обработки событий закрытия ===
 def on_program_closed(program_name: str, end_time: datetime, runtime, target_path: str):
     global history_time_of_resave_game
@@ -19,6 +25,7 @@ def on_program_closed(program_name: str, end_time: datetime, runtime, target_pat
     # Находим название игры, к которой относится exe-файл
     name_of_game = find_path_exe(conn_m, target_path)
     parametrs = take_parametrs(conn_m, name_of_game)
+    update_last_date(conn_m, name_of_game, end_time)
     
     if parametrs[2] == "on":
         print(f"[INFO] Сохранение после каждой игровой сессии включено для игры {name_of_game}")
@@ -26,6 +33,8 @@ def on_program_closed(program_name: str, end_time: datetime, runtime, target_pat
             if game[0] == name_of_game:
                 resave_copier_algorithm(take_game_info(conn_m, name_of_game), i)
                 update_current_game_resaves(conn_m, name_of_game)
+                if games_frame_ref is not None:
+                    games_frame_ref.after(0, games_frame_ref.update_games)
                 return
 
 
@@ -82,23 +91,3 @@ async def monitor_process(target_path: str, check_interval_in_seconds: int):
 async def a_main(list_of_game_paths: list):
     tasks = [asyncio.create_task(monitor_process(path, 1)) for path in list_of_game_paths]
     await asyncio.gather(*tasks)
-
-# # === Точка входа с обработкой остановки ===
-# if __name__ == "__main__":
-#     games_exe_path = [
-#         r"C:\Users\Semen\AppData\Roaming\.tlauncher\legacy\Minecraft\TL.exe",
-#         r"E:\Games\The Planet Crafter (2024)\The Planet Crafter\Planet Crafter.exe",
-#         r"E:\Games\Untitled Goose Game\Untitled.exe"
-#     ]
-
-#     try:
-#         asyncio.run(a_main(games_exe_path))
-#     except KeyboardInterrupt:
-#         print("\n[INFO] Скрипт остановлен вручную (Ctrl+C).")
-#         # Очистка файла логов
-#         if os.path.exists(LOG_FILE):
-#             with open(LOG_FILE, 'w'):
-#                 pass  # Открытие в режиме 'w' очищает файл
-#             print(f"[INFO] Файл логов '{LOG_FILE}' успешно очищен.")
-#         else:
-#             print(f"[WARNING] Файл логов '{LOG_FILE}' не найден при попытке очистки.")

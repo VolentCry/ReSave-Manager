@@ -7,8 +7,6 @@ import subprocess
 import os
 from tkinter import filedialog
 import asyncio
-from async_tkinter_loop import async_handler, async_mainloop
-from async_tkinter_loop.mixins import AsyncCTk
 import threading
 import logging
 
@@ -16,7 +14,7 @@ import logging
 from additional_algorithms import date_translate
 from game_copier_algorithm import resave_copier_algorithm, game_detection
 from user_games import *
-from process_monitoring import a_main, LOG_FILE
+from process_monitoring import a_main, LOG_FILE, set_games_frame_ref
 
 # Подключаемся к БД
 conn_app = connect_db()
@@ -353,7 +351,7 @@ class GameFrame(customtkinter.CTkFrame):
         self.resaves_limit_memory = resaves_limit_memory # Ограничение по количеству занимаемой памяти ресейвами
 
         # Название игры
-        self.label_name = customtkinter.CTkLabel(self, text=name)
+        self.label_name = customtkinter.CTkLabel(self, text=name, font=("Calibri", 18, "bold"))
         self.label_name.grid(row=0, column=0)
 
         # Отображение последней даты запуска игры
@@ -550,7 +548,7 @@ def start_async_loop():
         
 def on_closing():
     app.destroy()
-    print("\n[INFO] Скрипт остановлен вручную (Ctrl+C).")
+    print("\n[INFO] Скрипт остановлен вручную.")
     # Очистка файла логов
     if os.path.exists(LOG_FILE):
         with open(LOG_FILE, 'w'):
@@ -560,6 +558,7 @@ def on_closing():
         print(f"[WARNING] Файл логов '{LOG_FILE}' не найден при попытке очистки.")
 
 if __name__ == "__main__":
+    update_current_all_games_resaves(conn_app)
     app = App()
     app.protocol("WM_DELETE_WINDOW", on_closing)
     app.mainloop()

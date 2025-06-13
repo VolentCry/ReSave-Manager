@@ -165,10 +165,9 @@ def take_all_games_names(conn: Connection) -> list:
     cursor.execute('SELECT name_of_game FROM games')
     return cursor.fetchall()
 
-def update_last_date(conn: Connection, name_of_game: str):
+def update_last_date(conn: Connection, name_of_game: str, last_date):
     """Обновляет значение даты последнего запуска игры"""
     cursor = conn.cursor()
-    last_date = str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     cursor.execute('UPDATE games SET last_date = ? WHERE name_of_game = ?', (last_date, name_of_game))
 
 def find_path_exe(conn: Connection, path_to_exe: str) -> str:
@@ -184,5 +183,4 @@ def find_path_exe(conn: Connection, path_to_exe: str) -> str:
     return None
 
 # conn1 = connect_db()
-# update_current_all_games_resaves(conn1)
 # add_game(conn1, "The Planet Crafter", ["off", "off", "off", "off", "off"], r"E:\Games\The Planet Crafter (2024)\The Planet Crafter", r"saves\games\The Planet Crafter", r"%USERPROFILE%\AppData\LocalLow\MijuGames\Planet Crafter", 0, 0, 0, "1 день")
