@@ -204,7 +204,7 @@ class ChoiceGameDir(customtkinter.CTkToplevel):
     """Окно выбора директории игры"""
     def __init__(self, name_of_game):
         super().__init__()
-        self.geometry("510x410")
+        self.geometry("510x300")
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(3, weight=1)
         self.title(f"Выбор директории для игры {name_of_game}")

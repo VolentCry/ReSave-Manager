@@ -3,23 +3,38 @@ import psutil
 import os
 from datetime import datetime
 import logging
+from time import time, ctime
 
 from user_games import *
+from game_copier_algorithm import resave_copier_algorithm
 
 LOG_FILE = 'process_monitor.log'
 # Подключаемся к БД
 conn_m = connect_db()
+save_history = "" # Переменная, которая хранит название игры для которой последней делали сохранение
+history_time_of_resave_game = "" # Переменная, которая хранит время сохранения игры для которой последней делали сохранение
 
 # === Callback для обработки событий закрытия ===
 def on_program_closed(program_name: str, end_time: datetime, runtime, target_path: str):
+    global save_history, history_time_of_resave_game
     print(f"[INFO] Программа '{program_name}' закрыта в {end_time}, общее время работы: {runtime}")
     # Находим название игры, к которой относится exe-файл
     name_of_game = find_path_exe(conn_m, target_path)
-    print(name_of_game)
+    if save_history != "": save_history = name_of_game
+    if history_time_of_resave_game != "": history_time_of_resave_game = ctime(time()).split()[3].split(":")[2]
     parametrs = take_parametrs(conn_m, name_of_game)
     if parametrs[2] == "on":
-        print(f"[INFO] Сохранение после каждой игровой сессии включено для игры {name_of_game}")
-        update_current_game_resaves(conn_m, name_of_game, 0)
+        game_save_time = ctime(time()).split()[3].split(":")[2]
+        if abs(int(history_time_of_resave_game) - int(game_save_time)) < 10 and name_of_game != save_history:
+            print(f"[INFO] Сохранение после каждой игровой сессии включено для игры {name_of_game}")
+            update_current_game_resaves(conn_m, name_of_game, 0)
+            print(take_game_info(conn_m, name_of_game))
+            # for i, game in enumerate(take_all_games(conn_m)):
+            #     print(i, game)
+            #resave_copier_algorithm(take_game_info(conn_m, name_of_game), num_of_game)
+            if save_history == "": save_history = name_of_game
+            if history_time_of_resave_game == "": history_time_of_resave_game = ctime(time()).split()[3].split(":")[2]
+
 
 # === Мониторинг процесса ===
 async def monitor_process(target_path: str, check_interval_in_seconds: int):

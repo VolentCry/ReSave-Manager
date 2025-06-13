@@ -1,19 +1,10 @@
-# import tkinter as tk
-# from tkinter import filedialog
+# from time import time, ctime, sleep
 
-# def select_folder():
-#     folder_path = filedialog.askdirectory()  # Выбор папки
-#     if folder_path:
-#         print("Выбрана папка:", folder_path)
-#         label.config(text=f"Папка: {folder_path}")
 
-# root = tk.Tk()
-# root.title("Выбор папки")
+# history_time_of_resave_game = ctime(time()).split()[3].split(":")[2]
 
-# button = tk.Button(root, text="Выбрать папку", command=select_folder)
-# button.pack(pady=20)
+# sleep(10)
 
-# label = tk.Label(root, text="Папка не выбрана")
-# label.pack()
+# a = ctime(time()).split()[3].split(":")[2]
 
-# root.mainloop()
+# if abs(int(time_of_resave_game) - int(a)) > 2: print("Разыне игры")
