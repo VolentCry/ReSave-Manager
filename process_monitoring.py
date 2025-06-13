@@ -11,7 +11,6 @@ from game_copier_algorithm import resave_copier_algorithm
 LOG_FILE = 'process_monitor.log'
 # Подключаемся к БД
 conn_m = connect_db()
-history_time_of_resave_game = datetime(1000, 1, 1, int(ctime(time()).split()[3].split(":")[0]), int(ctime(time()).split()[3].split(":")[1]), int(ctime(time()).split()[3].split(":")[2])) # Переменная, которая хранит время сохранения игры для которой последней делали сохранение
 
 # === Callback для обработки событий закрытия ===
 def on_program_closed(program_name: str, end_time: datetime, runtime, target_path: str):
@@ -22,17 +21,12 @@ def on_program_closed(program_name: str, end_time: datetime, runtime, target_pat
     parametrs = take_parametrs(conn_m, name_of_game)
     
     if parametrs[2] == "on":
-        game_save_time = datetime(1000, 1, 1, int(ctime(time()).split()[3].split(":")[0]), int(ctime(time()).split()[3].split(":")[1]), int(ctime(time()).split()[3].split(":")[2]))
         print(f"[INFO] Сохранение после каждой игровой сессии включено для игры {name_of_game}")
         for i, game in enumerate(take_all_games(conn_m)):
             if game[0] == name_of_game:
                 resave_copier_algorithm(take_game_info(conn_m, name_of_game), i)
-                update_current_game_resaves(conn_m, name_of_game, 0)
+                update_current_game_resaves(conn_m, name_of_game)
                 return
-        # if int(str(history_time_of_resave_game - game_save_time).split(":")[0]) != 0 or int(str(history_time_of_resave_game - game_save_time).split(":")[1]) != 0 or int(str(history_time_of_resave_game - game_save_time).split(":")[0]) > 10:
-        #     print(f"[INFO] Сохранение после каждой игровой сессии включено для игры {name_of_game}")
-        #     update_current_game_resaves(conn_m, name_of_game, 0)
-        #     print(take_game_info(conn_m, name_of_game))
 
 
 # === Мониторинг процесса ===

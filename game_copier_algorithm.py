@@ -19,8 +19,7 @@ def resave_copier_algorithm(game: list, num_of_game: int):
         os.makedirs(fr'{path}\\ReSave 1', exist_ok=True) # Создаёт папку для первого ресейва
         shutil.copytree(a, b)
     else:
-        update_current_game_resaves(conn2, game[0], )
-        game[6] = len(os.listdir(fr'{path}')) # Обновляем данные о количестве всего резервных копий
+        update_current_game_resaves(conn2, game[0])
 
         if game[6] < game[7] and game[7] != 0: # Проверяем не превышает ли текущее количество сохранений установленный лимит
             os.makedirs(fr'{path}\\ReSave {int(contents[-1][-1]) + 1}', exist_ok=True) # Создаёт папку для последующего ресейва
@@ -57,7 +56,7 @@ def resave_copier_algorithm(game: list, num_of_game: int):
             b = fr'{path}\ReSave {int(contents[-1][-1]) + 1}\{game[5].split("\\")[-1]}'
             shutil.copytree(a, b)
 
-        game[6] = len(os.listdir(fr'{path}')) # Обновляем данные о количестве всего резервных копий
+        # game[6] = len(os.listdir(fr'{path}')) # Обновляем данные о количестве всего резервных копий
 
 def game_detection():
     games_names = []
