@@ -350,6 +350,11 @@ class GameFrame(customtkinter.CTkFrame):
         self.resaves_limit_cnt = resaves_limit_cnt # Ограничение по количеству ресейвов
         self.resaves_limit_memory = resaves_limit_memory # Ограничение по количеству занимаемой памяти ресейвами
 
+        # Чекбокс рядом с названием игры
+        self.checkbox_game_var = customtkinter.StringVar(value="off")
+        self.checkbox_game = customtkinter.CTkCheckBox(self, variable=self.checkbox_game_var, text="")
+        self.checkbox_game.grid(row=0, column=0, sticky="w")
+
         # Название игры
         self.label_name = customtkinter.CTkLabel(self, text=name, font=("Calibri", 18, "bold"))
         self.label_name.grid(row=0, column=0)
@@ -454,7 +459,7 @@ class DatectedGamesListTopLevel(customtkinter.CTkToplevel):
 
 
 
-class Settings(customtkinter.CTk):
+class Settings(customtkinter.CTkToplevel):
     """открывает настройки ОСНОВНОГО приложения, а не отдельных игр"""
     def __init__(self):
         super().__init__()
@@ -463,18 +468,36 @@ class Settings(customtkinter.CTk):
         self.columnconfigure(1, weight=1)
         self.rowconfigure(3, weight=1)
 
-        self.label = customtkinter.CTkLabel(self, text="Тема приложения:", font=("Calibri", 14, "bold"))
-        self.label.grid(row=0, column=0, sticky="nsew", pady=(8, 0))
+        self.label1 = customtkinter.CTkLabel(self, text="Тема приложения:", font=("Calibri", 14, "bold"))
+        self.label1.grid(row=0, column=0, sticky="w", pady=(8, 0), padx=10)
         self.optionmenu = customtkinter.CTkOptionMenu(self, values=["Системная", "Светлая", "Тёмная"])
-        self.optionmenu.grid(row=0, column=1, pady=(8, 0))
+        self.optionmenu.grid(row=0, column=1, pady=(8, 0), sticky="nsew", padx=(0, 10))
+
+        self.label2 = customtkinter.CTkLabel(self, text="Цвет приложения:", font=("Calibri", 14, "bold"))
+        self.label2.grid(row=1, column=0, sticky="w", pady=(8, 0), padx=10)
+        self.optionmenu2 = customtkinter.CTkOptionMenu(self, values=["Синий", "Тёмно-синий", "Зелёный"])
+        self.optionmenu2.grid(row=1, column=1, pady=(8, 0), sticky="nsew", padx=(0, 10))
+
         self.button_confirn = customtkinter.CTkButton(self, text="Авто обноружение игр", command=self.game_detected_button)
-        self.button_confirn.grid(row=1, column=0, padx=8, pady=8, sticky="ew")
-        self.button_confirn = customtkinter.CTkButton(self, text="Подтвердить настройки", command=self.button_callbck)
-        self.button_confirn.grid(row=3, column=0)
+        self.button_confirn.grid(row=2, column=0, padx=8, pady=(8, 0), sticky="nsew", columnspan=2)
+        self.button_confirn = customtkinter.CTkButton(self, text="Подтвердить настройки", command=self.confirm_settings)
+        self.button_confirn.grid(row=3, column=0, padx=8, pady=(8, 8), sticky="nsew", columnspan=2)
 
         self.toplevel_window = None
 
-    def button_callbck(self):
+    def confirm_settings(self):
+        if self.optionmenu.get() == "Светлая":
+            customtkinter.set_appearance_mode("light")
+        elif self.optionmenu.get() == "Тёмная":
+            customtkinter.set_appearance_mode("dark")
+        else: customtkinter.set_appearance_mode("system")
+
+        if self.optionmenu.get() == "Синий":
+            customtkinter.set_default_color_theme("blue")
+        elif self.optionmenu.get() == "Тёмно-синий":
+            customtkinter.set_default_color_theme("dark-blue")
+        else: customtkinter.set_default_color_theme("green")
+
         self.destroy()
 
     def game_detected_button(self):
@@ -497,27 +520,42 @@ class App(customtkinter.CTk):
         super().__init__()
         self.geometry("950x700")
         self.title("ReSave Manager")
-        self.grid_columnconfigure(1, weight=1)
-        self.grid_rowconfigure(2, weight=1)
+        self.grid_columnconfigure(2, weight=1)
+        self.grid_rowconfigure(3, weight=1)
 
-        threading.Thread(target=start_async_loop).start()
+        #threading.Thread(target=start_async_loop).start() # Запуск мониторинга всех процессов
 
-        # test
         self.games_frame = GameScrollBarFrame(self)  # Сохраняем в атрибуте
-        self.games_frame.grid(row=1, sticky="nsew", columnspan=2, padx=8, pady=8, rowspan=2)
+        self.games_frame.grid(row=2, sticky="nsew", columnspan=3, padx=8, pady=8, rowspan=2)
 
+        # Первый ряд
         self.label_of_app = customtkinter.CTkLabel(self, text="List of your games:", font=("Calibri", 28, "bold"))
-        self.label_of_app.grid(row=0, columnspan=2, sticky="ew", pady=(8, 0))
-        self.button_to_add_game = customtkinter.CTkButton(self, text="+ Добавить игру", command=self.add_game)
-        self.button_to_add_game.grid(row=3, columnspan=2, sticky="sew", padx=8, pady=(0, 8))
+        self.label_of_app.grid(row=0, columnspan=3, sticky="ew", pady=(8, 0))
         self.button_settings = customtkinter.CTkButton(self, text="Настройки приложения", command=self.button_callbck)
-        self.button_settings.grid(row=0, column=1, sticky="e", padx=8, pady=(8, 0))
+        self.button_settings.grid(row=0, column=2, sticky="e", padx=8, pady=(8, 0))
+
+        #Второй ряд
+        self.select_all_var = customtkinter.StringVar(value="off") # Сохранение с определённой частотой
+        self.select_all_checkbox = customtkinter.CTkCheckBox(self, text="Выбрать всё", variable=self.select_all_var, command=self.checkbox_seklect_all)
+        self.select_all_checkbox.grid(row=1, column=0, sticky="e", padx=8, pady=(8, 0))
+        self.export_button = customtkinter.CTkButton(self, text="Эскпортировать...", state="disable", command=self.partial_export)
+        self.export_button.grid(row=1, column=1, sticky="e", padx=8, pady=(8, 0))
+        self.change_partial_settings_button = customtkinter.CTkButton(self, text="Изменить настройки...", state="disable", command=self.partial_settings)
+        self.change_partial_settings_button.grid(row=1, column=2, sticky="e", padx=8, pady=(8, 0))
+        
+        # Третий ряд
+        self.button_to_add_game = customtkinter.CTkButton(self, text="+ Добавить игру", command=self.add_game)
+        self.button_to_add_game.grid(row=4, columnspan=3, sticky="sew", padx=8, pady=(0, 8))
 
         self.toplevel_window = None
+        self.toplevel_window1 = None
 
     def button_callbck(self):
-        self.settings_app = Settings()
-        self.settings_app.mainloop()    
+        if self.toplevel_window1 is None or not self.toplevel_window1.winfo_exists():
+            self.toplevel_window1 = Settings() 
+            self.toplevel_window1.focus()
+        else:
+            self.toplevel_window1.focus()   
 
     def add_game(self):
         """Заход в меню добавления определённой игры"""
@@ -526,6 +564,18 @@ class App(customtkinter.CTk):
             self.toplevel_window.focus()
         else:
             self.toplevel_window.focus()
+
+    def checkbox_seklect_all(self):
+        """Выполнение действия при нажатии на чекбокс выбора всех игр одновременно"""
+        pass
+
+    def partial_export(self):
+        """Частичный эспорт сохранений, только выбранных игр"""
+        pass
+
+    def partial_settings(self):
+        """Частичный изменение настроек, только выбранных игр"""
+        pass
 
 
 
