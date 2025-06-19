@@ -8,11 +8,12 @@ import os
 from tkinter import filedialog
 import asyncio
 import threading
+import shutil
 import logging
 
 # Внутренние импорты
 from additional_algorithms import date_translate
-from game_copier_algorithm import resave_copier_algorithm, game_detection
+from game_copier_algorithm import resave_copier_algorithm, game_detection, selective_game_resaves_export
 from user_games import *
 from process_monitoring import a_main, LOG_FILE, set_games_frame_ref
 
@@ -271,6 +272,17 @@ class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
             )
             game_frame.grid(row=i, column=0, sticky="ew", padx=8, pady=(6, 0))
             self.game_frames.append(game_frame)
+    
+    def return_checkbox_states(self) -> dict:
+        checkbox_states = {}
+        for i in self.game_frames:
+            name, check = i.return_checkbox_state_and_name()
+            checkbox_states[name] = check
+        return checkbox_states
+    
+    def off_all_checkboxes(self):
+        for i in self.game_frames:
+            i.off_checkbox()
 
 
 
@@ -351,7 +363,7 @@ class GameFrame(customtkinter.CTkFrame):
         self.resaves_limit_memory = resaves_limit_memory # Ограничение по количеству занимаемой памяти ресейвами
 
         # Чекбокс рядом с названием игры
-        self.checkbox_game_var = customtkinter.StringVar(value="off")
+        self.checkbox_game_var = customtkinter.StringVar(value="0")
         self.checkbox_game = customtkinter.CTkCheckBox(self, variable=self.checkbox_game_var, text="")
         self.checkbox_game.grid(row=0, column=0, sticky="w")
 
@@ -371,6 +383,10 @@ class GameFrame(customtkinter.CTkFrame):
         self.game_resave_settings = customtkinter.CTkButton(self, text="Создать резервную копию", command=self.button_make_resave, width=200)
         self.game_resave_settings.grid(row=1, column=1, padx=8, pady=4, sticky="e")
 
+        # Экспорт сохранений
+        self.export_game_save = customtkinter.CTkButton(self, text="Экспортировать сохранение", command=self.game_save_export, width=200)
+        self.export_game_save.grid(row=0, column=2, padx=8, pady=4, sticky="e")
+
         self.toplevel_window = None
 
     def button_callback_settings_menu_game(self):
@@ -384,6 +400,20 @@ class GameFrame(customtkinter.CTkFrame):
     def button_make_resave(self):
         """Создаёт резервную копию"""
         resave_copier_algorithm(take_game_info(conn_app, self.name), self.num_of_game)
+    
+    def game_save_export(self):
+        """Предоставляет возможность экспортирвоать файл в формате архива в нужное место"""
+        folder_path = filedialog.askdirectory(title="Выберите место для экспорта сохранения")
+        path_to_resave = take_paths(conn_app, self.name)[1]
+        # Создание нового ZIP-архива
+        shutil.make_archive(fr'{folder_path}/{self.name}_resave__export.zip', 'zip', fr"{os.path.expandvars(path_to_resave)}\{os.listdir(os.path.expandvars(path_to_resave))[-1]}")
+    
+    def return_checkbox_state_and_name(self):
+        return self.name, self.checkbox_game_var.get()
+    
+    def off_checkbox(self):
+        self.checkbox_game_var.set(value="0")
+        self.checkbox_game.configure(variable=self.checkbox_game_var)
 
 
 
@@ -453,7 +483,6 @@ class DatectedGamesListTopLevel(customtkinter.CTkToplevel):
                 # user_games.games.append([i, time_to_start, ["on", "off", "off", "off", "off"], "", path_to_resave, self.detected_games_saves_path[self.detected_games.index(i)], 0, 0, 0, "1 день"])
                 add_game(conn_app, i, ["on", "off", "off", "off", "off"], "", path_to_resave, self.detected_games_saves_path[self.detected_games.index(i)], 0, 0, 0, "1 день")
         print(take_all_games(conn_app))
-        # ОБНОВЛЯЕМ ОСНОВНОЙ ФРЕЙМ
         self.games_frame_ref.update_games()
         self.destroy()
 
@@ -535,7 +564,7 @@ class App(customtkinter.CTk):
         self.button_settings.grid(row=0, column=2, sticky="e", padx=8, pady=(8, 0))
 
         #Второй ряд
-        self.select_all_var = customtkinter.StringVar(value="off") # Сохранение с определённой частотой
+        self.select_all_var = customtkinter.StringVar(value=0) # Сохранение с определённой частотой
         self.select_all_checkbox = customtkinter.CTkCheckBox(self, text="Выбрать всё", variable=self.select_all_var, command=self.checkbox_seklect_all)
         self.select_all_checkbox.grid(row=1, column=0, sticky="e", padx=8, pady=(8, 0))
         self.export_button = customtkinter.CTkButton(self, text="Эскпортировать...", state="disable", command=self.partial_export)
@@ -567,11 +596,25 @@ class App(customtkinter.CTk):
 
     def checkbox_seklect_all(self):
         """Выполнение действия при нажатии на чекбокс выбора всех игр одновременно"""
-        pass
+        if (self.select_all_checkbox.get() != 0) or ("1" in self.games_frame.return_checkbox_states().values()):
+            self.export_button.configure(state="normal")
+        else:
+            self.export_button.configure(state="disable")
 
     def partial_export(self):
         """Частичный эспорт сохранений, только выбранных игр"""
-        pass
+        if (self.select_all_checkbox.get() != 0) or ("1" in self.games_frame.return_checkbox_states().values()):
+            folder_path = filedialog.askdirectory(title="Выберите место для экспорта сохранения игр")
+            names_to_export = []
+            for name in self.games_frame.return_checkbox_states():
+                state = self.games_frame.return_checkbox_states()[name]
+                if state == "1": names_to_export.append(name)
+            selective_game_resaves_export(names_to_export, folder_path)
+            
+            # Отключение всех чекбоксов
+            self.games_frame.off_all_checkboxes()
+            self.select_all_var.set(value="0")
+            self.select_all_checkbox.configure(variable=self.select_all_var)
 
     def partial_settings(self):
         """Частичный изменение настроек, только выбранных игр"""

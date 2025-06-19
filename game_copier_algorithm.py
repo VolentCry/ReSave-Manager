@@ -3,7 +3,7 @@ import subprocess
 import shutil
 import sys
 import ctypes
-from user_games import update_current_game_resaves, connect_db
+from user_games import update_current_game_resaves, connect_db, take_paths
 
 conn2 = connect_db()
 
@@ -68,3 +68,17 @@ def game_detection():
                 games_names.append(i.split(";")[0])
                 games_saves_path.append(i.split(";")[1])
     return games_names, games_saves_path
+
+
+def selective_game_resaves_export(names_of_games_to_export: list, folder_path_to_export: str):
+    for name in names_of_games_to_export:
+        path_to_resave = take_paths(conn2, name)[1]
+        shutil.copytree(fr"{os.path.expandvars(path_to_resave)}", fr"saves/export/{str(os.path.expandvars(path_to_resave)).split("\\")[-1]}")
+    # Создание нового ZIP-архива
+    shutil.make_archive(fr'{folder_path_to_export}/games_resaves__export.zip', 'zip', r"saves/export")
+
+    try:
+        shutil.rmtree(r"saves/export")
+        os.makedirs(r"saves/export")
+    except OSError as e:
+        print(f"Ошибка при очистке директории: {e}")
