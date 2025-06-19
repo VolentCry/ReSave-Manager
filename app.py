@@ -15,7 +15,8 @@ import logging
 from additional_algorithms import date_translate
 from game_copier_algorithm import resave_copier_algorithm, game_detection, selective_game_resaves_export
 from user_games import *
-from process_monitoring import a_main, LOG_FILE, set_games_frame_ref
+# from process_monitoring import a_main, LOG_FILE, set_games_frame_ref
+from process_monitoring import a_main, LOG_FILE
 
 # Подключаемся к БД
 conn_app = connect_db()
@@ -552,7 +553,7 @@ class App(customtkinter.CTk):
         self.grid_columnconfigure(2, weight=1)
         self.grid_rowconfigure(3, weight=1)
 
-        #threading.Thread(target=start_async_loop).start() # Запуск мониторинга всех процессов
+        threading.Thread(target=start_async_loop).start() # Запуск мониторинга всех процессов
 
         self.games_frame = GameScrollBarFrame(self)  # Сохраняем в атрибуте
         self.games_frame.grid(row=2, sticky="nsew", columnspan=3, padx=8, pady=8, rowspan=2)

@@ -12,11 +12,11 @@ LOG_FILE = 'process_monitor.log'
 # Подключаемся к БД
 conn_m = connect_db()
 
-games_frame_ref = None
+# games_frame_ref = None
 
-def set_games_frame_ref(ref):
-    global games_frame_ref
-    games_frame_ref = ref
+# def set_games_frame_ref(ref):
+#     global games_frame_ref
+#     games_frame_ref = ref
 
 # === Callback для обработки событий закрытия ===
 def on_program_closed(program_name: str, end_time: datetime, runtime, target_path: str):
@@ -33,9 +33,9 @@ def on_program_closed(program_name: str, end_time: datetime, runtime, target_pat
             if game[0] == name_of_game:
                 resave_copier_algorithm(take_game_info(conn_m, name_of_game), i)
                 update_current_game_resaves(conn_m, name_of_game)
-                if games_frame_ref is not None:
-                    games_frame_ref.after(0, games_frame_ref.update_games)
-                return
+                # if games_frame_ref is not None:
+                #     games_frame_ref.after(0, games_frame_ref.update_games)
+                # return
 
 
 # === Мониторинг процесса ===
