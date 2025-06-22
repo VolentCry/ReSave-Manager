@@ -400,7 +400,7 @@ class GameFrame(customtkinter.CTkFrame):
 
     def button_make_resave(self):
         """Создаёт резервную копию"""
-        resave_copier_algorithm(take_game_info(conn_app, self.name), self.num_of_game)
+        resave_copier_algorithm(take_game_info(conn_app, self.name))
     
     def game_save_export(self):
         """Предоставляет возможность экспортирвоать файл в формате архива в нужное место"""
@@ -496,7 +496,7 @@ class Settings(customtkinter.CTkToplevel):
         self.geometry("400x150")
         self.title("Настройки приложения")
         self.columnconfigure(1, weight=1)
-        self.rowconfigure(3, weight=1)
+        self.rowconfigure(4, weight=1)
 
         self.label1 = customtkinter.CTkLabel(self, text="Тема приложения:", font=("Calibri", 14, "bold"))
         self.label1.grid(row=0, column=0, sticky="w", pady=(8, 0), padx=10)
@@ -508,10 +508,12 @@ class Settings(customtkinter.CTkToplevel):
         self.optionmenu2 = customtkinter.CTkOptionMenu(self, values=["Синий", "Тёмно-синий", "Зелёный"])
         self.optionmenu2.grid(row=1, column=1, pady=(8, 0), sticky="nsew", padx=(0, 10))
 
-        self.button_confirn = customtkinter.CTkButton(self, text="Авто обноружение игр", command=self.game_detected_button)
-        self.button_confirn.grid(row=2, column=0, padx=8, pady=(8, 0), sticky="nsew", columnspan=2)
-        self.button_confirn = customtkinter.CTkButton(self, text="Подтвердить настройки", command=self.confirm_settings)
-        self.button_confirn.grid(row=3, column=0, padx=8, pady=(8, 8), sticky="nsew", columnspan=2)
+        self.button_avto_detect_games = customtkinter.CTkButton(self, text="Авто обноружение игр", command=self.game_detected_button)
+        self.button_avto_detect_games.grid(row=2, column=0, padx=8, pady=(8, 0), sticky="nsew", columnspan=2)
+        self.button_import_resaves = customtkinter.CTkButton(self, text="Импорт сохранений игры", command=self.game_saves_import)
+        self.button_import_resaves.grid(row=3, column=0, padx=8, pady=(8, 0), sticky="nsew", columnspan=2)
+        self.button_confirm = customtkinter.CTkButton(self, text="Подтвердить настройки", command=self.confirm_settings)
+        self.button_confirm.grid(row=4, column=0, padx=8, pady=(8, 8), sticky="nsew", columnspan=2)
 
         self.toplevel_window = None
 
@@ -529,6 +531,10 @@ class Settings(customtkinter.CTkToplevel):
         else: customtkinter.set_default_color_theme("green")
 
         self.destroy()
+
+    def game_saves_import(self):
+        """Можно импортировать в приложение сохранения игры, таким образом эти сохранения будут применены сразу к игре"""
+        pass
 
     def game_detected_button(self):
         """Функция, которая по нажатию кнопки запускает поиск директорий сохранений игр"""
@@ -553,7 +559,7 @@ class App(customtkinter.CTk):
         self.grid_columnconfigure(2, weight=1)
         self.grid_rowconfigure(3, weight=1)
 
-        threading.Thread(target=start_async_loop).start() # Запуск мониторинга всех процессов
+        #threading.Thread(target=start_async_loop).start() # Запуск мониторинга всех процессов
 
         self.games_frame = GameScrollBarFrame(self)  # Сохраняем в атрибуте
         self.games_frame.grid(row=2, sticky="nsew", columnspan=3, padx=8, pady=8, rowspan=2)

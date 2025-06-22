@@ -165,6 +165,19 @@ def take_all_games_names(conn: Connection) -> list:
     cursor.execute('SELECT name_of_game FROM games')
     return cursor.fetchall()
 
+def take_frequency_resave(conn: Connection, name_of_game: str):
+    """Возвращает частоты сохранений резервных копий для определённой игры"""
+    cursor = conn.cursor()
+    cursor.execute('SELECT frequency_resave FROM games WHERE name_of_game = ?', (name_of_game,))
+    rows = cursor.fetchall()
+    return rows[0][0]
+
+def take_all_games_frequency(conn: Connection):
+    """Возвращает название игры и её частоту сохранения"""
+    cursor = conn.cursor()
+    cursor.execute('SELECT name_of_game, frequency_resave FROM games')
+    return cursor.fetchall()
+
 def update_last_date(conn: Connection, name_of_game: str, last_date):
     """Обновляет значение даты последнего запуска игры"""
     cursor = conn.cursor()
