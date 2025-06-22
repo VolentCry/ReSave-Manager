@@ -10,13 +10,18 @@ import asyncio
 import threading
 import shutil
 import logging
+from apscheduler.schedulers.background import BackgroundScheduler
 
 # Внутренние импорты
 from additional_algorithms import date_translate
 from game_copier_algorithm import resave_copier_algorithm, game_detection, selective_game_resaves_export
 from user_games import *
+from game_resave_time_algorithm import create_tasks_for_all_games, process_start_check
 # from process_monitoring import a_main, LOG_FILE, set_games_frame_ref
 from process_monitoring import a_main, LOG_FILE
+
+# Запуск второстепенных процессов по систематическим ресейвам
+scheduler = BackgroundScheduler()
 
 # Подключаемся к БД
 conn_app = connect_db()
@@ -559,7 +564,11 @@ class App(customtkinter.CTk):
         self.grid_columnconfigure(2, weight=1)
         self.grid_rowconfigure(3, weight=1)
 
+        # Запуски процессов отслеживания программ и систематических ресейвов
         #threading.Thread(target=start_async_loop).start() # Запуск мониторинга всех процессов
+        create_tasks_for_all_games(conn_app)
+        process_start_check(conn_app)
+        scheduler.start()
 
         self.games_frame = GameScrollBarFrame(self)  # Сохраняем в атрибуте
         self.games_frame.grid(row=2, sticky="nsew", columnspan=3, padx=8, pady=8, rowspan=2)
