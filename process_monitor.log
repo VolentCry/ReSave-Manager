@@ -1,0 +1,114 @@
+2025-06-22 22:48:36,504 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:48:36,504 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:48:36,505 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:48:36,505 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:48:36,505 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:48:36,505 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:48:36,507 - INFO - Scheduler started
+2025-06-22 22:48:36,507 - DEBUG - Looking for jobs to run
+2025-06-22 22:48:36,507 - DEBUG - No jobs; waiting until a job is added
+2025-06-22 22:50:56,932 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:50:56,933 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-22 22:50:56,933 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:50:56,933 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-22 22:50:56,933 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:50:56,933 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-22 22:50:56,933 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:50:56,933 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-22 22:50:56,934 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:50:56,934 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-22 22:50:56,934 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:50:56,934 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-22 22:50:56,936 - INFO - Scheduler started
+2025-06-22 22:50:56,936 - DEBUG - Looking for jobs to run
+2025-06-22 22:50:56,936 - DEBUG - No jobs; waiting until a job is added
+2025-06-22 22:54:58,520 - INFO - Scheduler started
+2025-06-22 22:54:58,520 - DEBUG - Looking for jobs to run
+2025-06-22 22:54:58,520 - DEBUG - No jobs; waiting until a job is added
+2025-06-22 22:54:58,521 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:54:58,521 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-22 22:54:58,522 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:54:58,522 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-22 22:54:58,522 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:54:58,522 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-22 22:54:58,522 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:54:58,522 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-22 22:54:58,522 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:54:58,522 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-22 22:54:58,523 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:54:58,523 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-22 22:55:21,409 - DEBUG - Using proactor: IocpProactor
+2025-06-22 22:55:21,411 - INFO - Scheduler started
+2025-06-22 22:55:21,412 - DEBUG - Looking for jobs to run
+2025-06-22 22:55:21,413 - DEBUG - No jobs; waiting until a job is added
+2025-06-22 22:55:21,414 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:21,414 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-22 22:55:21,414 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:21,414 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-22 22:55:21,414 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:21,414 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-22 22:55:21,415 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:21,415 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-22 22:55:21,415 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:21,415 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-22 22:55:21,415 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:21,415 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-22 22:55:21,483 - INFO - Начато наблюдение за программой: eldenring.exe
+2025-06-22 22:55:22,800 - INFO - Начато наблюдение за программой: start_protected_game.exe
+2025-06-22 22:55:22,849 - INFO - Начато наблюдение за программой: Planet Crafter.exe
+2025-06-22 22:55:22,922 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-06-22 22:55:22,969 - INFO - Начато наблюдение за программой: FactoryGameSteam.exe
+2025-06-22 22:55:23,042 - INFO - Начато наблюдение за программой: HorizonZeroDawn.exe
+2025-06-22 22:55:23,096 - INFO - Начато наблюдение за программой: Cult Of The Lamb.exe
+2025-06-22 22:55:23,144 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-06-22 22:55:23,192 - INFO - Начато наблюдение за программой: VotV.exe
+2025-06-22 22:55:34,387 - DEBUG - Using proactor: IocpProactor
+2025-06-22 22:55:34,389 - INFO - Scheduler started
+2025-06-22 22:55:34,389 - DEBUG - Looking for jobs to run
+2025-06-22 22:55:34,389 - DEBUG - No jobs; waiting until a job is added
+2025-06-22 22:55:34,389 - INFO - Начато наблюдение за программой: eldenring.exe
+2025-06-22 22:55:34,471 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:34,471 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-22 22:55:34,480 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:34,489 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-22 22:55:34,497 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:34,498 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-22 22:55:34,498 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:34,505 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-22 22:55:34,513 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:34,513 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-22 22:55:34,522 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:55:34,530 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-22 22:55:35,799 - INFO - Начато наблюдение за программой: start_protected_game.exe
+2025-06-22 22:55:35,869 - INFO - Начато наблюдение за программой: Planet Crafter.exe
+2025-06-22 22:55:35,913 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-06-22 22:55:35,957 - INFO - Начато наблюдение за программой: FactoryGameSteam.exe
+2025-06-22 22:55:36,001 - INFO - Начато наблюдение за программой: HorizonZeroDawn.exe
+2025-06-22 22:55:36,063 - INFO - Начато наблюдение за программой: Cult Of The Lamb.exe
+2025-06-22 22:55:36,107 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-06-22 22:55:36,150 - INFO - Начато наблюдение за программой: VotV.exe
+2025-06-22 22:56:10,409 - DEBUG - Using proactor: IocpProactor
+2025-06-22 22:56:10,410 - INFO - Scheduler started
+2025-06-22 22:56:10,410 - DEBUG - Looking for jobs to run
+2025-06-22 22:56:10,410 - DEBUG - No jobs; waiting until a job is added
+2025-06-22 22:56:10,411 - INFO - Начато наблюдение за программой: eldenring.exe
+2025-06-22 22:56:10,471 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:56:10,471 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-22 22:56:10,479 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:56:10,487 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-22 22:56:10,487 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:56:10,496 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-22 22:56:10,503 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:56:10,504 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-22 22:56:10,511 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:56:10,519 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-22 22:56:10,519 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:56:10,520 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-22 22:56:11,785 - INFO - Начато наблюдение за программой: start_protected_game.exe
+2025-06-22 22:56:11,831 - INFO - Начато наблюдение за программой: Planet Crafter.exe
+2025-06-22 22:56:11,874 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-06-22 22:56:11,916 - INFO - Начато наблюдение за программой: FactoryGameSteam.exe
+2025-06-22 22:56:11,959 - INFO - Начато наблюдение за программой: HorizonZeroDawn.exe
+2025-06-22 22:56:12,002 - INFO - Начато наблюдение за программой: Cult Of The Lamb.exe
+2025-06-22 22:56:12,053 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-06-22 22:56:12,097 - INFO - Начато наблюдение за программой: VotV.exe

@@ -501,7 +501,7 @@ class Settings(customtkinter.CTkToplevel):
         self.geometry("400x150")
         self.title("Настройки приложения")
         self.columnconfigure(1, weight=1)
-        self.rowconfigure(4, weight=1)
+        self.rowconfigure(5, weight=1)
 
         self.label1 = customtkinter.CTkLabel(self, text="Тема приложения:", font=("Calibri", 14, "bold"))
         self.label1.grid(row=0, column=0, sticky="w", pady=(8, 0), padx=10)
@@ -565,11 +565,11 @@ class App(customtkinter.CTk):
         self.grid_rowconfigure(3, weight=1)
 
         # Запуски процессов отслеживания программ и систематических ресейвов
-        #threading.Thread(target=start_async_loop).start() # Запуск мониторинга всех процессов
+        threading.Thread(target=start_async_loop).start() # Запуск мониторинга всех процессов
+        scheduler.start()
         create_tasks_for_all_games(conn_app)
         process_start_check(conn_app)
-        scheduler.start()
-
+        
         self.games_frame = GameScrollBarFrame(self)  # Сохраняем в атрибуте
         self.games_frame.grid(row=2, sticky="nsew", columnspan=3, padx=8, pady=8, rowspan=2)
 
@@ -657,14 +657,14 @@ def start_async_loop():
         
 def on_closing():
     app.destroy()
-    print("\n[INFO] Скрипт остановлен вручную.")
-    # Очистка файла логов
-    if os.path.exists(LOG_FILE):
-        with open(LOG_FILE, 'w'):
-            pass  # Открытие в режиме 'w' очищает файл
-        print(f"[INFO] Файл логов '{LOG_FILE}' успешно очищен.")
-    else:
-        print(f"[WARNING] Файл логов '{LOG_FILE}' не найден при попытке очистки.")
+    print("\n[INFO] Приложение было закрыто, скрипт работает в фоне.")
+    # # Очистка файла логов
+    # if os.path.exists(LOG_FILE):
+    #     with open(LOG_FILE, 'w'):
+    #         pass  # Открытие в режиме 'w' очищает файл
+    #     print(f"[INFO] Файл логов '{LOG_FILE}' успешно очищен.")
+    # else:
+    #     print(f"[WARNING] Файл логов '{LOG_FILE}' не найден при попытке очистки.")
 
 if __name__ == "__main__":
     update_current_all_games_resaves(conn_app)
