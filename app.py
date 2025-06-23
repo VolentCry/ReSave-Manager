@@ -498,7 +498,7 @@ class Settings(customtkinter.CTkToplevel):
     """открывает настройки ОСНОВНОГО приложения, а не отдельных игр"""
     def __init__(self):
         super().__init__()
-        self.geometry("400x150")
+        self.geometry("400x250")
         self.title("Настройки приложения")
         self.columnconfigure(1, weight=1)
         self.rowconfigure(5, weight=1)

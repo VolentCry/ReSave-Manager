@@ -112,3 +112,1133 @@
 2025-06-22 22:56:12,002 - INFO - Начато наблюдение за программой: Cult Of The Lamb.exe
 2025-06-22 22:56:12,053 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
 2025-06-22 22:56:12,097 - INFO - Начато наблюдение за программой: VotV.exe
+2025-06-22 22:59:06,698 - DEBUG - Using proactor: IocpProactor
+2025-06-22 22:59:06,699 - INFO - Scheduler started
+2025-06-22 22:59:06,699 - DEBUG - Looking for jobs to run
+2025-06-22 22:59:06,699 - INFO - Начато наблюдение за программой: eldenring.exe
+2025-06-22 22:59:06,699 - DEBUG - No jobs; waiting until a job is added
+2025-06-22 22:59:06,770 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:06,770 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-22 22:59:06,778 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:06,778 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-22 22:59:06,779 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:06,786 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-22 22:59:06,794 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:06,794 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-22 22:59:06,794 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:06,802 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-22 22:59:06,809 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:06,809 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-22 22:59:07,998 - INFO - Начато наблюдение за программой: start_protected_game.exe
+2025-06-22 22:59:08,044 - INFO - Начато наблюдение за программой: Planet Crafter.exe
+2025-06-22 22:59:08,087 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-06-22 22:59:08,129 - INFO - Начато наблюдение за программой: FactoryGameSteam.exe
+2025-06-22 22:59:08,171 - INFO - Начато наблюдение за программой: HorizonZeroDawn.exe
+2025-06-22 22:59:08,214 - INFO - Начато наблюдение за программой: Cult Of The Lamb.exe
+2025-06-22 22:59:08,269 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-06-22 22:59:08,313 - INFO - Начато наблюдение за программой: VotV.exe
+2025-06-22 22:59:29,894 - DEBUG - Using proactor: IocpProactor
+2025-06-22 22:59:29,895 - INFO - Scheduler started
+2025-06-22 22:59:29,895 - DEBUG - Looking for jobs to run
+2025-06-22 22:59:29,896 - DEBUG - No jobs; waiting until a job is added
+2025-06-22 22:59:29,896 - INFO - Начато наблюдение за программой: eldenring.exe
+2025-06-22 22:59:29,966 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:29,966 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-22 22:59:29,974 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:29,974 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-22 22:59:29,974 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:29,982 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-22 22:59:29,990 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:29,990 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-22 22:59:29,990 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:29,990 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-22 22:59:29,990 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-06-22 22:59:29,990 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-22 22:59:31,172 - INFO - Начато наблюдение за программой: start_protected_game.exe
+2025-06-22 22:59:31,218 - INFO - Начато наблюдение за программой: Planet Crafter.exe
+2025-06-22 22:59:31,262 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-06-22 22:59:31,305 - INFO - Начато наблюдение за программой: FactoryGameSteam.exe
+2025-06-22 22:59:31,350 - INFO - Начато наблюдение за программой: HorizonZeroDawn.exe
+2025-06-22 22:59:31,395 - INFO - Начато наблюдение за программой: Cult Of The Lamb.exe
+2025-06-22 22:59:31,442 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-06-22 22:59:31,494 - INFO - Начато наблюдение за программой: VotV.exe
+2025-06-23 09:08:48,627 - INFO - Scheduler started
+2025-06-23 09:08:48,627 - DEBUG - Looking for jobs to run
+2025-06-23 09:08:48,628 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:08:48,629 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:08:48,629 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:08:48,629 - DEBUG - Looking for jobs to run
+2025-06-23 09:08:48,629 - DEBUG - Next wakeup is due at 2025-09-21 09:08:48.628996+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:08:48,631 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:08:48,631 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:08:48,632 - DEBUG - Looking for jobs to run
+2025-06-23 09:08:48,632 - DEBUG - Next wakeup is due at 2025-06-26 09:08:48.631749+05:00 (in 259199.999652 seconds)
+2025-06-23 09:08:48,634 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:08:48,634 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:08:48,634 - DEBUG - Looking for jobs to run
+2025-06-23 09:08:48,634 - DEBUG - Next wakeup is due at 2025-06-26 09:08:48.631749+05:00 (in 259199.997065 seconds)
+2025-06-23 09:08:48,636 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:08:48,636 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:08:48,636 - DEBUG - Looking for jobs to run
+2025-06-23 09:08:48,637 - DEBUG - Next wakeup is due at 2025-06-26 09:08:48.631749+05:00 (in 259199.994684 seconds)
+2025-06-23 09:08:48,639 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:08:48,639 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:08:48,639 - DEBUG - Looking for jobs to run
+2025-06-23 09:08:48,639 - DEBUG - Next wakeup is due at 2025-06-26 09:08:48.631749+05:00 (in 259199.992332 seconds)
+2025-06-23 09:08:48,641 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:08:48,641 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:08:48,641 - DEBUG - Looking for jobs to run
+2025-06-23 09:08:48,641 - DEBUG - Next wakeup is due at 2025-06-26 09:08:48.631749+05:00 (in 259199.990138 seconds)
+2025-06-23 09:11:10,353 - INFO - Scheduler started
+2025-06-23 09:11:10,353 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:10,353 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:11:10,354 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:10,354 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:11:10,354 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:10,355 - DEBUG - Next wakeup is due at 2025-09-21 09:11:10.354693+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:11:10,355 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:10,355 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:11:10,355 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:10,355 - DEBUG - Next wakeup is due at 2025-06-26 09:11:10.355142+05:00 (in 259199.999727 seconds)
+2025-06-23 09:11:10,355 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:10,355 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:11:10,355 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:10,355 - DEBUG - Next wakeup is due at 2025-06-26 09:11:10.355142+05:00 (in 259199.999380 seconds)
+2025-06-23 09:11:10,355 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:10,355 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:11:10,356 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:10,356 - DEBUG - Next wakeup is due at 2025-06-26 09:11:10.355142+05:00 (in 259199.999080 seconds)
+2025-06-23 09:11:10,356 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:10,356 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:11:10,356 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:10,356 - DEBUG - Next wakeup is due at 2025-06-26 09:11:10.355142+05:00 (in 259199.998773 seconds)
+2025-06-23 09:11:10,356 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:10,356 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:11:10,356 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:10,356 - DEBUG - Next wakeup is due at 2025-06-26 09:11:10.355142+05:00 (in 259199.998412 seconds)
+2025-06-23 09:11:25,053 - INFO - Scheduler started
+2025-06-23 09:11:25,053 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:25,053 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:11:25,054 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:25,054 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:11:25,054 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:25,054 - DEBUG - Next wakeup is due at 2025-09-21 09:11:25.054559+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:11:25,055 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:25,055 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:11:25,055 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:25,055 - DEBUG - Next wakeup is due at 2025-06-26 09:11:25.055059+05:00 (in 259199.999598 seconds)
+2025-06-23 09:11:25,055 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:25,055 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:11:25,055 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:25,055 - DEBUG - Next wakeup is due at 2025-06-26 09:11:25.055059+05:00 (in 259199.999236 seconds)
+2025-06-23 09:11:25,056 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:25,056 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:11:25,056 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:25,056 - DEBUG - Next wakeup is due at 2025-06-26 09:11:25.055059+05:00 (in 259199.998897 seconds)
+2025-06-23 09:11:25,056 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:25,056 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:11:25,056 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:25,056 - DEBUG - Next wakeup is due at 2025-06-26 09:11:25.055059+05:00 (in 259199.998429 seconds)
+2025-06-23 09:11:25,056 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:25,056 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:11:25,056 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:25,057 - DEBUG - Next wakeup is due at 2025-06-26 09:11:25.055059+05:00 (in 259199.997966 seconds)
+2025-06-23 09:11:37,691 - INFO - Scheduler started
+2025-06-23 09:11:37,692 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:37,692 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:11:37,693 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:37,693 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:11:37,693 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:37,693 - DEBUG - Next wakeup is due at 2025-09-21 09:11:37.693069+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:11:37,693 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:37,693 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:11:37,693 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:37,693 - DEBUG - Next wakeup is due at 2025-06-26 09:11:37.693509+05:00 (in 259199.999720 seconds)
+2025-06-23 09:11:37,693 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:37,694 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:11:37,694 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:37,694 - DEBUG - Next wakeup is due at 2025-06-26 09:11:37.693509+05:00 (in 259199.999375 seconds)
+2025-06-23 09:11:37,694 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:37,694 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:11:37,694 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:37,694 - DEBUG - Next wakeup is due at 2025-06-26 09:11:37.693509+05:00 (in 259199.999017 seconds)
+2025-06-23 09:11:37,694 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:37,694 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:11:37,694 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:37,694 - DEBUG - Next wakeup is due at 2025-06-26 09:11:37.693509+05:00 (in 259199.998637 seconds)
+2025-06-23 09:11:37,695 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:11:37,695 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:11:37,695 - DEBUG - Looking for jobs to run
+2025-06-23 09:11:37,695 - DEBUG - Next wakeup is due at 2025-06-26 09:11:37.693509+05:00 (in 259199.998264 seconds)
+2025-06-23 09:13:00,520 - INFO - Scheduler started
+2025-06-23 09:13:00,520 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:00,521 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:13:00,522 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:00,522 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:13:00,522 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:00,522 - DEBUG - Next wakeup is due at 2025-09-21 09:13:00.521933+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:13:00,522 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:00,522 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:13:00,522 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:00,522 - DEBUG - Next wakeup is due at 2025-06-26 09:13:00.522468+05:00 (in 259199.999640 seconds)
+2025-06-23 09:13:00,523 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:00,523 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:13:00,523 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:00,523 - DEBUG - Next wakeup is due at 2025-06-26 09:13:00.522468+05:00 (in 259199.999187 seconds)
+2025-06-23 09:13:00,523 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:00,523 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:13:00,523 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:00,523 - DEBUG - Next wakeup is due at 2025-06-26 09:13:00.522468+05:00 (in 259199.998751 seconds)
+2025-06-23 09:13:00,523 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:00,523 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:13:00,523 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:00,524 - DEBUG - Next wakeup is due at 2025-06-26 09:13:00.522468+05:00 (in 259199.998311 seconds)
+2025-06-23 09:13:00,524 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:00,524 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:13:00,524 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:00,524 - DEBUG - Next wakeup is due at 2025-06-26 09:13:00.522468+05:00 (in 259199.997831 seconds)
+2025-06-23 09:13:04,864 - INFO - Scheduler started
+2025-06-23 09:13:04,865 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:04,865 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:13:04,866 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:04,866 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:13:04,866 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:04,866 - DEBUG - Next wakeup is due at 2025-09-21 09:13:04.865922+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:13:04,866 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:04,866 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:13:04,866 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:04,866 - DEBUG - Next wakeup is due at 2025-06-26 09:13:04.866375+05:00 (in 259199.999723 seconds)
+2025-06-23 09:13:04,866 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:04,866 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:13:04,866 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:04,867 - DEBUG - Next wakeup is due at 2025-06-26 09:13:04.866375+05:00 (in 259199.999342 seconds)
+2025-06-23 09:13:04,867 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:04,867 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:13:04,867 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:04,867 - DEBUG - Next wakeup is due at 2025-06-26 09:13:04.866375+05:00 (in 259199.999025 seconds)
+2025-06-23 09:13:04,867 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:04,867 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:13:04,867 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:04,867 - DEBUG - Next wakeup is due at 2025-06-26 09:13:04.866375+05:00 (in 259199.998696 seconds)
+2025-06-23 09:13:04,867 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:13:04,867 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:13:04,867 - DEBUG - Looking for jobs to run
+2025-06-23 09:13:04,868 - DEBUG - Next wakeup is due at 2025-06-26 09:13:04.866375+05:00 (in 259199.998308 seconds)
+2025-06-23 09:14:18,249 - INFO - Scheduler started
+2025-06-23 09:14:18,249 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:18,249 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:14:18,250 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:18,250 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:14:18,251 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:18,251 - DEBUG - Next wakeup is due at 2025-09-21 09:14:18.250647+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:14:18,251 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:18,251 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:14:18,251 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:18,251 - DEBUG - Next wakeup is due at 2025-06-26 09:14:18.251340+05:00 (in 259199.999608 seconds)
+2025-06-23 09:14:18,251 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:18,252 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:14:18,252 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:18,252 - DEBUG - Next wakeup is due at 2025-06-26 09:14:18.251340+05:00 (in 259199.999136 seconds)
+2025-06-23 09:14:18,252 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:18,252 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:14:18,252 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:18,252 - DEBUG - Next wakeup is due at 2025-06-26 09:14:18.251340+05:00 (in 259199.998729 seconds)
+2025-06-23 09:14:18,252 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:18,252 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:14:18,252 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:18,253 - DEBUG - Next wakeup is due at 2025-06-26 09:14:18.251340+05:00 (in 259199.998267 seconds)
+2025-06-23 09:14:18,253 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:18,253 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:14:18,253 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:18,253 - DEBUG - Next wakeup is due at 2025-06-26 09:14:18.251340+05:00 (in 259199.997840 seconds)
+2025-06-23 09:14:29,707 - INFO - Scheduler started
+2025-06-23 09:14:29,707 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:29,708 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:14:29,709 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:29,709 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:14:29,709 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:29,709 - DEBUG - Next wakeup is due at 2025-09-21 09:14:29.708942+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:14:29,709 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:29,709 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:14:29,709 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:29,709 - DEBUG - Next wakeup is due at 2025-06-26 09:14:29.709480+05:00 (in 259199.999753 seconds)
+2025-06-23 09:14:29,710 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:29,710 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:14:29,710 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:29,710 - DEBUG - Next wakeup is due at 2025-06-26 09:14:29.709480+05:00 (in 259199.999296 seconds)
+2025-06-23 09:14:29,710 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:29,710 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:14:29,710 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:29,710 - DEBUG - Next wakeup is due at 2025-06-26 09:14:29.709480+05:00 (in 259199.998794 seconds)
+2025-06-23 09:14:29,710 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:29,710 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:14:29,711 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:29,711 - DEBUG - Next wakeup is due at 2025-06-26 09:14:29.709480+05:00 (in 259199.998420 seconds)
+2025-06-23 09:14:29,711 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:29,711 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:14:29,711 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:29,711 - DEBUG - Next wakeup is due at 2025-06-26 09:14:29.709480+05:00 (in 259199.998028 seconds)
+2025-06-23 09:14:38,980 - INFO - Scheduler started
+2025-06-23 09:14:38,981 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:38,981 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:14:38,982 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:38,982 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:14:38,982 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:38,982 - DEBUG - Next wakeup is due at 2025-09-21 09:14:38.982227+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:14:38,982 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:38,982 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:14:38,982 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:38,982 - DEBUG - Next wakeup is due at 2025-06-26 09:14:38.982666+05:00 (in 259199.999739 seconds)
+2025-06-23 09:14:38,983 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:38,983 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:14:38,983 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:38,983 - DEBUG - Next wakeup is due at 2025-06-26 09:14:38.982666+05:00 (in 259199.999404 seconds)
+2025-06-23 09:14:38,983 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:38,983 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:14:38,983 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:38,983 - DEBUG - Next wakeup is due at 2025-06-26 09:14:38.982666+05:00 (in 259199.999105 seconds)
+2025-06-23 09:14:38,983 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:38,983 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:14:38,983 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:38,983 - DEBUG - Next wakeup is due at 2025-06-26 09:14:38.982666+05:00 (in 259199.998803 seconds)
+2025-06-23 09:14:38,984 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:38,984 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:14:38,984 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:38,984 - DEBUG - Next wakeup is due at 2025-06-26 09:14:38.982666+05:00 (in 259199.998524 seconds)
+2025-06-23 09:14:48,972 - INFO - Scheduler started
+2025-06-23 09:14:48,972 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:48,972 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:14:48,973 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:48,973 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:14:48,973 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:48,973 - DEBUG - Next wakeup is due at 2025-09-21 09:14:48.973380+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:14:48,974 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:48,974 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:14:48,974 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:48,974 - DEBUG - Next wakeup is due at 2025-06-26 09:14:48.973953+05:00 (in 259199.999735 seconds)
+2025-06-23 09:14:48,974 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:48,974 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:14:48,974 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:48,974 - DEBUG - Next wakeup is due at 2025-06-26 09:14:48.973953+05:00 (in 259199.999202 seconds)
+2025-06-23 09:14:48,974 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:48,975 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:14:48,975 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:48,975 - DEBUG - Next wakeup is due at 2025-06-26 09:14:48.973953+05:00 (in 259199.998732 seconds)
+2025-06-23 09:14:48,975 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:48,975 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:14:48,975 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:48,975 - DEBUG - Next wakeup is due at 2025-06-26 09:14:48.973953+05:00 (in 259199.998279 seconds)
+2025-06-23 09:14:48,975 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:48,975 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:14:48,975 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:48,976 - DEBUG - Next wakeup is due at 2025-06-26 09:14:48.973953+05:00 (in 259199.997847 seconds)
+2025-06-23 09:14:50,849 - INFO - Scheduler started
+2025-06-23 09:14:50,849 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:50,849 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:14:50,850 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:50,850 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:14:50,850 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:50,850 - DEBUG - Next wakeup is due at 2025-09-21 09:14:50.850531+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:14:50,851 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:50,851 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:14:50,851 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:50,851 - DEBUG - Next wakeup is due at 2025-06-26 09:14:50.851021+05:00 (in 259199.999720 seconds)
+2025-06-23 09:14:50,851 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:50,851 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:14:50,851 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:50,851 - DEBUG - Next wakeup is due at 2025-06-26 09:14:50.851021+05:00 (in 259199.999326 seconds)
+2025-06-23 09:14:50,851 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:50,851 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:14:50,851 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:50,852 - DEBUG - Next wakeup is due at 2025-06-26 09:14:50.851021+05:00 (in 259199.999002 seconds)
+2025-06-23 09:14:50,852 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:50,852 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:14:50,852 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:50,852 - DEBUG - Next wakeup is due at 2025-06-26 09:14:50.851021+05:00 (in 259199.998700 seconds)
+2025-06-23 09:14:50,852 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:14:50,852 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:14:50,852 - DEBUG - Looking for jobs to run
+2025-06-23 09:14:50,852 - DEBUG - Next wakeup is due at 2025-06-26 09:14:50.851021+05:00 (in 259199.998402 seconds)
+2025-06-23 09:16:44,805 - INFO - Scheduler started
+2025-06-23 09:16:44,805 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:44,805 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:16:44,806 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:44,806 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:16:44,806 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:44,806 - DEBUG - Next wakeup is due at 2025-09-21 09:16:44.806208+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:16:44,806 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:44,806 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:16:44,806 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:44,807 - DEBUG - Next wakeup is due at 2025-06-26 09:16:44.806724+05:00 (in 259199.999729 seconds)
+2025-06-23 09:16:44,807 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:44,807 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:16:44,807 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:44,807 - DEBUG - Next wakeup is due at 2025-06-26 09:16:44.806724+05:00 (in 259199.999375 seconds)
+2025-06-23 09:16:44,807 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:44,807 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:16:44,807 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:44,807 - DEBUG - Next wakeup is due at 2025-06-26 09:16:44.806724+05:00 (in 259199.999055 seconds)
+2025-06-23 09:16:44,807 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:44,807 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:16:44,807 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:44,808 - DEBUG - Next wakeup is due at 2025-06-26 09:16:44.806724+05:00 (in 259199.998703 seconds)
+2025-06-23 09:16:44,808 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:44,808 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:16:44,808 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:44,808 - DEBUG - Next wakeup is due at 2025-06-26 09:16:44.806724+05:00 (in 259199.998361 seconds)
+2025-06-23 09:16:48,162 - INFO - Scheduler started
+2025-06-23 09:16:48,162 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:48,162 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:16:48,163 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:48,163 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:16:48,163 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:48,163 - DEBUG - Next wakeup is due at 2025-09-21 09:16:48.163477+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:16:48,164 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:48,164 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:16:48,164 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:48,164 - DEBUG - Next wakeup is due at 2025-06-26 09:16:48.164025+05:00 (in 259199.999697 seconds)
+2025-06-23 09:16:48,164 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:48,164 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:16:48,164 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:48,164 - DEBUG - Next wakeup is due at 2025-06-26 09:16:48.164025+05:00 (in 259199.999294 seconds)
+2025-06-23 09:16:48,164 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:48,164 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:16:48,165 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:48,165 - DEBUG - Next wakeup is due at 2025-06-26 09:16:48.164025+05:00 (in 259199.998940 seconds)
+2025-06-23 09:16:48,165 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:48,165 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:16:48,165 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:48,165 - DEBUG - Next wakeup is due at 2025-06-26 09:16:48.164025+05:00 (in 259199.998616 seconds)
+2025-06-23 09:16:48,165 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:16:48,165 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:16:48,165 - DEBUG - Looking for jobs to run
+2025-06-23 09:16:48,165 - DEBUG - Next wakeup is due at 2025-06-26 09:16:48.164025+05:00 (in 259199.998282 seconds)
+2025-06-23 09:17:07,425 - INFO - Scheduler started
+2025-06-23 09:17:07,426 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:07,426 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:17:07,427 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:07,427 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:17:07,427 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:07,427 - DEBUG - Next wakeup is due at 2025-09-21 09:17:07.427032+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:17:07,427 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:07,427 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:17:07,427 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:07,427 - DEBUG - Next wakeup is due at 2025-06-26 09:17:07.427570+05:00 (in 259199.999668 seconds)
+2025-06-23 09:17:07,428 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:07,428 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:17:07,428 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:07,428 - DEBUG - Next wakeup is due at 2025-06-26 09:17:07.427570+05:00 (in 259199.999221 seconds)
+2025-06-23 09:17:07,428 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:07,428 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:17:07,428 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:07,428 - DEBUG - Next wakeup is due at 2025-06-26 09:17:07.427570+05:00 (in 259199.998753 seconds)
+2025-06-23 09:17:07,429 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:07,429 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:17:07,429 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:07,429 - DEBUG - Next wakeup is due at 2025-06-26 09:17:07.427570+05:00 (in 259199.998311 seconds)
+2025-06-23 09:17:07,429 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:07,429 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:17:07,429 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:07,429 - DEBUG - Next wakeup is due at 2025-06-26 09:17:07.427570+05:00 (in 259199.997843 seconds)
+2025-06-23 09:17:20,698 - INFO - Scheduler started
+2025-06-23 09:17:20,699 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:20,699 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:17:20,700 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:20,700 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:17:20,700 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:20,700 - DEBUG - Next wakeup is due at 2025-09-21 09:17:20.700029+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:17:20,700 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:20,700 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:17:20,700 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:20,700 - DEBUG - Next wakeup is due at 2025-06-26 09:17:20.700454+05:00 (in 259199.999747 seconds)
+2025-06-23 09:17:20,700 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:20,700 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:17:20,700 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:20,701 - DEBUG - Next wakeup is due at 2025-06-26 09:17:20.700454+05:00 (in 259199.999423 seconds)
+2025-06-23 09:17:20,701 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:20,701 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:17:20,701 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:20,701 - DEBUG - Next wakeup is due at 2025-06-26 09:17:20.700454+05:00 (in 259199.999132 seconds)
+2025-06-23 09:17:20,701 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:20,701 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:17:20,701 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:20,701 - DEBUG - Next wakeup is due at 2025-06-26 09:17:20.700454+05:00 (in 259199.998814 seconds)
+2025-06-23 09:17:20,701 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:20,701 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:17:20,701 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:20,701 - DEBUG - Next wakeup is due at 2025-06-26 09:17:20.700454+05:00 (in 259199.998527 seconds)
+2025-06-23 09:17:27,942 - INFO - Scheduler started
+2025-06-23 09:17:27,943 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:27,943 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:17:27,944 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:27,944 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:17:27,944 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:27,944 - DEBUG - Next wakeup is due at 2025-09-21 09:17:27.944069+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:17:27,944 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:27,944 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:17:27,944 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:27,944 - DEBUG - Next wakeup is due at 2025-06-26 09:17:27.944685+05:00 (in 259199.999724 seconds)
+2025-06-23 09:17:27,945 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:27,945 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:17:27,945 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:27,945 - DEBUG - Next wakeup is due at 2025-06-26 09:17:27.944685+05:00 (in 259199.999395 seconds)
+2025-06-23 09:17:27,945 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:27,945 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:17:27,945 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:27,945 - DEBUG - Next wakeup is due at 2025-06-26 09:17:27.944685+05:00 (in 259199.999102 seconds)
+2025-06-23 09:17:27,945 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:27,945 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:17:27,945 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:27,945 - DEBUG - Next wakeup is due at 2025-06-26 09:17:27.944685+05:00 (in 259199.998790 seconds)
+2025-06-23 09:17:27,946 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:27,946 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:17:27,946 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:27,946 - DEBUG - Next wakeup is due at 2025-06-26 09:17:27.944685+05:00 (in 259199.998495 seconds)
+2025-06-23 09:17:45,867 - INFO - Scheduler started
+2025-06-23 09:17:45,867 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:45,867 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:17:45,868 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:45,868 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:17:45,868 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:45,868 - DEBUG - Next wakeup is due at 2025-09-21 09:17:45.868413+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:17:45,868 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:45,869 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:17:45,869 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:45,869 - DEBUG - Next wakeup is due at 2025-06-26 09:17:45.868867+05:00 (in 259199.999687 seconds)
+2025-06-23 09:17:45,869 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:45,869 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:17:45,869 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:45,869 - DEBUG - Next wakeup is due at 2025-06-26 09:17:45.868867+05:00 (in 259199.999257 seconds)
+2025-06-23 09:17:45,869 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:45,869 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:17:45,869 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:45,870 - DEBUG - Next wakeup is due at 2025-06-26 09:17:45.868867+05:00 (in 259199.998807 seconds)
+2025-06-23 09:17:45,870 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:45,870 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:17:45,870 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:45,870 - DEBUG - Next wakeup is due at 2025-06-26 09:17:45.868867+05:00 (in 259199.998377 seconds)
+2025-06-23 09:17:45,870 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:17:45,870 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:17:45,870 - DEBUG - Looking for jobs to run
+2025-06-23 09:17:45,870 - DEBUG - Next wakeup is due at 2025-06-26 09:17:45.868867+05:00 (in 259199.997926 seconds)
+2025-06-23 09:18:53,181 - INFO - Scheduler started
+2025-06-23 09:18:53,181 - DEBUG - Looking for jobs to run
+2025-06-23 09:18:53,181 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:18:53,182 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:18:53,182 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:18:53,182 - DEBUG - Looking for jobs to run
+2025-06-23 09:18:53,183 - DEBUG - Next wakeup is due at 2025-09-21 09:18:53.182657+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:18:53,183 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:18:53,183 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:18:53,183 - DEBUG - Looking for jobs to run
+2025-06-23 09:18:53,183 - DEBUG - Next wakeup is due at 2025-06-26 09:18:53.183134+05:00 (in 259199.999699 seconds)
+2025-06-23 09:18:53,183 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:18:53,183 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:18:53,183 - DEBUG - Looking for jobs to run
+2025-06-23 09:18:53,183 - DEBUG - Next wakeup is due at 2025-06-26 09:18:53.183134+05:00 (in 259199.999372 seconds)
+2025-06-23 09:18:53,183 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:18:53,183 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:18:53,184 - DEBUG - Looking for jobs to run
+2025-06-23 09:18:53,184 - DEBUG - Next wakeup is due at 2025-06-26 09:18:53.183134+05:00 (in 259199.999066 seconds)
+2025-06-23 09:18:53,184 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:18:53,184 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:18:53,184 - DEBUG - Looking for jobs to run
+2025-06-23 09:18:53,184 - DEBUG - Next wakeup is due at 2025-06-26 09:18:53.183134+05:00 (in 259199.998779 seconds)
+2025-06-23 09:18:53,184 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:18:53,184 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:18:53,184 - DEBUG - Looking for jobs to run
+2025-06-23 09:18:53,184 - DEBUG - Next wakeup is due at 2025-06-26 09:18:53.183134+05:00 (in 259199.998505 seconds)
+2025-06-23 09:19:00,796 - INFO - Scheduler started
+2025-06-23 09:19:00,796 - DEBUG - Looking for jobs to run
+2025-06-23 09:19:00,796 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:19:00,797 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:19:00,797 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:19:00,797 - DEBUG - Looking for jobs to run
+2025-06-23 09:19:00,797 - DEBUG - Next wakeup is due at 2025-09-21 09:19:00.797576+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:19:00,798 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:19:00,798 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:19:00,798 - DEBUG - Looking for jobs to run
+2025-06-23 09:19:00,798 - DEBUG - Next wakeup is due at 2025-06-26 09:19:00.798082+05:00 (in 259199.999683 seconds)
+2025-06-23 09:19:00,798 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:19:00,798 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:19:00,798 - DEBUG - Looking for jobs to run
+2025-06-23 09:19:00,798 - DEBUG - Next wakeup is due at 2025-06-26 09:19:00.798082+05:00 (in 259199.999243 seconds)
+2025-06-23 09:19:00,799 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:19:00,799 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:19:00,799 - DEBUG - Looking for jobs to run
+2025-06-23 09:19:00,799 - DEBUG - Next wakeup is due at 2025-06-26 09:19:00.798082+05:00 (in 259199.998869 seconds)
+2025-06-23 09:19:00,799 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:19:00,799 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:19:00,799 - DEBUG - Looking for jobs to run
+2025-06-23 09:19:00,799 - DEBUG - Next wakeup is due at 2025-06-26 09:19:00.798082+05:00 (in 259199.998545 seconds)
+2025-06-23 09:19:00,799 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:19:00,799 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:19:00,799 - DEBUG - Looking for jobs to run
+2025-06-23 09:19:00,799 - DEBUG - Next wakeup is due at 2025-06-26 09:19:00.798082+05:00 (in 259199.998207 seconds)
+2025-06-23 09:20:43,216 - INFO - Scheduler started
+2025-06-23 09:20:43,217 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:43,217 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:20:43,218 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:43,218 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:20:43,218 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:43,218 - DEBUG - Next wakeup is due at 2025-09-21 09:20:43.218214+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:20:43,218 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:43,218 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:20:43,219 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:43,219 - DEBUG - Next wakeup is due at 2025-06-26 09:20:43.218822+05:00 (in 259199.999705 seconds)
+2025-06-23 09:20:43,219 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:43,219 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:20:43,219 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:43,219 - DEBUG - Next wakeup is due at 2025-06-26 09:20:43.218822+05:00 (in 259199.999244 seconds)
+2025-06-23 09:20:43,219 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:43,219 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:20:43,219 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:43,220 - DEBUG - Next wakeup is due at 2025-06-26 09:20:43.218822+05:00 (in 259199.998775 seconds)
+2025-06-23 09:20:43,220 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:43,220 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:20:43,220 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:43,220 - DEBUG - Next wakeup is due at 2025-06-26 09:20:43.218822+05:00 (in 259199.998313 seconds)
+2025-06-23 09:20:43,220 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:43,220 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:20:43,220 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:43,220 - DEBUG - Next wakeup is due at 2025-06-26 09:20:43.218822+05:00 (in 259199.997865 seconds)
+2025-06-23 09:20:46,881 - INFO - Scheduler started
+2025-06-23 09:20:46,881 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:46,881 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:20:46,882 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:46,882 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:20:46,882 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:46,883 - DEBUG - Next wakeup is due at 2025-09-21 09:20:46.882634+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:20:46,883 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:46,883 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:20:46,883 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:46,883 - DEBUG - Next wakeup is due at 2025-06-26 09:20:46.883158+05:00 (in 259199.999631 seconds)
+2025-06-23 09:20:46,883 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:46,883 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:20:46,883 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:46,884 - DEBUG - Next wakeup is due at 2025-06-26 09:20:46.883158+05:00 (in 259199.999135 seconds)
+2025-06-23 09:20:46,884 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:46,884 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:20:46,884 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:46,884 - DEBUG - Next wakeup is due at 2025-06-26 09:20:46.883158+05:00 (in 259199.998656 seconds)
+2025-06-23 09:20:46,884 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:46,884 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:20:46,884 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:46,884 - DEBUG - Next wakeup is due at 2025-06-26 09:20:46.883158+05:00 (in 259199.998238 seconds)
+2025-06-23 09:20:46,885 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:20:46,885 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:20:46,885 - DEBUG - Looking for jobs to run
+2025-06-23 09:20:46,885 - DEBUG - Next wakeup is due at 2025-06-26 09:20:46.883158+05:00 (in 259199.997775 seconds)
+2025-06-23 09:21:08,041 - INFO - Scheduler started
+2025-06-23 09:21:08,042 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:08,042 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:21:08,043 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:08,043 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:21:08,043 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:08,043 - DEBUG - Next wakeup is due at 2025-09-21 09:21:08.043177+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:21:08,043 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:08,043 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:21:08,043 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:08,043 - DEBUG - Next wakeup is due at 2025-06-26 09:21:08.043614+05:00 (in 259199.999749 seconds)
+2025-06-23 09:21:08,044 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:08,044 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:21:08,044 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:08,044 - DEBUG - Next wakeup is due at 2025-06-26 09:21:08.043614+05:00 (in 259199.999390 seconds)
+2025-06-23 09:21:08,044 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:08,044 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:21:08,044 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:08,044 - DEBUG - Next wakeup is due at 2025-06-26 09:21:08.043614+05:00 (in 259199.999077 seconds)
+2025-06-23 09:21:08,044 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:08,044 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:21:08,044 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:08,044 - DEBUG - Next wakeup is due at 2025-06-26 09:21:08.043614+05:00 (in 259199.998771 seconds)
+2025-06-23 09:21:08,044 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:08,045 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:21:08,045 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:08,045 - DEBUG - Next wakeup is due at 2025-06-26 09:21:08.043614+05:00 (in 259199.998473 seconds)
+2025-06-23 09:21:26,558 - INFO - Scheduler started
+2025-06-23 09:21:26,558 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:26,558 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:21:26,559 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:26,559 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:21:26,559 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:26,559 - DEBUG - Next wakeup is due at 2025-09-21 09:21:26.559492+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:21:26,560 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:26,560 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:21:26,560 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:26,560 - DEBUG - Next wakeup is due at 2025-06-26 09:21:26.560009+05:00 (in 259199.999651 seconds)
+2025-06-23 09:21:26,560 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:26,560 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:21:26,560 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:26,560 - DEBUG - Next wakeup is due at 2025-06-26 09:21:26.560009+05:00 (in 259199.999188 seconds)
+2025-06-23 09:21:26,561 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:26,561 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:21:26,561 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:26,561 - DEBUG - Next wakeup is due at 2025-06-26 09:21:26.560009+05:00 (in 259199.998762 seconds)
+2025-06-23 09:21:26,561 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:26,561 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:21:26,561 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:26,561 - DEBUG - Next wakeup is due at 2025-06-26 09:21:26.560009+05:00 (in 259199.998206 seconds)
+2025-06-23 09:21:26,562 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:21:26,562 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:21:26,562 - DEBUG - Looking for jobs to run
+2025-06-23 09:21:26,562 - DEBUG - Next wakeup is due at 2025-06-26 09:21:26.560009+05:00 (in 259199.997808 seconds)
+2025-06-23 09:27:27,867 - INFO - Scheduler started
+2025-06-23 09:27:27,867 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:27,867 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:27:27,868 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:27,868 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:27:27,868 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:27,869 - DEBUG - Next wakeup is due at 2025-09-21 09:27:27.868688+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:27:27,869 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:27,869 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:27:27,869 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:27,869 - DEBUG - Next wakeup is due at 2025-06-26 09:27:27.869307+05:00 (in 259199.999747 seconds)
+2025-06-23 09:27:27,869 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:27,869 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:27:27,869 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:27,870 - DEBUG - Next wakeup is due at 2025-06-26 09:27:27.869307+05:00 (in 259199.999208 seconds)
+2025-06-23 09:27:27,870 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:27,870 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:27:27,870 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:27,870 - DEBUG - Next wakeup is due at 2025-06-26 09:27:27.869307+05:00 (in 259199.998751 seconds)
+2025-06-23 09:27:27,870 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:27,870 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:27:27,870 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:27,871 - DEBUG - Next wakeup is due at 2025-06-26 09:27:27.869307+05:00 (in 259199.998314 seconds)
+2025-06-23 09:27:27,871 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:27,871 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:27:27,871 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:27,871 - DEBUG - Next wakeup is due at 2025-06-26 09:27:27.869307+05:00 (in 259199.997867 seconds)
+2025-06-23 09:27:51,879 - INFO - Scheduler started
+2025-06-23 09:27:51,880 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:51,880 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:27:51,881 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:51,881 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:27:51,881 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:51,881 - DEBUG - Next wakeup is due at 2025-09-21 09:27:51.880921+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:27:51,881 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:51,881 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:27:51,881 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:51,881 - DEBUG - Next wakeup is due at 2025-06-26 09:27:51.881406+05:00 (in 259199.999754 seconds)
+2025-06-23 09:27:51,881 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:51,881 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:27:51,881 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:51,881 - DEBUG - Next wakeup is due at 2025-06-26 09:27:51.881406+05:00 (in 259199.999456 seconds)
+2025-06-23 09:27:51,882 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:51,882 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:27:51,882 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:51,882 - DEBUG - Next wakeup is due at 2025-06-26 09:27:51.881406+05:00 (in 259199.999170 seconds)
+2025-06-23 09:27:51,882 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:51,882 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:27:51,882 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:51,882 - DEBUG - Next wakeup is due at 2025-06-26 09:27:51.881406+05:00 (in 259199.998790 seconds)
+2025-06-23 09:27:51,882 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:27:51,882 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:27:51,882 - DEBUG - Looking for jobs to run
+2025-06-23 09:27:51,882 - DEBUG - Next wakeup is due at 2025-06-26 09:27:51.881406+05:00 (in 259199.998514 seconds)
+2025-06-23 09:28:22,286 - INFO - Scheduler started
+2025-06-23 09:28:22,287 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:22,287 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:28:22,288 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:22,288 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:28:22,288 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:22,288 - DEBUG - Next wakeup is due at 2025-09-21 09:28:22.288259+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:28:22,288 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:22,289 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:28:22,289 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:22,289 - DEBUG - Next wakeup is due at 2025-06-26 09:28:22.288907+05:00 (in 259199.999669 seconds)
+2025-06-23 09:28:22,289 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:22,289 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:28:22,289 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:22,289 - DEBUG - Next wakeup is due at 2025-06-26 09:28:22.288907+05:00 (in 259199.999271 seconds)
+2025-06-23 09:28:22,289 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:22,289 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:28:22,289 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:22,290 - DEBUG - Next wakeup is due at 2025-06-26 09:28:22.288907+05:00 (in 259199.998855 seconds)
+2025-06-23 09:28:22,290 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:22,290 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:28:22,290 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:22,290 - DEBUG - Next wakeup is due at 2025-06-26 09:28:22.288907+05:00 (in 259199.998367 seconds)
+2025-06-23 09:28:22,290 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:22,290 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:28:22,290 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:22,290 - DEBUG - Next wakeup is due at 2025-06-26 09:28:22.288907+05:00 (in 259199.997925 seconds)
+2025-06-23 09:28:34,016 - INFO - Scheduler started
+2025-06-23 09:28:34,017 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:34,017 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:28:34,018 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:34,018 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:28:34,018 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:34,018 - DEBUG - Next wakeup is due at 2025-09-21 09:28:34.017957+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:28:34,018 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:34,018 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:28:34,018 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:34,018 - DEBUG - Next wakeup is due at 2025-06-26 09:28:34.018417+05:00 (in 259199.999657 seconds)
+2025-06-23 09:28:34,018 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:34,019 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:28:34,019 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:34,019 - DEBUG - Next wakeup is due at 2025-06-26 09:28:34.018417+05:00 (in 259199.999180 seconds)
+2025-06-23 09:28:34,019 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:34,019 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:28:34,019 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:34,019 - DEBUG - Next wakeup is due at 2025-06-26 09:28:34.018417+05:00 (in 259199.998632 seconds)
+2025-06-23 09:28:34,020 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:34,020 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:28:34,020 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:34,020 - DEBUG - Next wakeup is due at 2025-06-26 09:28:34.018417+05:00 (in 259199.998206 seconds)
+2025-06-23 09:28:34,020 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:34,020 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:28:34,020 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:34,020 - DEBUG - Next wakeup is due at 2025-06-26 09:28:34.018417+05:00 (in 259199.997718 seconds)
+2025-06-23 09:28:43,983 - INFO - Scheduler started
+2025-06-23 09:28:43,984 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:43,984 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:28:43,985 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:43,985 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:28:43,985 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:43,985 - DEBUG - Next wakeup is due at 2025-09-21 09:28:43.985121+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:28:43,985 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:43,985 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:28:43,985 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:43,985 - DEBUG - Next wakeup is due at 2025-06-26 09:28:43.985586+05:00 (in 259199.999701 seconds)
+2025-06-23 09:28:43,986 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:43,986 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:28:43,986 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:43,986 - DEBUG - Next wakeup is due at 2025-06-26 09:28:43.985586+05:00 (in 259199.999299 seconds)
+2025-06-23 09:28:43,986 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:43,986 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:28:43,986 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:43,986 - DEBUG - Next wakeup is due at 2025-06-26 09:28:43.985586+05:00 (in 259199.998994 seconds)
+2025-06-23 09:28:43,986 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:43,986 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:28:43,986 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:43,986 - DEBUG - Next wakeup is due at 2025-06-26 09:28:43.985586+05:00 (in 259199.998667 seconds)
+2025-06-23 09:28:43,987 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:43,987 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:28:43,987 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:43,987 - DEBUG - Next wakeup is due at 2025-06-26 09:28:43.985586+05:00 (in 259199.998349 seconds)
+2025-06-23 09:28:54,112 - INFO - Scheduler started
+2025-06-23 09:28:54,112 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:54,112 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:28:54,113 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:54,113 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:28:54,113 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:54,114 - DEBUG - Next wakeup is due at 2025-09-21 09:28:54.113657+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:28:54,114 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:54,114 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:28:54,114 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:54,114 - DEBUG - Next wakeup is due at 2025-06-26 09:28:54.114113+05:00 (in 259199.999734 seconds)
+2025-06-23 09:28:54,114 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:54,114 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:28:54,114 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:54,114 - DEBUG - Next wakeup is due at 2025-06-26 09:28:54.114113+05:00 (in 259199.999388 seconds)
+2025-06-23 09:28:54,114 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:54,114 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:28:54,114 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:54,115 - DEBUG - Next wakeup is due at 2025-06-26 09:28:54.114113+05:00 (in 259199.999042 seconds)
+2025-06-23 09:28:54,115 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:54,115 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:28:54,115 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:54,115 - DEBUG - Next wakeup is due at 2025-06-26 09:28:54.114113+05:00 (in 259199.998727 seconds)
+2025-06-23 09:28:54,115 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:28:54,115 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:28:54,115 - DEBUG - Looking for jobs to run
+2025-06-23 09:28:54,115 - DEBUG - Next wakeup is due at 2025-06-26 09:28:54.114113+05:00 (in 259199.998328 seconds)
+2025-06-23 09:29:01,514 - INFO - Scheduler started
+2025-06-23 09:29:01,514 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:01,514 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:29:01,515 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:01,515 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:29:01,515 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:01,515 - DEBUG - Next wakeup is due at 2025-09-21 09:29:01.515427+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:29:01,516 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:01,516 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:29:01,516 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:01,516 - DEBUG - Next wakeup is due at 2025-06-26 09:29:01.515920+05:00 (in 259199.999729 seconds)
+2025-06-23 09:29:01,516 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:01,516 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:29:01,516 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:01,516 - DEBUG - Next wakeup is due at 2025-06-26 09:29:01.515920+05:00 (in 259199.999389 seconds)
+2025-06-23 09:29:01,516 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:01,516 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:29:01,516 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:01,516 - DEBUG - Next wakeup is due at 2025-06-26 09:29:01.515920+05:00 (in 259199.999090 seconds)
+2025-06-23 09:29:01,516 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:01,517 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:29:01,517 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:01,517 - DEBUG - Next wakeup is due at 2025-06-26 09:29:01.515920+05:00 (in 259199.998803 seconds)
+2025-06-23 09:29:01,517 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:01,517 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:29:01,517 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:01,517 - DEBUG - Next wakeup is due at 2025-06-26 09:29:01.515920+05:00 (in 259199.998518 seconds)
+2025-06-23 09:29:20,259 - INFO - Scheduler started
+2025-06-23 09:29:20,260 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:20,260 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:29:20,261 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:20,261 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:29:20,261 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:20,261 - DEBUG - Next wakeup is due at 2025-09-21 09:29:20.261187+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:29:20,261 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:20,261 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:29:20,261 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:20,261 - DEBUG - Next wakeup is due at 2025-06-26 09:29:20.261639+05:00 (in 259199.999731 seconds)
+2025-06-23 09:29:20,262 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:20,262 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:29:20,262 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:20,262 - DEBUG - Next wakeup is due at 2025-06-26 09:29:20.261639+05:00 (in 259199.999401 seconds)
+2025-06-23 09:29:20,262 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:20,262 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:29:20,262 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:20,262 - DEBUG - Next wakeup is due at 2025-06-26 09:29:20.261639+05:00 (in 259199.999068 seconds)
+2025-06-23 09:29:20,262 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:20,262 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:29:20,262 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:20,262 - DEBUG - Next wakeup is due at 2025-06-26 09:29:20.261639+05:00 (in 259199.998725 seconds)
+2025-06-23 09:29:20,263 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:20,263 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:29:20,263 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:20,263 - DEBUG - Next wakeup is due at 2025-06-26 09:29:20.261639+05:00 (in 259199.998405 seconds)
+2025-06-23 09:29:33,966 - INFO - Scheduler started
+2025-06-23 09:29:33,966 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:33,966 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:29:33,967 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:33,967 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:29:33,967 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:33,967 - DEBUG - Next wakeup is due at 2025-09-21 09:29:33.967556+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:29:33,968 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:33,968 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:29:33,968 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:33,968 - DEBUG - Next wakeup is due at 2025-06-26 09:29:33.967983+05:00 (in 259199.999713 seconds)
+2025-06-23 09:29:33,968 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:33,968 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:29:33,968 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:33,968 - DEBUG - Next wakeup is due at 2025-06-26 09:29:33.967983+05:00 (in 259199.999337 seconds)
+2025-06-23 09:29:33,968 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:33,968 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:29:33,968 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:33,968 - DEBUG - Next wakeup is due at 2025-06-26 09:29:33.967983+05:00 (in 259199.999013 seconds)
+2025-06-23 09:29:33,969 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:33,969 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:29:33,969 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:33,969 - DEBUG - Next wakeup is due at 2025-06-26 09:29:33.967983+05:00 (in 259199.998695 seconds)
+2025-06-23 09:29:33,969 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:33,969 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:29:33,969 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:33,969 - DEBUG - Next wakeup is due at 2025-06-26 09:29:33.967983+05:00 (in 259199.998373 seconds)
+2025-06-23 09:29:45,403 - INFO - Scheduler started
+2025-06-23 09:29:45,404 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:45,404 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:29:45,405 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:45,405 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:29:45,405 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:45,405 - DEBUG - Next wakeup is due at 2025-09-21 09:29:45.405277+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:29:45,406 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:45,406 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:29:45,406 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:45,406 - DEBUG - Next wakeup is due at 2025-06-26 09:29:45.405905+05:00 (in 259199.999628 seconds)
+2025-06-23 09:29:45,406 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:45,406 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:29:45,406 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:45,406 - DEBUG - Next wakeup is due at 2025-06-26 09:29:45.405905+05:00 (in 259199.999134 seconds)
+2025-06-23 09:29:45,406 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:45,407 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:29:45,407 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:45,407 - DEBUG - Next wakeup is due at 2025-06-26 09:29:45.405905+05:00 (in 259199.998736 seconds)
+2025-06-23 09:29:45,407 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:45,407 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:29:45,407 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:45,407 - DEBUG - Next wakeup is due at 2025-06-26 09:29:45.405905+05:00 (in 259199.998304 seconds)
+2025-06-23 09:29:45,407 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:29:45,407 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:29:45,407 - DEBUG - Looking for jobs to run
+2025-06-23 09:29:45,408 - DEBUG - Next wakeup is due at 2025-06-26 09:29:45.405905+05:00 (in 259199.997873 seconds)
+2025-06-23 09:30:14,122 - INFO - Scheduler started
+2025-06-23 09:30:14,122 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:14,122 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:30:14,123 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:14,123 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:30:14,123 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:14,124 - DEBUG - Next wakeup is due at 2025-09-21 09:30:14.123720+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:30:14,124 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:14,124 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:30:14,124 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:14,124 - DEBUG - Next wakeup is due at 2025-06-26 09:30:14.124266+05:00 (in 259199.999711 seconds)
+2025-06-23 09:30:14,124 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:14,124 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:30:14,124 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:14,125 - DEBUG - Next wakeup is due at 2025-06-26 09:30:14.124266+05:00 (in 259199.999195 seconds)
+2025-06-23 09:30:14,125 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:14,125 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:30:14,125 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:14,125 - DEBUG - Next wakeup is due at 2025-06-26 09:30:14.124266+05:00 (in 259199.998741 seconds)
+2025-06-23 09:30:14,125 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:14,125 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:30:14,125 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:14,125 - DEBUG - Next wakeup is due at 2025-06-26 09:30:14.124266+05:00 (in 259199.998276 seconds)
+2025-06-23 09:30:14,126 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:14,126 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:30:14,126 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:14,126 - DEBUG - Next wakeup is due at 2025-06-26 09:30:14.124266+05:00 (in 259199.997845 seconds)
+2025-06-23 09:30:50,915 - INFO - Scheduler started
+2025-06-23 09:30:50,915 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:50,915 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:30:50,916 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:50,916 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:30:50,916 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:50,916 - DEBUG - Next wakeup is due at 2025-09-21 09:30:50.916566+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:30:50,917 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:50,917 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:30:50,917 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:50,917 - DEBUG - Next wakeup is due at 2025-06-26 09:30:50.917099+05:00 (in 259199.999684 seconds)
+2025-06-23 09:30:50,917 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:50,917 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:30:50,917 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:50,917 - DEBUG - Next wakeup is due at 2025-06-26 09:30:50.917099+05:00 (in 259199.999202 seconds)
+2025-06-23 09:30:50,918 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:50,918 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:30:50,918 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:50,918 - DEBUG - Next wakeup is due at 2025-06-26 09:30:50.917099+05:00 (in 259199.998691 seconds)
+2025-06-23 09:30:50,918 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:50,918 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:30:50,918 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:50,918 - DEBUG - Next wakeup is due at 2025-06-26 09:30:50.917099+05:00 (in 259199.998260 seconds)
+2025-06-23 09:30:50,919 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:30:50,919 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:30:50,919 - DEBUG - Looking for jobs to run
+2025-06-23 09:30:50,919 - DEBUG - Next wakeup is due at 2025-06-26 09:30:50.917099+05:00 (in 259199.997775 seconds)
+2025-06-23 09:31:34,821 - INFO - Scheduler started
+2025-06-23 09:31:34,821 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:34,821 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:31:34,822 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:34,822 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:31:34,822 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:34,822 - DEBUG - Next wakeup is due at 2025-09-21 09:31:34.822647+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:31:34,823 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:34,823 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:31:34,823 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:34,823 - DEBUG - Next wakeup is due at 2025-06-26 09:31:34.823167+05:00 (in 259199.999664 seconds)
+2025-06-23 09:31:34,823 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:34,823 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:31:34,823 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:34,823 - DEBUG - Next wakeup is due at 2025-06-26 09:31:34.823167+05:00 (in 259199.999293 seconds)
+2025-06-23 09:31:34,824 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:34,824 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:31:34,824 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:34,824 - DEBUG - Next wakeup is due at 2025-06-26 09:31:34.823167+05:00 (in 259199.998801 seconds)
+2025-06-23 09:31:34,824 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:34,824 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:31:34,824 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:34,824 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:34,825 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:31:34,825 - DEBUG - Next wakeup is due at 2025-06-26 09:31:34.823167+05:00 (in 259199.998009 seconds)
+2025-06-23 09:31:34,825 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:34,825 - DEBUG - Next wakeup is due at 2025-06-26 09:31:34.823167+05:00 (in 259199.997859 seconds)
+2025-06-23 09:31:52,825 - INFO - Scheduler started
+2025-06-23 09:31:52,826 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:52,826 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:31:52,827 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:52,827 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:31:52,827 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:52,827 - DEBUG - Next wakeup is due at 2025-09-21 09:31:52.827143+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:31:52,827 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:52,827 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:31:52,827 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:52,827 - DEBUG - Next wakeup is due at 2025-06-26 09:31:52.827576+05:00 (in 259199.999746 seconds)
+2025-06-23 09:31:52,828 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:52,828 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:31:52,828 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:52,828 - DEBUG - Next wakeup is due at 2025-06-26 09:31:52.827576+05:00 (in 259199.999405 seconds)
+2025-06-23 09:31:52,828 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:52,828 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:31:52,828 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:52,828 - DEBUG - Next wakeup is due at 2025-06-26 09:31:52.827576+05:00 (in 259199.999111 seconds)
+2025-06-23 09:31:52,828 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:52,828 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:31:52,828 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:52,828 - DEBUG - Next wakeup is due at 2025-06-26 09:31:52.827576+05:00 (in 259199.998824 seconds)
+2025-06-23 09:31:52,828 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:31:52,828 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:31:52,828 - DEBUG - Looking for jobs to run
+2025-06-23 09:31:52,829 - DEBUG - Next wakeup is due at 2025-06-26 09:31:52.827576+05:00 (in 259199.998540 seconds)
+2025-06-23 09:34:14,779 - INFO - Scheduler started
+2025-06-23 09:34:14,779 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:14,779 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:34:14,780 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:14,780 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:34:14,780 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:14,780 - DEBUG - Next wakeup is due at 2025-09-21 09:34:14.780471+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:34:14,781 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:14,781 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:34:14,781 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:14,781 - DEBUG - Next wakeup is due at 2025-06-26 09:34:14.781118+05:00 (in 259199.999717 seconds)
+2025-06-23 09:34:14,781 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:14,781 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:34:14,781 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:14,781 - DEBUG - Next wakeup is due at 2025-06-26 09:34:14.781118+05:00 (in 259199.999236 seconds)
+2025-06-23 09:34:14,782 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:14,782 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:34:14,782 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:14,782 - DEBUG - Next wakeup is due at 2025-06-26 09:34:14.781118+05:00 (in 259199.998738 seconds)
+2025-06-23 09:34:14,782 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:14,782 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:34:14,782 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:14,782 - DEBUG - Next wakeup is due at 2025-06-26 09:34:14.781118+05:00 (in 259199.998375 seconds)
+2025-06-23 09:34:14,782 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:14,782 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:34:14,783 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:14,783 - DEBUG - Next wakeup is due at 2025-06-26 09:34:14.781118+05:00 (in 259199.997965 seconds)
+2025-06-23 09:34:48,038 - INFO - Scheduler started
+2025-06-23 09:34:48,038 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:48,038 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:34:48,039 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:48,039 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:34:48,040 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:48,040 - DEBUG - Next wakeup is due at 2025-09-21 09:34:48.039758+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:34:48,040 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:48,040 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:34:48,040 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:48,040 - DEBUG - Next wakeup is due at 2025-06-26 09:34:48.040215+05:00 (in 259199.999707 seconds)
+2025-06-23 09:34:48,040 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:48,040 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:34:48,040 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:48,040 - DEBUG - Next wakeup is due at 2025-06-26 09:34:48.040215+05:00 (in 259199.999240 seconds)
+2025-06-23 09:34:48,041 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:48,041 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:34:48,041 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:48,041 - DEBUG - Next wakeup is due at 2025-06-26 09:34:48.040215+05:00 (in 259199.998806 seconds)
+2025-06-23 09:34:48,041 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:48,041 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:34:48,041 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:48,041 - DEBUG - Next wakeup is due at 2025-06-26 09:34:48.040215+05:00 (in 259199.998412 seconds)
+2025-06-23 09:34:48,042 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:34:48,042 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:34:48,042 - DEBUG - Looking for jobs to run
+2025-06-23 09:34:48,042 - DEBUG - Next wakeup is due at 2025-06-26 09:34:48.040215+05:00 (in 259199.997961 seconds)
+2025-06-23 09:35:08,458 - INFO - Scheduler started
+2025-06-23 09:35:08,458 - DEBUG - Looking for jobs to run
+2025-06-23 09:35:08,458 - DEBUG - No jobs; waiting until a job is added
+2025-06-23 09:35:08,459 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:35:08,459 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца
+2025-06-23 09:35:08,459 - DEBUG - Looking for jobs to run
+2025-06-23 09:35:08,459 - DEBUG - Next wakeup is due at 2025-09-21 09:35:08.459479+05:00 (in 4294967.000000 seconds)
+2025-06-23 09:35:08,460 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:35:08,460 - INFO - Создан таск для игры Elden Ring с частотой 3 дней
+2025-06-23 09:35:08,460 - DEBUG - Looking for jobs to run
+2025-06-23 09:35:08,460 - DEBUG - Next wakeup is due at 2025-06-26 09:35:08.460024+05:00 (in 259199.999745 seconds)
+2025-06-23 09:35:08,460 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:35:08,460 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев
+2025-06-23 09:35:08,460 - DEBUG - Looking for jobs to run
+2025-06-23 09:35:08,460 - DEBUG - Next wakeup is due at 2025-06-26 09:35:08.460024+05:00 (in 259199.999267 seconds)
+2025-06-23 09:35:08,460 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:35:08,461 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев
+2025-06-23 09:35:08,461 - DEBUG - Looking for jobs to run
+2025-06-23 09:35:08,461 - DEBUG - Next wakeup is due at 2025-06-26 09:35:08.460024+05:00 (in 259199.998874 seconds)
+2025-06-23 09:35:08,461 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:35:08,461 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели
+2025-06-23 09:35:08,461 - DEBUG - Looking for jobs to run
+2025-06-23 09:35:08,461 - DEBUG - Next wakeup is due at 2025-06-26 09:35:08.460024+05:00 (in 259199.998436 seconds)
+2025-06-23 09:35:08,461 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-06-23 09:35:08,461 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней
+2025-06-23 09:35:08,461 - DEBUG - Looking for jobs to run
+2025-06-23 09:35:08,462 - DEBUG - Next wakeup is due at 2025-06-26 09:35:08.460024+05:00 (in 259199.997973 seconds)
