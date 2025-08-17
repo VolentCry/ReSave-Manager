@@ -8,13 +8,14 @@ import os
 games = [["Elden Ring", "5 Май 2025 18:05:56", ["on", "off", "off", "off", "off"], r"E:\Games\ELDEN RING\Game", r"%USERPROFILE%\Desktop\Programming\ReSave Manager\saves\games\Elden Ring", r"%APPDATA%\EldenRing\76561197960267366", 0, 0, 0, "1 день", ['E:\\Games\\ELDEN RING\\Game\\eldenring.exe', 'E:\\Games\\ELDEN RING\\Game\\start_protected_game.exe']]]
 # Структура массива под одну игру: название, последняя дата запуска, вкл/выкл параметры, директория игры, директория ресейвов, директория сейвов, кол-во текущих ресейвов, ограничение по кол-во сейвов(0 - нет ограничений), ограничение по памяти сейвов(0 - нет ограничений), частота автосохранений; пути к exe файлам игры
 
-# Функция для подключения к базе данных
-def connect_db(db_name='user_game.db'):
-    conn = sqlite3.connect(db_name, check_same_thread=False)
+
+def connect_db(db_name='user_game.db') -> Connection:
+    """ Подключение к БД user_game """
+    conn = sqlite3.connect(db_name, check_same_thread=False, timeout=10)
     return conn
 
-# Функция для добавления новой игры в базу
-def add_game(conn, name_of_game: str, parametrs_of_settings: list, path_to_game: str, path_to_resave: str, path_to_save: str, current_resave: int, limit_resave: int, limit_memory: int, frequency_resave: str):
+def add_game(conn: Connection, name_of_game: str, parametrs_of_settings: list, path_to_game: str, path_to_resave: str, path_to_save: str, current_resave: int, limit_resave: int, limit_memory: int, frequency_resave: str):
+    """ Функция для добавления новой игры в базу """
     cursor = conn.cursor()
 
     path_to_exe = []
@@ -99,11 +100,12 @@ def update_game_exe(conn: Connection, name_of_game: str, paths_to_game_exe: str)
     conn.commit()
 
 def update_current_game_resaves(conn: Connection, name_of_game: str):
-    """Обновляет значения количества текущих ресейвов у определённой игры"""
+    """Обновляет значения количества текущих ресейвов в БД у определённой игры"""
     cursor = conn.cursor()
     cursor.execute("SELECT current_resave FROM games WHERE name_of_game = ?", (name_of_game,))
     rows = cursor.fetchall()
     current_resaves = int(rows[0][0]) + 1
+    print(current_resaves, name_of_game)
     cursor.execute('UPDATE games SET current_resave = ? WHERE name_of_game = ?', (current_resaves, name_of_game))
     conn.commit()
 
@@ -165,14 +167,14 @@ def take_all_games_names(conn: Connection) -> list:
     cursor.execute('SELECT name_of_game FROM games')
     return cursor.fetchall()
 
-def take_frequency_resave(conn: Connection, name_of_game: str):
+def take_frequency_resave(conn: Connection, name_of_game: str) -> str:
     """Возвращает частоты сохранений резервных копий для определённой игры"""
     cursor = conn.cursor()
     cursor.execute('SELECT frequency_resave FROM games WHERE name_of_game = ?', (name_of_game,))
     rows = cursor.fetchall()
     return rows[0][0]
 
-def take_all_games_frequency(conn: Connection):
+def take_all_games_frequency(conn: Connection) -> list:
     """Возвращает название игры и её частоту сохранения"""
     cursor = conn.cursor()
     cursor.execute('SELECT name_of_game, frequency_resave FROM games')
@@ -182,8 +184,9 @@ def update_last_date(conn: Connection, name_of_game: str, last_date):
     """Обновляет значение даты последнего запуска игры"""
     cursor = conn.cursor()
     cursor.execute('UPDATE games SET last_date = ? WHERE name_of_game = ?', (last_date, name_of_game))
+    conn.commit()
 
-def find_path_exe(conn: Connection, path_to_exe: str) -> str:
+def find_path_exe(conn: Connection, path_to_exe: str) -> str|None:
     """Находит название игры, к который указывает exe-файл"""
     cursor = conn.cursor()
     cursor.execute('SELECT name_of_game, path_to_exe FROM games')
@@ -194,6 +197,13 @@ def find_path_exe(conn: Connection, path_to_exe: str) -> str:
             if path == path_to_exe:
                 return i[0]
     return None
+
+
+def update_frequency_resave(conn: Connection, name_of_game: str, new_future_date: str):
+    """ Обновляет дату будущего автосохранения игры исходя из периода """
+    cursor = conn.cursor()
+    cursor.execute('UPDATE tasks SET future_date = ? WHERE name_of_game = ?', (new_future_date, name_of_game))
+    conn.commit()
 
 # conn1 = connect_db()
 # add_game(conn1, "The Planet Crafter", ["off", "off", "off", "off", "off"], r"E:\Games\The Planet Crafter (2024)\The Planet Crafter", r"saves\games\The Planet Crafter", r"%USERPROFILE%\AppData\LocalLow\MijuGames\Planet Crafter", 0, 0, 0, "1 день")

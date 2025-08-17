@@ -650,10 +650,12 @@ for j in take_all_games(conn_app):
         
 
 def start_async_loop():
-    try:
-        asyncio.run(a_main(paths_to_exe))
-    except:
-        print("Не удалось запустить мониторинг процессов")
+    asyncio.run(a_main(paths_to_exe))
+    # try:
+    #     asyncio.run(a_main(paths_to_exe))
+    # except Exception as e:
+    #     print(e)
+    #     print("Не удалось запустить мониторинг процессов")
         
 def on_closing():
     app.destroy()

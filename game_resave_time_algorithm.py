@@ -9,11 +9,10 @@ from dateutil.relativedelta import relativedelta
 import logging
 from sqlite3 import Connection, IntegrityError
 
-from user_games import connect_db, take_game_info, take_all_games_frequency, take_all_games_names
+from user_games import *
 from game_copier_algorithm import resave_copier_algorithm
 from process_monitoring import LOG_FILE
 
-frequency_conn = connect_db()
 scheduler = BackgroundScheduler()
 
 # === Настройка логгера ===
@@ -21,7 +20,8 @@ logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s',
     filename=LOG_FILE,
-    filemode='a'
+    filemode='a',
+    encoding="UTF-8"
 )
 logger = logging.getLogger(__name__)
 
@@ -33,72 +33,119 @@ def time_task_to_resave(name_of_game: str):
     На вход: названия игры (str)
     """
 
-    logger.debug(f"Задача по запланированному ресейву {name_of_game} выполняется!", time.strftime("%H:%M:%S"))
+    conn = connect_db()
+    try:
+        logger.debug(f"Задача по запланированному ресейву {name_of_game} выполняется!", time.strftime("%H:%M:%S"))
 
-    result = resave_copier_algorithm(take_game_info(frequency_conn, name_of_game))
+        # ИЗМЕНЕНО: Используем локальное 'conn' и передаем его дальше
+        game_info = take_game_info(conn, name_of_game)
+        if game_info:
+            result = resave_copier_algorithm(conn, game_info)
+            if result:
+                logger.info(f"Копия {name_of_game} выполнена успешно и по расписанию!")
+            else:
+                logger.error(f"Возникли неизвестные проблемы во время копирования игры {name_of_game}!")
+    finally:
+        # ДОБАВЛЕНО: Гарантированно закрываем соединение
+        conn.close()
 
-    if result == True:
-        logger.info(f"Копия {name_of_game} выполнена успешно и по расписанию!")
-    else:
-        logger.error(f"Возниколи неизвестные проблемы во время копирования игры {name_of_game}!")
+
+def make_future_resave_date(period: str) -> tuple[int, datetime]:
+    """ Вовзращает в числовом формате кол-во дней, именно с таким периодом будут создаваться автоматические резервные копии игры. 
+    А также возвращает дату в формате datetime, в эту дату должно произойти авто резервное копирование игры """
+    if "день" in period or "дней" in period:
+        # Установка автосохранения по дням
+        new_period = int(period.replace("день", "").replace("дней", ""))
+
+        now = datetime.now().replace(second=0, microsecond=0) # Текущая дата
+        future_date = timedelta(days=new_period)
+        date_of_resave = now + future_date
+        date_of_resave = date_of_resave.replace(second=0, microsecond=0)
+
+    elif "неделя" in period or "недель" in period or "недели" in period:
+        # Установка автосохранения по неделям
+        new_period = int(period.replace("неделя", "").replace("недель", "").replace("недели", "")) * 7
+
+        now = datetime.now().replace(second=0, microsecond=0) # Текущая дата
+        future_date = timedelta(days=new_period)
+        date_of_resave = now + future_date
+        date_of_resave = date_of_resave.replace(second=0, microsecond=0)
+
+    elif "месяца" in period or "месяцев" in period:
+        # Установка автосохранения по месяцам
+        new_period = int(period.replace("месяцев", "").replace("месяца", "")) * 30
+
+        now = datetime.now().replace(second=0, microsecond=0) # Текущая дата
+        future_date = timedelta(days=new_period)
+        date_of_resave = now + future_date
+        date_of_resave = date_of_resave.replace(second=0, microsecond=0)
+    
+    return new_period, date_of_resave
 
 
 def create_task_to_game(name_of_game: str, conn: Connection):
-    """Создаёт таску для определённой игры"""
+    """ Создаёт таску по авто резервному копированию с определённым периодом для определённой игры """
     cursor = conn.cursor()
     cursor.execute("SELECT frequency_resave FROM games WHERE name_of_game = ?", (name_of_game,))
     rows = cursor.fetchall()
     conn.commit()
 
+    # Период автосохранения игры
     period = rows[0][0]
-    period_copy = period
+    period_to_info = period
 
-    if "день" in period or "дней" in period:
-        period = int(period.replace("день", "").replace("дней", ""))
+    # if "день" in period or "дней" in period:
+    #     # Установка автосохранения по дням
+    #     period = int(period.replace("день", "").replace("дней", ""))
 
-        now = datetime.now().replace(second=0, microsecond=0)
-        future_date = timedelta(days=period)
-        date_of_resave = now + future_date
-        date_of_resave = date_of_resave.replace(second=0, microsecond=0)
+    #     now = datetime.now().replace(second=0, microsecond=0) # Текущая дата
+    #     future_date = timedelta(days=period)
+    #     date_of_resave = now + future_date
+    #     date_of_resave = date_of_resave.replace(second=0, microsecond=0)
 
-    elif "неделя" in period or "недель" in period or "недели" in period:
-        period = int(period.replace("неделя", "").replace("недель", "").replace("недели", "")) * 7
+    # elif "неделя" in period or "недель" in period or "недели" in period:
+    #     # Установка автосохранения по неделям
+    #     period = int(period.replace("неделя", "").replace("недель", "").replace("недели", "")) * 7
 
-        now = datetime.now().replace(second=0, microsecond=0)
-        future_date = timedelta(days=period)
-        date_of_resave = now + future_date
-        date_of_resave = date_of_resave.replace(second=0, microsecond=0)
+    #     now = datetime.now().replace(second=0, microsecond=0) # Текущая дата
+    #     future_date = timedelta(days=period)
+    #     date_of_resave = now + future_date
+    #     date_of_resave = date_of_resave.replace(second=0, microsecond=0)
 
-    elif "месяца" in period or "месяцев" in period:
-        period = int(period.replace("месяцев", "").replace("месяца", "")) * 30
+    # elif "месяца" in period or "месяцев" in period:
+    #     # Установка автосохранения по месяцам
+    #     period = int(period.replace("месяцев", "").replace("месяца", "")) * 30
 
-        now = datetime.now().replace(second=0, microsecond=0)
-        future_date = timedelta(days=period)
-        date_of_resave = now + future_date
-        date_of_resave = date_of_resave.replace(second=0, microsecond=0)
+    #     now = datetime.now().replace(second=0, microsecond=0) # Текущая дата
+    #     future_date = timedelta(days=period)
+    #     date_of_resave = now + future_date
+    #     date_of_resave = date_of_resave.replace(second=0, microsecond=0)
 
+    period, date_of_resave = make_future_resave_date(period)
+
+    # Добавляем таск в текущие задачи
     scheduler.add_job(time_task_to_resave, 'interval', days=period, args=[name_of_game])
-    logger.info(f"Создан таск для игры {name_of_game} с частотой {period_copy}")
+    logger.info(f"Создан таск для игры {name_of_game} с частотой {period_to_info}.")
 
     try:
+        # Вносим данные о новом таске в таблицу
         conn.cursor()
-        conn.execute('''INSERT INTO tasks (name_of_game, period, future_date) VALUES (?, ?, ?)''', (name_of_game, period_copy, str(date_of_resave), ))
+        conn.execute('''INSERT INTO tasks (name_of_game, period, future_date) VALUES (?, ?, ?)''', (name_of_game, period_to_info, str(date_of_resave), ))
         conn.commit()
     except IntegrityError:
-        # Таск уже создан
-        pass
+        logger.warning(f"Таск для игры {name_of_game} уже был создан ранее. Ложный вызов.")
 
 
 def create_tasks_for_all_games(conn: Connection):
     """Создаёт таски с систематическим ресейвом кажд"""
-    names_fo_games = take_all_games_names(frequency_conn)
+    names_fo_games = take_all_games_names(conn)
     for name in names_fo_games:
         create_task_to_game(name[0], conn)
 
 
 def process_start_check(conn: Connection):
     """Проверка на то, запущен ли процесс ресейва для каждой игры"""
-    all_names_of_games = take_all_games_names(frequency_conn)
+    all_names_of_games = take_all_games_names(conn)
     jobs_list = [scheduler.get_job(y).args for y in [x.id for x in scheduler.get_jobs()]]
     
     for name in all_names_of_games:
@@ -106,34 +153,55 @@ def process_start_check(conn: Connection):
         cursor.execute("SELECT future_date FROM tasks WHERE name_of_game = ?", (name[0],))
         rows = cursor.fetchall()
         conn.commit()
-
-        date_future = [int(x) for x in rows[0][0].replace("-", " ").replace(":", " ").split()]
-        # date_future = timedelta(rows[0], rows[1], rows[2], rows[3], rows[4], rows[5])
-        date_now = [int(x) for x in datetime.now().replace(second=0, microsecond=0).strftime("%Y %m %d %H %M %S").split()]
-        # date_future_timedelta = timedelta(days=date_future[2], hours=date_future[3], minutes=date_future[4])
-        # date_now_timedelta = timedelta(days=date_now[2], hours=date_now[3], minutes=date_now[4])
-        date_now_datetype = datetime.now()
-        date_future_datetype = datetime.strptime(rows[0][0], "%Y-%m-%d %H:%M:%S")
-        print(date_now_datetype > date_future_datetype)
         
+        date_now_datetype = datetime.now() # текущее время
+        date_future_datetype = datetime.strptime(rows[0][0], "%Y-%m-%d %H:%M:%S")
 
         if name in jobs_list:
-            print(f"Процесс {name[0]} запущен.")
+            logger.info(f"Процесс {name[0]} запущен.")
 
-            if date_future[0] >= date_now[0] and date_future[1] >= date_now[1]:
+            # if date_future[0] >= date_now[0] and date_future[1] >= date_now[1]:
+            if date_now_datetype <= date_future_datetype:
                 ...
-            else:
-                # Исходя из провреки мы поняли, что так как программа не была запущена, то мы пропустили необходимую проверку, поэтому делаем её вручную
-                resave_copier_algorithm(take_game_info(frequency_conn, name[0]))
+            else: # Исходя из провреки мы поняли, что так как программа не была запущена, то мы пропустили необходимую проверку, поэтому делаем резервную копию игры вручную
+                resave_copier_algorithm(conn, take_game_info(conn, name[0]))
+                logger.info(f"Резервная копия сохранения игры {name[0]} была сделана вручную, т. к. во время необходимого запланированного резервного копирования приложение было закрыто по тем или иным причинам.")
+
+                # Период автосохранения игры
+                cursor = conn.cursor()
+                cursor.execute("SELECT frequency_resave FROM games WHERE name_of_game = ?", (name[0],))
+                period = cursor.fetchall()[0][0]
+
+                new_period, date_of_resave = make_future_resave_date(period) # Получаем дату для записи в БД
+                update_frequency_resave(conn, name[0], str(date_of_resave))
 
         else:
             create_task_to_game(name[0], conn)
             print(f"Процесс {name[0]} был не запущен, но теперь стартовал.")
 
 
+def initialize_scheduler_tasks():
+    """
+    Создает временное подключение к БД для начальной настройки
+    и проверки всех запланированных задач.
+    """
+    conn = connect_db()
+    try:
+        print("[INFO] Инициализация и проверка запланированных задач...")
+        create_tasks_for_all_games(conn)
+        process_start_check(conn)
+        print("[INFO] Инициализация завершена.")
+    finally:
+        conn.close()
+
+# Запускаем сам планировщик (он работает в фоне и не требует постоянного соединения)
 scheduler.start()
-create_tasks_for_all_games(frequency_conn)
-process_start_check(frequency_conn)
+
+# 4. Вызываем нашу новую функцию для запуска
+# Это произойдет один раз при старте приложения
+initialize_scheduler_tasks()
+
+
 
 # # Основной поток продолжает работать
 # try:

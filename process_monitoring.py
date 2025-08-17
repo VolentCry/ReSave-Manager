@@ -9,8 +9,7 @@ from user_games import *
 from game_copier_algorithm import resave_copier_algorithm
 
 LOG_FILE = 'process_monitor.log'
-# Подключаемся к БД
-conn_m = connect_db()
+
 
 # games_frame_ref = None
 
@@ -20,22 +19,26 @@ conn_m = connect_db()
 
 # === Callback для обработки событий закрытия ===
 def on_program_closed(program_name: str, end_time: datetime, runtime, target_path: str):
-    global history_time_of_resave_game
-    print(f"[INFO] Программа '{program_name}' закрыта в {end_time}, общее время работы: {runtime}")
-    # Находим название игры, к которой относится exe-файл
-    name_of_game = find_path_exe(conn_m, target_path)
-    parametrs = take_parametrs(conn_m, name_of_game)
-    update_last_date(conn_m, name_of_game, end_time)
-    
-    if parametrs[2] == "on":
-        print(f"[INFO] Сохранение после каждой игровой сессии включено для игры {name_of_game}")
-        for i, game in enumerate(take_all_games(conn_m)):
-            if game[0] == name_of_game:
-                resave_copier_algorithm(take_game_info(conn_m, name_of_game), i)
-                update_current_game_resaves(conn_m, name_of_game)
-                # if games_frame_ref is not None:
-                #     games_frame_ref.after(0, games_frame_ref.update_games)
-                # return
+    conn = connect_db()
+    try:
+        global history_time_of_resave_game
+        print(f"[INFO] Программа '{program_name}' закрыта в {end_time}, общее время работы: {runtime}")
+        
+        name_of_game = find_path_exe(conn, target_path)
+        if not name_of_game:
+            print(f"[WARNING] Не удалось найти игру для exe: {target_path}")
+            return
+            
+        parametrs = take_parametrs(conn, name_of_game)
+        update_last_date(conn, name_of_game, end_time)
+        
+        if parametrs and parametrs[2] == "on":
+            print(f"[INFO] Сохранение после каждой игровой сессии включено для игры {name_of_game}")
+            game_info = take_game_info(conn, name_of_game)
+            if game_info:
+                resave_copier_algorithm(conn, game_info)
+    finally:
+        conn.close()
 
 
 # === Мониторинг процесса ===
@@ -46,7 +49,8 @@ async def monitor_process(target_path: str, check_interval_in_seconds: int):
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s',
         filename=LOG_FILE,
-        filemode='a'
+        filemode='a',
+        encoding="UTF-8"
     )
     logger = logging.getLogger(__name__)
 

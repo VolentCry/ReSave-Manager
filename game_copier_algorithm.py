@@ -5,10 +5,8 @@ import sys
 import ctypes
 from user_games import update_current_game_resaves, connect_db, take_paths
 
-conn2 = connect_db()
 
-
-def resave_copier_algorithm(game: list) -> bool:
+def resave_copier_algorithm(conn, game: list) -> bool:
     """Создание единичной копии"""
     path = os.path.expandvars(rf"{game[4]}") #Расшифровка пути к игре
     contents = os.listdir(path)
@@ -22,13 +20,14 @@ def resave_copier_algorithm(game: list) -> bool:
         except:
             return False
     else:
-        update_current_game_resaves(conn2, game[0])
+        update_current_game_resaves(conn, game[0])
 
         if game[6] < game[7] and game[7] != 0: # Проверяем не превышает ли текущее количество сохранений установленный лимит
             os.makedirs(fr'{path}\\ReSave {int(contents[-1][-1]) + 1}', exist_ok=True) # Создаёт папку для последующего ресейва
             a = fr'{os.path.expandvars(game[5])}'
             b = fr'{path}\ReSave {int(contents[-1][-1]) + 1}\{game[5].split("\\")[-1]}'
             shutil.copytree(a, b)
+            return
 
         elif game[6] >= game[7] and game[7] != 0: # Превышение лимитов по количеству ресейвов 
             list_of_resaves = os.listdir(fr'{path}')
@@ -40,7 +39,9 @@ def resave_copier_algorithm(game: list) -> bool:
                 print(f"Папка '{path_to_remove}' не найдена.")
             except OSError as e:
                 print(f"Ошибка при удалении папки: {e}")
+                
             os.makedirs(fr'{path}\\ReSave 1', exist_ok=True) # Вновь создаём папку ReSave 1
+
             for i in range(len(list_of_resaves)):
                 # Пробегаемся по всем папкам с ресейвами
                 if list_of_resaves[i] == "ReSave 1": pass
@@ -56,6 +57,7 @@ def resave_copier_algorithm(game: list) -> bool:
                             return True
                         except:
                             return False
+            return
 
         elif game[7] == 0: # Отсутствие лимитов по количеству ресейвов
             os.makedirs(fr'{path}\\ReSave {int(contents[-1][-1]) + 1}', exist_ok=True) # Создаёт папку для последующего ресейва
@@ -66,8 +68,8 @@ def resave_copier_algorithm(game: list) -> bool:
                 return True
             except:
                 return False
-
-
+        return
+        
         # game[6] = len(os.listdir(fr'{path}')) # Обновляем данные о количестве всего резервных копий
 
 def game_detection():
@@ -90,8 +92,9 @@ def selective_game_resaves_export(names_of_games_to_export: list, folder_path_to
 
     В итоге будет создан архив с папками каждой игры, где будут лежать резервные копии сохранений.
     """
+    conn = connect_db()
     for name in names_of_games_to_export:
-        path_to_resave = take_paths(conn2, name)[1]
+        path_to_resave = take_paths(conn, name)[1]
         shutil.copytree(fr"{os.path.expandvars(path_to_resave)}", fr"saves/export/{str(os.path.expandvars(path_to_resave)).split("\\")[-1]}")
 
         # Добавление текстового файла с инструкцией, а также создания папки ReSave 0 с текущем сохранение игры.
