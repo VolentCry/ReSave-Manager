@@ -24,31 +24,50 @@ Instructions for further import:
 Thank you very much for using our software! We will be glad if you recommend us to your friends and acquaintances! :)
 """
 
+# Вспомогательные функции
+def get_size(path: str) -> int:
+    """ Возвращает размер директории в байтах """
+    total_size = 0 
+    for dirpath, dirnames, filenames in os.walk(path): 
+        for f in filenames: 
+            fp = os.path.join(dirpath, f) 
+            total_size += os.path.getsize(fp) 
+    return total_size 
+
+def make_one_resave(path: str, current_game_save_dir: str, contents: list, game: tuple) -> bool:
+    """ Делает непосредственно одну копию сохранения игры, учитывая, что есть уже какие-то ресейвы в папке. """
+    os.makedirs(fr'{path}\\ReSave {int(contents[-1][-1]) + 1}', exist_ok=True) # Создаёт папку для последующего ресейва
+    new_resave_filename = fr'{path}\ReSave {int(contents[-1][-1]) + 1}\{game[5].split("\\")[-1]}'
+    try:
+        shutil.copytree(current_game_save_dir, new_resave_filename)
+        return True
+    except:
+        return False
+
 def resave_copier_algorithm(conn, game: list) -> bool:
-    """Создание единичной копии игры"""
+    """ Создание единичной копии игры """
     path = os.path.expandvars(rf"{game[4]}") #Расшифровка пути к игре
     contents = os.listdir(path)
-
+    current_game_save_dir = fr'{os.path.expandvars(game[5])}'
+    print(game)
     
     if contents == []:
         # Выполняется в том случаи, если НЕТ НИ ОДНОГО РЕСЕЙВА игры
-        a = fr'{os.path.expandvars(game[5])}'
-        b = fr'{path}\ReSave 1\{game[5].split("\\")[-1]}'
+        new_resave_filename = fr'{path}\ReSave 1\{game[5].split("\\")[-1]}'
         os.makedirs(fr'{path}\\ReSave 1', exist_ok=True) # Создаёт папку для первого ресейва
         try:
-            shutil.copytree(a, b)
+            shutil.copytree(current_game_save_dir, new_resave_filename)
             return True
         except:
             return False
-    else:
-
+        
+    else: # Если уже есть хоть один ресейв
         update_current_game_resaves(conn, game[0])
 
         if game[6] < game[7] and game[7] != 0: # Проверяем не превышает ли текущее количество сохранений установленный лимит
             os.makedirs(fr'{path}\\ReSave {int(contents[-1][-1]) + 1}', exist_ok=True) # Создаёт папку для последующего ресейва
-            a = fr'{os.path.expandvars(game[5])}'
-            b = fr'{path}\ReSave {int(contents[-1][-1]) + 1}\{game[5].split("\\")[-1]}'
-            shutil.copytree(a, b)
+            new_resave_filename = fr'{path}\ReSave {int(contents[-1][-1]) + 1}\{game[5].split("\\")[-1]}'
+            shutil.copytree(current_game_save_dir, new_resave_filename)
             return
 
         elif game[6] >= game[7] and game[7] != 0:
@@ -74,23 +93,61 @@ def resave_copier_algorithm(conn, game: list) -> bool:
                     shutil.move(source_path, destination_path)
                     if i == (len(list_of_resaves) - 1):
                         source_path = fr"{path}\{list_of_resaves[i]}\{game[5].split("\\")[-1]}"
-                        a = fr'{os.path.expandvars(game[5])}'
                         try:
-                            shutil.copytree(a, source_path)
+                            shutil.copytree(current_game_save_dir, source_path)
                             return True
                         except:
                             return False
             return
 
-        elif game[7] == 0: # Отсутствие лимитов по количеству ресейвов
-            os.makedirs(fr'{path}\\ReSave {int(contents[-1][-1]) + 1}', exist_ok=True) # Создаёт папку для последующего ресейва
-            a = fr'{os.path.expandvars(game[5])}'
-            b = fr'{path}\ReSave {int(contents[-1][-1]) + 1}\{game[5].split("\\")[-1]}'
-            try:
-                shutil.copytree(a, b)
-                return True
-            except:
-                return False
+        elif game[7] == 0 and game[8] == 0: # Отсутствие лимитов по количеству ресейвов и по количеству занимаемой памяти
+            # Выполняем единичный ресейв без каких-либо проблем
+            make_one_resave(path, current_game_save_dir, contents, game)
+            
+        elif game[8] != 0: # Присутствуют лимиты по количеству занимаемой памяти для ресейвов
+            # Проверка веса нынешней папки с ресейвами игры
+            current_game_resave_directory = fr'{os.path.expandvars(game[4])}'
+            weight_of_current_game_resave_directory = get_size(current_game_resave_directory) # в байтах
+            print(weight_of_current_game_resave_directory)
+
+            # Проверка веса одного файла сохранения игры
+            weight_of_current_game_save_dir = get_size(current_game_save_dir) # в байтах
+            print(weight_of_current_game_save_dir)
+
+            # Рассчёты и сохранение
+            current_limit_of_resaves = game[8] * 1024 * 1024 # В байтах
+            if weight_of_current_game_resave_directory + weight_of_current_game_save_dir > current_limit_of_resaves:
+                # ПРЕВЫШЕНИЕ ЛИМИТОВ по количеству занимаемой памяти. Удаление самого первого ресейва и создание нового
+                list_of_resaves = os.listdir(fr'{path}')
+                path_to_remove = fr"{path}\{list_of_resaves[0]}" # То содержимое, которое будет удалено
+
+                # Попытка удалить
+                try:
+                    shutil.rmtree(path_to_remove)
+                    print(f"INFO: Папка '{path_to_remove}' успешно удалена.")
+                except FileNotFoundError:
+                    print(f"ERROR: Папка '{path_to_remove}' не найдена.")
+                except OSError as e:
+                    print(f"ERROR: Ошибка при удалении папки: {e}")
+                    
+                os.makedirs(fr'{path}\\ReSave 1', exist_ok=True) # Вновь создаём папку ReSave 1
+
+                for i in range(len(list_of_resaves)):
+                    # Пробегаемся по всем папкам с ресейвами
+                    if list_of_resaves[i] == "ReSave 1": pass
+                    elif i != len(list_of_resaves):
+                        source_path = fr"{path}\{list_of_resaves[i]}\{os.listdir(fr"{path}\{list_of_resaves[i]}")[0]}"
+                        destination_path = fr"{path}\{list_of_resaves[i - 1]}"
+                        shutil.move(source_path, destination_path)
+                        if i == (len(list_of_resaves) - 1):
+                            source_path = fr"{path}\{list_of_resaves[i]}\{game[5].split("\\")[-1]}"
+                            try:
+                                shutil.copytree(current_game_save_dir, source_path)
+                                return True
+                            except:
+                                return False
+            else: # Выполняем единичный ресейв без каких-либо проблем
+                make_one_resave(path, current_game_save_dir, contents, game)
         return
         
         # game[6] = len(os.listdir(fr'{path}')) # Обновляем данные о количестве всего резервных копий

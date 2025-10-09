@@ -153,14 +153,13 @@ class GameSettingsWindow(customtkinter.CTkToplevel):
         """ Сохранение изменений настроек """
         setting_chackbox_parametrs = [self.checkbox_frequency.get(), self.checkbox_smart_resave.get(), self.checkbox_after_game_resave.get(), self.checkbox_resave_count.get(), self.checkbox_resave_memory.get()]
         update_parametrs(conn_app, self.name_of_game, setting_chackbox_parametrs)
-        update_frequency_resave(conn_app, self.name_of_game, self.resave_frequency_mean.cget("text"))
 
         try:
             update_limit_resaves(conn_app, self.name_of_game, int(self.cnt_resaves_entry.get()))
         except ValueError:
             update_limit_resaves(conn_app, self.name_of_game, 0)
         try:
-            update_limit_memory(conn_app, self.name_of_game, int(self.cnt_resaves_memory_entry.get()))
+            update_limit_memory(conn_app, self.name_of_game, eval(self.cnt_resaves_memory_entry.get()))
         except ValueError:
             update_limit_memory(conn_app, self.name_of_game, 0)
 
