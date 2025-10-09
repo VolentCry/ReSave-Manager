@@ -1,6 +1,7 @@
 from datetime import datetime
 
-def date_translate(date: str):
+def date_translate(date: str) -> str:
+    """Переводчик даты на русский язык"""
     weekdays_ru = {
         "Monday": "Понедельник",
         "Tuesday": "Вторник",

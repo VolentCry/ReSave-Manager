@@ -31,7 +31,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 class GameSettingsWindow(customtkinter.CTkToplevel):
-    """Окно настройки определённой игры"""
+    """ Окно настройки определённой игры """
     def __init__(self, name_of_game, directory_of_game, dir_of_resave, dir_of_cur_save, parametrs, num_of_game):
         super().__init__()
         self.geometry("650x410")
@@ -105,9 +105,9 @@ class GameSettingsWindow(customtkinter.CTkToplevel):
         self.toplevel_window = None
 
     def button_game_dir(self):
-        """Открытие директории игры"""
+        """ Открытие директории игры """
         if self.directory_of_game == "":
-            """Заход в меню настроек определённой игры"""
+            """ Заход в меню настроек определённой игры """
             if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
                 self.toplevel_window = ChoiceGameDir(name_of_game=self.name_of_game)
                 self.toplevel_window.focus()
@@ -117,11 +117,11 @@ class GameSettingsWindow(customtkinter.CTkToplevel):
             subprocess.Popen(['explorer', self.directory_of_game]) # Открыть проводник в заданной директории
     
     def button_resaves(self):
-        """Открытие директории с резервными копиями сохранений"""
+        """ Открытие директории с резервными копиями сохранений """
         subprocess.Popen(['explorer', self.dir_of_resave]) # Открыть проводник в заданной директории
         
     def change_slider(self, value):
-        """Конфигурация изменений слайдера"""
+        """ Конфигурация изменений слайдера """
         if value <= 27:
             self.day = str(int((value // 3) + 1))
             self.type_of_time = "дней"
@@ -146,20 +146,24 @@ class GameSettingsWindow(customtkinter.CTkToplevel):
             self.resave_frequency_mean.configure(text=f"{self.day} {self.type_of_time}")
 
     def button_game_current_save(self):
-        """Открытие директории с текущем сохранение"""
+        """ Открытие директории с текущем сохранение """
         subprocess.Popen(['explorer', self.dir_of_cur_save]) # Открыть проводник в заданной директории
 
     def button_settings_save(self):
-        """Сохранение изменений настроек"""
+        """ Сохранение изменений настроек """
         setting_chackbox_parametrs = [self.checkbox_frequency.get(), self.checkbox_smart_resave.get(), self.checkbox_after_game_resave.get(), self.checkbox_resave_count.get(), self.checkbox_resave_memory.get()]
         update_parametrs(conn_app, self.name_of_game, setting_chackbox_parametrs)
         update_frequency_resave(conn_app, self.name_of_game, self.resave_frequency_mean.cget("text"))
+
         try:
             update_limit_resaves(conn_app, self.name_of_game, int(self.cnt_resaves_entry.get()))
-            update_limit_memory(conn_app, self.name_of_game, int(self.cnt_resaves_memory_entry.get()))
         except ValueError:
             update_limit_resaves(conn_app, self.name_of_game, 0)
+        try:
+            update_limit_memory(conn_app, self.name_of_game, int(self.cnt_resaves_memory_entry.get()))
+        except ValueError:
             update_limit_memory(conn_app, self.name_of_game, 0)
+
         print(take_game_info(conn_app, self.name_of_game))
         self.destroy()
 
@@ -293,6 +297,7 @@ class GameScrollBarFrame(customtkinter.CTkScrollableFrame):
 
 
 class AddGameWindow(customtkinter.CTkToplevel):
+    """ Окно для добавление новой игры """
     def __init__(self, games_frame_ref):  # Добавляем параметр
         super().__init__()
         self.geometry("500x300")
@@ -337,13 +342,12 @@ class AddGameWindow(customtkinter.CTkToplevel):
     def add_game(self):
         name_of_game = self.add_name_entry.get()
         if name_of_game == "" or name_of_game == None or self.path_to_game == None or self.path_to_save == None:
-            print("Пожалуйста укажите все данные")
+            print("Пожалуйста укажите все данные.")
         else:
             path_to_resave = fr'C:\Users\Semen\Desktop\Programming\ReSave Manager\saves\games\{name_of_game}'
             os.makedirs(path_to_resave, exist_ok=True) # Создание папки для новой игры
             add_game(conn_app, name_of_game, ["on", "off", "off", "off", "off"], self.path_to_game, path_to_resave, self.path_to_save, 0, 0, 0, "1 день")
             # user_games.games.append([name_of_game, time_to_start, ["on", "off", "off", "off", "off"], self.path_to_game, path_to_resave, self.path_to_save, 0, 0, 0, "1 день"])
-            # print(user_games.games)
             print(take_all_games(conn_app))
         self.games_frame_ref.update_games()
         self.destroy()
@@ -351,7 +355,7 @@ class AddGameWindow(customtkinter.CTkToplevel):
 
 
 class GameFrame(customtkinter.CTkFrame):
-    """Блок, который будет создаваться для каждой игры пользователя"""
+    """ Блок, который будет создаваться для каждой игры пользователя """
     def __init__(self, master, name, date, par, game_dir, resave_dir, cur_save_dir, num_of_game, current_cnt_resaves, resaves_limit_cnt, resaves_limit_memory):
         super().__init__(master)
 
@@ -396,7 +400,7 @@ class GameFrame(customtkinter.CTkFrame):
         self.toplevel_window = None
 
     def button_callback_settings_menu_game(self):
-        """Заход в меню настроек определённой игры"""
+        """ Заход в меню настроек определённой игры """
         if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
             self.toplevel_window = GameSettingsWindow(name_of_game=self.name, directory_of_game=self.game_dir, dir_of_resave=self.resave_dir, dir_of_cur_save=self.cur_save_dir, parametrs=self.par, num_of_game=self.num_of_game)
             self.toplevel_window.focus()
@@ -404,11 +408,11 @@ class GameFrame(customtkinter.CTkFrame):
             self.toplevel_window.focus()
 
     def button_make_resave(self):
-        """Создаёт резервную копию"""
-        resave_copier_algorithm(take_game_info(conn_app, self.name))
+        """ Создаёт резервную копию """
+        resave_copier_algorithm(conn_app, take_game_info(conn_app, self.name))
     
     def game_save_export(self):
-        """Предоставляет возможность экспортирвоать файл в формате архива в нужное место"""
+        """ Предоставляет возможность экспортирвоать файл в формате архива в нужное место """
         folder_path = filedialog.askdirectory(title="Выберите место для экспорта сохранения")
         path_to_resave = take_paths(conn_app, self.name)[1]
         # Создание нового ZIP-архива
@@ -424,7 +428,7 @@ class GameFrame(customtkinter.CTkFrame):
 
 
 class SettingsFrameForGame(customtkinter.CTkFrame):
-    """Рамка для настроек игровых сохранений приложения"""
+    """ Рамка для настроек игровых сохранений приложения """
     def __init__(self, master, name):
         super().__init__(master)
 
@@ -437,7 +441,7 @@ class SettingsFrameForGame(customtkinter.CTkFrame):
 
 
 class GameListScrollBar(customtkinter.CTkScrollableFrame):
-    """Скроллбар, где отобразиться список всех обнаруженных игр"""
+    """ Скроллбар, где отобразиться список всех обнаруженных игр """
     def __init__(self, master, detected_games: list):
         super().__init__(master)
         self.columnconfigure(0, weight=1)
@@ -450,7 +454,7 @@ class GameListScrollBar(customtkinter.CTkScrollableFrame):
 
 
 class DatectedGamesListTopLevel(customtkinter.CTkToplevel):
-    """Создаёт окно, куда выводиться список оьбнаруженных игр"""
+    """ Создаёт окно, куда выводиться список оьбнаруженных игр """
     
     def __init__(self, detected_games, detected_games_saves_path, games_frame_ref):
         super().__init__()
@@ -476,7 +480,7 @@ class DatectedGamesListTopLevel(customtkinter.CTkToplevel):
         self.confirm_button.grid(row=3, column=0, padx=8, pady=8, sticky="ew")
     
     def add_detected_games(self):
-        """Добавляет обнаруженные игры в библиотеку пользователя"""
+        """ Добавляет обнаруженные игры в библиотеку пользователя """
         names = [y[0] for y in take_all_games_names(conn_app)]
         for i in self.detected_games:
             if i in names:
@@ -495,7 +499,7 @@ class DatectedGamesListTopLevel(customtkinter.CTkToplevel):
 
 
 class Settings(customtkinter.CTkToplevel):
-    """открывает настройки ОСНОВНОГО приложения, а не отдельных игр"""
+    """ Открывает настройки ОСНОВНОГО приложения, а не отдельных игр """
     def __init__(self):
         super().__init__()
         self.geometry("400x250")
@@ -542,7 +546,7 @@ class Settings(customtkinter.CTkToplevel):
         pass
 
     def game_detected_button(self):
-        """Функция, которая по нажатию кнопки запускает поиск директорий сохранений игр"""
+        """ Функция, которая по нажатию кнопки запускает поиск директорий сохранений игр """
         detected_games, saves_path = game_detection()
         if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
             # Передаем games_frame из основного окна
@@ -556,7 +560,7 @@ class Settings(customtkinter.CTkToplevel):
 
 
 class App(customtkinter.CTk):
-    """Класс основного приложения"""
+    """ Класс основного приложения """
     def __init__(self):
         super().__init__()
         self.geometry("950x700")
@@ -603,7 +607,7 @@ class App(customtkinter.CTk):
             self.toplevel_window1.focus()   
 
     def add_game(self):
-        """Заход в меню добавления определённой игры"""
+        """ Заход в меню добавления определённой игры """
         if self.toplevel_window is None or not self.toplevel_window.winfo_exists():
             self.toplevel_window = AddGameWindow(self.games_frame) 
             self.toplevel_window.focus()
@@ -611,14 +615,14 @@ class App(customtkinter.CTk):
             self.toplevel_window.focus()
 
     def checkbox_seklect_all(self):
-        """Выполнение действия при нажатии на чекбокс выбора всех игр одновременно"""
+        """ Выполнение действия при нажатии на чекбокс выбора всех игр одновременно """
         if (self.select_all_checkbox.get() != 0) or ("1" in self.games_frame.return_checkbox_states().values()):
             self.export_button.configure(state="normal")
         else:
             self.export_button.configure(state="disable")
 
     def partial_export(self):
-        """Частичный эспорт сохранений, только выбранных игр"""
+        """ Частичный эспорт сохранений, только выбранных игр """
         if (self.select_all_checkbox.get() != 0) or ("1" in self.games_frame.return_checkbox_states().values()):
             folder_path = filedialog.askdirectory(title="Выберите место для экспорта сохранения игр")
             names_to_export = []
@@ -633,7 +637,7 @@ class App(customtkinter.CTk):
             self.select_all_checkbox.configure(variable=self.select_all_var)
 
     def partial_settings(self):
-        """Частичный изменение настроек, только выбранных игр"""
+        """ Частичный изменение настроек, только выбранных игр """
         pass
 
 

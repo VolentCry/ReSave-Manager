@@ -173,6 +173,7 @@ def process_start_check(conn: Connection):
                 period = cursor.fetchall()[0][0]
 
                 new_period, date_of_resave = make_future_resave_date(period) # Получаем дату для записи в БД
+                print(str(date_of_resave))
                 update_frequency_resave(conn, name[0], str(date_of_resave))
 
         else:
