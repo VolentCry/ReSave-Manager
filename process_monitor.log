@@ -1345,3 +1345,104 @@
 2025-10-09 18:52:43,575 - INFO - Начато наблюдение за программой: Cult Of The Lamb.exe
 2025-10-09 18:52:43,631 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
 2025-10-09 18:52:43,682 - INFO - Начато наблюдение за программой: VotV.exe
+2025-10-09 18:53:47,199 - INFO - Scheduler started
+2025-10-09 18:53:47,199 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,199 - DEBUG - No jobs; waiting until a job is added
+2025-10-09 18:53:47,201 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,201 - INFO - Создан таск для игры Atomic Heart с частотой 1 день.
+2025-10-09 18:53:47,201 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,202 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.999492 seconds)
+2025-10-09 18:53:47,202 - WARNING - Таск для игры Atomic Heart уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,202 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,202 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца.
+2025-10-09 18:53:47,202 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,202 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.998867 seconds)
+2025-10-09 18:53:47,202 - WARNING - Таск для игры Cult Of The Lamb уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,203 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,203 - INFO - Создан таск для игры Elden Ring с частотой 3 дней.
+2025-10-09 18:53:47,203 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,203 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.998402 seconds)
+2025-10-09 18:53:47,203 - WARNING - Таск для игры Elden Ring уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,203 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,203 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев.
+2025-10-09 18:53:47,203 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,203 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.997952 seconds)
+2025-10-09 18:53:47,203 - WARNING - Таск для игры Horizon Zero Dawn уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,203 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,203 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев.
+2025-10-09 18:53:47,204 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,204 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.997543 seconds)
+2025-10-09 18:53:47,204 - WARNING - Таск для игры Satisfactory уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,204 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,204 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели.
+2025-10-09 18:53:47,204 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,204 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.997115 seconds)
+2025-10-09 18:53:47,204 - WARNING - Таск для игры The Planet Crafter уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,204 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,204 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней.
+2025-10-09 18:53:47,204 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,204 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.996747 seconds)
+2025-10-09 18:53:47,204 - WARNING - Таск для игры Voices of the Void уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,206 - INFO - Процесс Atomic Heart запущен.
+2025-10-09 18:53:47,206 - INFO - Процесс Cult Of The Lamb запущен.
+2025-10-09 18:53:47,207 - INFO - Процесс Elden Ring запущен.
+2025-10-09 18:53:47,207 - INFO - Процесс Horizon Zero Dawn запущен.
+2025-10-09 18:53:47,207 - INFO - Процесс Satisfactory запущен.
+2025-10-09 18:53:47,207 - INFO - Процесс The Planet Crafter запущен.
+2025-10-09 18:53:47,207 - INFO - Процесс Voices of the Void запущен.
+2025-10-09 18:53:47,208 - ERROR - Для игры Atomic Heart не указана директория с самой игрой!
+2025-10-09 18:53:47,281 - INFO - Scheduler started
+2025-10-09 18:53:47,281 - DEBUG - Using proactor: IocpProactor
+2025-10-09 18:53:47,281 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,281 - DEBUG - No jobs; waiting until a job is added
+2025-10-09 18:53:47,282 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,282 - INFO - Создан таск для игры Atomic Heart с частотой 1 день.
+2025-10-09 18:53:47,282 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,282 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.918910 seconds)
+2025-10-09 18:53:47,283 - WARNING - Таск для игры Atomic Heart уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,283 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,283 - INFO - Начато наблюдение за программой: eldenring.exe
+2025-10-09 18:53:47,283 - INFO - Создан таск для игры Cult Of The Lamb с частотой 3 месяца.
+2025-10-09 18:53:47,283 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,341 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.860167 seconds)
+2025-10-09 18:53:47,341 - WARNING - Таск для игры Cult Of The Lamb уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,362 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,362 - INFO - Создан таск для игры Elden Ring с частотой 3 дней.
+2025-10-09 18:53:47,362 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,373 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.827907 seconds)
+2025-10-09 18:53:47,373 - WARNING - Таск для игры Elden Ring уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,384 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,396 - INFO - Создан таск для игры Horizon Zero Dawn с частотой 6 месяцев.
+2025-10-09 18:53:47,396 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,409 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.792006 seconds)
+2025-10-09 18:53:47,409 - WARNING - Таск для игры Horizon Zero Dawn уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,410 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,421 - INFO - Создан таск для игры Satisfactory с частотой 6 месяцев.
+2025-10-09 18:53:47,421 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,421 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.780089 seconds)
+2025-10-09 18:53:47,432 - WARNING - Таск для игры Satisfactory уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,443 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,444 - INFO - Создан таск для игры The Planet Crafter с частотой 4 недели.
+2025-10-09 18:53:47,444 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,455 - WARNING - Таск для игры The Planet Crafter уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,455 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.746349 seconds)
+2025-10-09 18:53:47,465 - INFO - Added job "time_task_to_resave" to job store "default"
+2025-10-09 18:53:47,465 - INFO - Создан таск для игры Voices of the Void с частотой 9 дней.
+2025-10-09 18:53:47,465 - DEBUG - Looking for jobs to run
+2025-10-09 18:53:47,476 - DEBUG - Next wakeup is due at 2025-10-10 18:53:47.201616+05:00 (in 86399.724749 seconds)
+2025-10-09 18:53:47,476 - WARNING - Таск для игры Voices of the Void уже был создан ранее. Ложный вызов.
+2025-10-09 18:53:47,501 - INFO - Процесс Atomic Heart запущен.
+2025-10-09 18:53:47,502 - INFO - Процесс Cult Of The Lamb запущен.
+2025-10-09 18:53:47,516 - INFO - Процесс Elden Ring запущен.
+2025-10-09 18:53:47,531 - INFO - Процесс Horizon Zero Dawn запущен.
+2025-10-09 18:53:47,546 - INFO - Процесс Satisfactory запущен.
+2025-10-09 18:53:47,559 - INFO - Процесс The Planet Crafter запущен.
+2025-10-09 18:53:47,571 - INFO - Процесс Voices of the Void запущен.
+2025-10-09 18:53:50,528 - INFO - Начато наблюдение за программой: start_protected_game.exe
+2025-10-09 18:53:50,589 - INFO - Начато наблюдение за программой: Planet Crafter.exe
+2025-10-09 18:53:50,647 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-10-09 18:53:50,704 - INFO - Начато наблюдение за программой: FactoryGameSteam.exe
+2025-10-09 18:53:50,760 - INFO - Начато наблюдение за программой: HorizonZeroDawn.exe
+2025-10-09 18:53:50,816 - INFO - Начато наблюдение за программой: Cult Of The Lamb.exe
+2025-10-09 18:53:50,891 - INFO - Начато наблюдение за программой: UnityCrashHandler64.exe
+2025-10-09 18:53:50,951 - INFO - Начато наблюдение за программой: VotV.exe
