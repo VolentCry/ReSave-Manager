@@ -115,11 +115,11 @@ class GameSettingsWindow(customtkinter.CTkToplevel):
                 self.toplevel_window.focus()
         else:
             subprocess.Popen(['explorer', self.directory_of_game]) # Открыть проводник в заданной директории
-    
+
     def button_resaves(self):
         """ Открытие директории с резервными копиями сохранений """
         subprocess.Popen(['explorer', self.dir_of_resave]) # Открыть проводник в заданной директории
-        
+
     def change_slider(self, value):
         """ Конфигурация изменений слайдера """
         if value <= 27:
@@ -147,7 +147,7 @@ class GameSettingsWindow(customtkinter.CTkToplevel):
 
     def button_game_current_save(self):
         """ Открытие директории с текущем сохранение """
-        subprocess.Popen(['explorer', self.dir_of_cur_save]) # Открыть проводник в заданной директории
+        subprocess.Popen(['explorer', self.dir_of_cur_save])
 
     def button_settings_save(self):
         """ Сохранение изменений настроек """
@@ -219,10 +219,20 @@ class ChoiceGameDir(customtkinter.CTkToplevel):
         self.resizable(False, False)
 
         self.name_of_game = name_of_game
-        
-        self.info_label = customtkinter.CTkLabel(self, text="Данная игра была добавлена с помощью автообноружения, поэтому путь к самой директории неизвестен, пожалуйста, укажите его вручную. "\
-                                                 "Обратите внимание, чтобы в этой директории был обязательно файл с раширением .exe для запуска игры.", font=("Calibri", 13.5, "bold"), wraplength=(510-16))
-        self.info_label.grid(row=0, column=0, padx=8, pady=10, sticky="ew")
+
+        # Информационная сводка
+        customtkinter.CTkLabel(
+            self,
+            text="Данная игра была добавлена с помощью автообноружения, поэтому путь к самой директории неизвестен, пожалуйста, укажите его вручную. Обратите внимание, чтобы в этой директории был обязательно файл с раширением .exe для запуска игры.",
+            font=("Calibri", 13.5, "bold"),
+            wraplength=(510-16)
+        ).grid(
+            row=0,
+            column=0,
+            padx=8,
+            pady=10,
+            sticky="ew"
+        )
         self.button_choose_dir = customtkinter.CTkButton(self, text="Выбрать директорию...", command=self.select_folder)
         self.button_choose_dir.grid(row=1, column=0, padx=8, sticky="ew")
         self.label_game_dir = customtkinter.CTkLabel(self, text="Выбранная директория: ")
